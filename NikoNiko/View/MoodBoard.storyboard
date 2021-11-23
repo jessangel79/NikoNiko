@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nnK-xB-DKK">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Monaco.ttf">
+            <string>Monaco</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--MoodBoard-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MoodBoardViewController" customModule="NikoNiko" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was your day today ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-mr-YVN">
+                                <rect key="frame" x="10" y="69" width="300" height="25"/>
+                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-x1-HBh">
+                                <rect key="frame" x="15" y="119" width="290" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="vX1-Qg-nkF">
+                                        <rect key="frame" x="23" y="0.0" width="244" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-fM-Hmz">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bwJ-fM-Hmz" secondAttribute="height" multiplier="1:1" id="MIZ-bq-3YR"/>
+                                                    <constraint firstAttribute="height" constant="60" id="tAv-Xn-jCY"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="smiling"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuP-Fr-dgJ">
+                                                <rect key="frame" x="92" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6LT-8x-PDs"/>
+                                                    <constraint firstAttribute="width" secondItem="nuP-Fr-dgJ" secondAttribute="height" multiplier="1:1" id="ogI-R3-Hh1"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="happy"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-8R-HKI">
+                                                <rect key="frame" x="184" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="MD4-bG-vWO"/>
+                                                    <constraint firstAttribute="width" secondItem="sBd-8R-HKI" secondAttribute="height" multiplier="1:1" id="sFq-C0-nsK"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="neutral"/>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="120"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-zf-6ZM">
+                                        <rect key="frame" x="65.5" y="78" width="159" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-F0-e9l">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uEA-F0-e9l" secondAttribute="height" multiplier="1:1" id="I9R-8F-0ba"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Yp4-GY-inp"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="sad"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-Id-Myd">
+                                                <rect key="frame" x="99" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Pzn-u4-BOj"/>
+                                                    <constraint firstAttribute="width" secondItem="t45-Id-Myd" secondAttribute="height" multiplier="1:1" id="eCa-av-0p5"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="disappointed"/>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="120"/>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="68"/>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dividingLine" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rk-cq-g1o">
+                                <rect key="frame" x="25" y="274" width="270" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="3qO-vz-WaD"/>
+                                    <constraint firstAttribute="width" constant="270" id="FWf-Uf-xaM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last week" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-XA-21U">
+                                <rect key="frame" x="106" y="315" width="108.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-ke-RIe">
+                                <rect key="frame" x="10" y="360" width="300" height="94"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lDl-HZ-it2">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-Gd-ys9">
+                                                <rect key="frame" x="16.5" y="0.0" width="27.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="iSn-DO-gJn">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="DgC-sm-B3e"/>
+                                                    <constraint firstAttribute="width" secondItem="iSn-DO-gJn" secondAttribute="height" multiplier="1:1" id="txJ-PB-l1D"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4oa-hn-vxU">
+                                        <rect key="frame" x="60" y="0.0" width="60" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-t6-dnQ">
+                                                <rect key="frame" x="16.5" y="0.0" width="27.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-AD-RgN">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Zlc-a0-gyl"/>
+                                                    <constraint firstAttribute="width" secondItem="RNg-AD-RgN" secondAttribute="height" multiplier="1:1" id="dQC-Pe-oP3"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-oI-n5h">
+                                        <rect key="frame" x="120" y="0.0" width="60" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4U-Bs-PvN">
+                                                <rect key="frame" x="16.5" y="0.0" width="27.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="fYg-ea-YSX">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="fYg-ea-YSX" secondAttribute="height" multiplier="1:1" id="Y4t-Nx-qxS"/>
+                                                    <constraint firstAttribute="height" constant="60" id="ilR-6S-NZO"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VFu-tZ-GCc">
+                                        <rect key="frame" x="180" y="0.0" width="60" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-tP-S99">
+                                                <rect key="frame" x="16.5" y="0.0" width="27.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="K7F-kQ-QzF">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="K7F-kQ-QzF" secondAttribute="height" multiplier="1:1" id="ZFW-Yi-CI9"/>
+                                                    <constraint firstAttribute="height" constant="60" id="cdl-wY-Sbc"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-U6-EQ3">
+                                        <rect key="frame" x="240" y="0.0" width="60" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWE-tq-RYW">
+                                                <rect key="frame" x="16.5" y="0.0" width="27.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="9o8-gm-u2D">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="dgt-D4-3U0"/>
+                                                    <constraint firstAttribute="width" secondItem="9o8-gm-u2D" secondAttribute="height" multiplier="1:1" id="fox-TF-k3x"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBu-t7-XcW">
+                                <rect key="frame" x="10" y="469" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2OC-Qm-RuV"/>
+                                    <constraint firstAttribute="height" constant="50" id="m71-ri-DTA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.80191510919999998" green="0.98819977049999996" blue="0.98431676629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3rk-cq-g1o" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="92u-vz-fMK"/>
+                            <constraint firstItem="mct-XA-21U" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CO6-U2-YEK"/>
+                            <constraint firstItem="Zzs-ke-RIe" firstAttribute="top" secondItem="mct-XA-21U" secondAttribute="bottom" constant="20" id="Gth-Rw-33Y"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="top" secondItem="Zzs-ke-RIe" secondAttribute="bottom" constant="15" id="KYv-8s-oXp"/>
+                            <constraint firstItem="KSd-mr-YVN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="LWY-ve-1bt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FSs-x1-HBh" secondAttribute="trailing" constant="15" id="NuL-R2-4jl"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="R3T-sp-wgC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zzs-ke-RIe" secondAttribute="trailing" constant="10" id="ROd-dp-f0D"/>
+                            <constraint firstItem="mct-XA-21U" firstAttribute="top" secondItem="3rk-cq-g1o" secondAttribute="bottom" constant="10" id="Yyt-BW-q9h"/>
+                            <constraint firstItem="KSd-mr-YVN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="agG-CM-kx5"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="btX-5a-IUx"/>
+                            <constraint firstItem="Zzs-ke-RIe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="fCU-ks-yYW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KSd-mr-YVN" secondAttribute="trailing" constant="10" id="fsY-hh-CW8"/>
+                            <constraint firstItem="FSs-x1-HBh" firstAttribute="top" secondItem="KSd-mr-YVN" secondAttribute="bottom" constant="25" id="hN8-jZ-ked"/>
+                            <constraint firstItem="FSs-x1-HBh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="mdh-cU-2Qb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MoodBoard" id="0ds-rM-1Yf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z"/>
+                    </navigationItem>
+                    <connections>
+                        <outletCollection property="allLabels" destination="KSd-mr-YVN" collectionClass="NSMutableArray" id="48J-YV-6YP"/>
+                        <outletCollection property="allLabels" destination="mct-XA-21U" collectionClass="NSMutableArray" id="qkW-um-m4d"/>
+                        <outletCollection property="allLabels" destination="v5a-Gd-ys9" collectionClass="NSMutableArray" id="ESc-qk-adr"/>
+                        <outletCollection property="allLabels" destination="fa7-t6-dnQ" collectionClass="NSMutableArray" id="1Bb-t7-oce"/>
+                        <outletCollection property="allLabels" destination="Y4U-Bs-PvN" collectionClass="NSMutableArray" id="J3v-gV-f0l"/>
+                        <outletCollection property="allLabels" destination="Xb6-tP-S99" collectionClass="NSMutableArray" id="rMa-SO-h9z"/>
+                        <outletCollection property="allLabels" destination="hWE-tq-RYW" collectionClass="NSMutableArray" id="gQt-ME-DOP"/>
+                        <outletCollection property="moodImageViews" destination="iSn-DO-gJn" collectionClass="NSMutableArray" id="bDc-31-mBT"/>
+                        <outletCollection property="moodImageViews" destination="RNg-AD-RgN" collectionClass="NSMutableArray" id="WOg-HC-Zhx"/>
+                        <outletCollection property="moodImageViews" destination="fYg-ea-YSX" collectionClass="NSMutableArray" id="VHE-Xc-G0L"/>
+                        <outletCollection property="moodImageViews" destination="K7F-kQ-QzF" collectionClass="NSMutableArray" id="8r9-y5-gjj"/>
+                        <outletCollection property="moodImageViews" destination="9o8-gm-u2D" collectionClass="NSMutableArray" id="h5a-8X-Exm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104.375" y="107.74647887323944"/>
+        </scene>
+        <!--NikoNiko-->
+        <scene sceneID="uii-Fp-Kuf">
+            <objects>
+                <navigationController id="nnK-xB-DKK" userLabel="NikoNiko" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Niko Niko" image="puzzled" id="gR6-zn-suj"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dEA-xD-ekS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="5Y1-FO-X1h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h05-e8-tzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.875" y="107.74647887323944"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="disappointed" width="96" height="96"/>
+        <image name="dividingLine" width="2000" height="2000"/>
+        <image name="happy" width="96" height="96"/>
+        <image name="neutral" width="96" height="96"/>
+        <image name="puzzled" width="25" height="25"/>
+        <image name="puzzledColor" width="96" height="96"/>
+        <image name="sad" width="96" height="96"/>
+        <image name="smiling" width="96" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
