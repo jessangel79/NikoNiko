@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setColorNavBar()
+        setRealm()
         return true
     }
 
@@ -38,5 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let myFontBarButtonItem = UIFont(name: "Monaco", size: 15) else { return }
         UIBarButtonItem.appearance().setTitleTextAttributes([.font: myFontBarButtonItem], for: UIControl.State.normal)
+    }
+    
+    private func setRealm() {
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { (migration: Migration, oldSchemaVersion: UInt64) in
+                
+            })
+        Realm.Configuration.defaultConfiguration = config
+        //        deleteRealmIfMigrationNeeded: true
     }
 }

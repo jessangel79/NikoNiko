@@ -32,7 +32,7 @@ extension UIViewController {
     func customShadowButton(button: UIButton) {
         button.clipsToBounds = false
         button.layer.cornerRadius = 20
-        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
         button.layer.shadowOpacity = 0.8
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
@@ -61,6 +61,21 @@ extension UIViewController {
         label.layer.borderColor = colorBorder.cgColor
     }
     
+    /// custom label with shadow
+    func customShadowLabel(label: UILabel) {
+        label.clipsToBounds = false
+        label.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
+        label.layer.shadowOpacity = 0.6
+        label.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
+    
+    /// custom collection labels with shadow
+    func customShadowLabels(labels: [UILabel]) {
+        for label in labels {
+            customShadowLabel(label: label)
+        }
+    }
+    
     // MARK: - ImageView custom
     
     /// custom collection imageViews
@@ -87,7 +102,7 @@ extension UIViewController {
     /// custom view with shadow
     func customShadowImageView(imageView: UIImageView) {
         imageView.clipsToBounds = false
-        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
         imageView.layer.shadowOpacity = 0.8
         imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
     }

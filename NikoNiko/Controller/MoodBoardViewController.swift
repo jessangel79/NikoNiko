@@ -6,26 +6,53 @@
 //
 
 import UIKit
+import RealmSwift
 
-class MoodBoardViewController: UIViewController {
+final class MoodBoardViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet var allLabels: [UILabel]!
-    
-    @IBOutlet var moodImageViews: [UIImageView]!
+    @IBOutlet private var moodHistoryImageViews: [UIImageView]!
+    @IBOutlet private var moodTodayButtons: [UIButton]!
+    @IBOutlet private weak var historyView: UIView!
+    @IBOutlet private var titleLabels: [UILabel]!
     
     // MARK: - Properties
+    
+    private let realm = try? Realm()
 
     // MARK: - Actions
+    
+    @IBAction func moodPressed(_ sender: UIButton) {
+        guard let moodName = sender.currentTitle else { return }
+        getMoodForToday(moodName: moodName)
+    }
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        customAllLabels(allLabels: allLabels, radius: 5, width: 1.0, colorBackground: #colorLiteral(red: 0.2436142266, green: 0.8575767279, blue: 0.9419901967, alpha: 1), colorBorder: #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1))
-        customShadowImageViews(imageViews: moodImageViews)
-        customImageViews(imageViews: moodImageViews, colorBorder: #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1))
+        customUI()
+        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
+    }
+    
+    // MARK: - Methods
+    
+    private func customUI() {
+        customShadowImageViews(imageViews: moodHistoryImageViews)
+        customShadowButtons(buttons: moodTodayButtons)
+        customShadowView(view: historyView)
+        customView(view: historyView, radius: 20, width: 0.8, colorBorder: #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1))
+        customShadowLabels(labels: titleLabels)
+    }
+    
+    private func getMoodForToday(moodName: String) {
+        let dataManager = DataManager()
+        let currentDate = Date()
+        dataManager.saveMood(realm: self.realm, moodName: moodName, currentDate: currentDate)
+        print("current date : \(currentDate)")
+        print("moodName : \(moodName)")
+
     }
 
 }
