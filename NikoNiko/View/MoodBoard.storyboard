@@ -46,7 +46,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="smiling" image="smiling"/>
                                                 <connections>
-                                                    <action selector="moodPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gIe-tN-4np"/>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lOu-cw-USL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuP-Fr-dgJ">
@@ -58,7 +58,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="happy" image="happy"/>
                                                 <connections>
-                                                    <action selector="moodPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="El8-ZP-fB4"/>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z2s-KS-7uH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-8R-HKI">
@@ -70,7 +70,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="neutral" image="neutral"/>
                                                 <connections>
-                                                    <action selector="moodPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="H9J-XO-IWD"/>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R13-AK-3Le"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -88,7 +88,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="sad" image="sad"/>
                                                 <connections>
-                                                    <action selector="moodPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Jx6-JI-cUv"/>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNq-kk-qeW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-Id-Myd">
@@ -100,7 +100,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="disappointed" image="disappointed"/>
                                                 <connections>
-                                                    <action selector="moodPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hTJ-8K-PTe"/>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZW-nn-xGD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -278,6 +278,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="MoodBoard" id="0ds-rM-1Yf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="n5h-jq-qG0">
+                            <connections>
+                                <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="pPs-rV-pDd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="historyView" destination="dEM-J1-Wxi" id="Sfy-aD-XH4"/>

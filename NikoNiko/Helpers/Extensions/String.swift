@@ -7,9 +7,16 @@
 
 import Foundation
  
-//extension String {
-//
-//    /// get current date
+extension String {
+    
+    /// format type string in type date
+    func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: self) ?? Date()
+    }
+
+    /// get current date
 //    func getCurrentDate(dateFormat: String) -> String {
 //        let currentDate = Date()
 //        let dateFormatter = DateFormatter()
@@ -17,4 +24,4 @@ import Foundation
 //        let stringDate = dateFormatter.string(from: currentDate)
 //        return stringDate
 //    }
-//}
+}

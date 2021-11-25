@@ -19,13 +19,19 @@ final class MoodBoardViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let realm = try? Realm()
+//    private let realm = try? Realm()
 
     // MARK: - Actions
     
-    @IBAction func moodPressed(_ sender: UIButton) {
+    @IBAction func moodTodayButtonsPressed(_ sender: UIButton) {
         guard let moodName = sender.currentTitle else { return }
         getMoodForToday(moodName: moodName)
+    }
+    
+    @IBAction func deleteAllBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        let dataManager = DataManager()
+//        dataManager.deleteAllMood(realm: realm)
+        dataManager.removeAllMood()
     }
     
     // MARK: - View Life Cycle
@@ -44,12 +50,16 @@ final class MoodBoardViewController: UIViewController {
         customShadowView(view: historyView)
         customView(view: historyView, radius: 20, width: 0.8, colorBorder: #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1))
         customShadowLabels(labels: titleLabels)
+
     }
     
     private func getMoodForToday(moodName: String) {
         let dataManager = DataManager()
         let currentDate = Date()
-        dataManager.saveMood(realm: self.realm, moodName: moodName, currentDate: currentDate)
+        dataManager.updateMood(moodName: moodName, forDate: currentDate)
+//        dataManager.addMood(withName: moodName, forDate: currentDate)
+//        dataManager.updateMood(moodName: moodName, forDate: currentDate)
+//        dataManager.saveMood(realm: self.realm, moodName: moodName, currentDate: currentDate)
         print("current date : \(currentDate)")
         print("moodName : \(moodName)")
 
