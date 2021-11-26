@@ -19,7 +19,9 @@ final class MoodBoardViewController: UIViewController {
     
     // MARK: - Properties
     
-//    private let realm = try? Realm()
+    private let realm = try? Realm()
+//    private let dataManager = DataManager()
+    private var lastMoods = [Mood]()
 
     // MARK: - Actions
     
@@ -30,8 +32,7 @@ final class MoodBoardViewController: UIViewController {
     
     @IBAction func deleteAllBarButtonItemPressed(_ sender: UIBarButtonItem) {
         let dataManager = DataManager()
-//        dataManager.deleteAllMood(realm: realm)
-        dataManager.removeAllMood()
+        dataManager.removeAllMoods(realm: realm)
     }
     
     // MARK: - View Life Cycle
@@ -40,6 +41,7 @@ final class MoodBoardViewController: UIViewController {
         super.viewDidLoad()
         customUI()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
+//        getLastMoods()
     }
     
     // MARK: - Methods
@@ -56,13 +58,18 @@ final class MoodBoardViewController: UIViewController {
     private func getMoodForToday(moodName: String) {
         let dataManager = DataManager()
         let currentDate = Date()
-        dataManager.updateMood(moodName: moodName, forDate: currentDate)
-//        dataManager.addMood(withName: moodName, forDate: currentDate)
-//        dataManager.updateMood(moodName: moodName, forDate: currentDate)
-//        dataManager.saveMood(realm: self.realm, moodName: moodName, currentDate: currentDate)
+        dataManager.updateMood(realm: self.realm, moodName: moodName, forDate: currentDate)
         print("current date : \(currentDate)")
         print("moodName : \(moodName)")
-
+    }
+    
+    private func getLastMoods() {
+        let dataManager = DataManager()
+        lastMoods = dataManager.getLastMoods(realm: realm)
+    }
+    
+    private func setMoodHistoryImages() {
+        
     }
 
 }

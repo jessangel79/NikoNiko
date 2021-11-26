@@ -8,17 +8,15 @@
 import Foundation
 import RealmSwift
 
-//class Mood: Object {
-//    @objc dynamic var name = ""
-//    @objc dynamic var currentDate = ""
-//}
 class Mood: Object {
     @Persisted var name = ""
     @Persisted var date = ""
+    @Persisted var dateNoFormatted = ""
     
-    convenience init(name: String, date: String) {
+    convenience init(name: String, date: String, dateNoFormatted: String) {
         self.init()
         self.name = name
         self.date = date
+        self.dateNoFormatted = dateNoFormatted
     }
 }

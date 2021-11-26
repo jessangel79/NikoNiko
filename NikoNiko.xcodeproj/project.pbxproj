@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0323E0275116D900D53B12 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323DF275116D900D53B12 /* StringExtensionTests.swift */; };
+		3A0323E22751236700D53B12 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323E12751236700D53B12 /* DateExtensionTests.swift */; };
 		3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB50F274C1805006EE44F /* AppDelegate.swift */; };
 		3A3EB512274C1805006EE44F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB511274C1805006EE44F /* SceneDelegate.swift */; };
 		3A3EB514274C1805006EE44F /* MoodBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB513274C1805006EE44F /* MoodBoardViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0323DF275116D900D53B12 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		3A0323E12751236700D53B12 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		3A3EB50C274C1805006EE44F /* NikoNiko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoNiko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3EB50F274C1805006EE44F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A3EB511274C1805006EE44F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0323DE275116D000D53B12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A0323DF275116D900D53B12 /* StringExtensionTests.swift */,
+				3A0323E12751236700D53B12 /* DateExtensionTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3A3EB503274C1805006EE44F = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		3AB53E39274F9D85002B3960 /* NikoNikoTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A0323DE275116D000D53B12 /* Extensions */,
 				3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */,
 				3AB53E41274F9F70002B3960 /* RealmTests.swift */,
 			);
@@ -348,7 +362,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */,
+				3A0323E22751236700D53B12 /* DateExtensionTests.swift in Sources */,
 				3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */,
+				3A0323E0275116D900D53B12 /* StringExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

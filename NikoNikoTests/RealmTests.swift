@@ -21,6 +21,7 @@ class RealmTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "RealmTests"
+//        print("REALM TEST : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
     }
 
     override func tearDownWithError() throws {
@@ -29,55 +30,130 @@ class RealmTests: XCTestCase {
     
     // MARK: - Helpers
     
+    private func addMoods(_ testRealm: Realm) {
+        let currentDate = "2021-11-25T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: currentDate)
+        let newDate = "2021-11-26T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+        let newDate2 = "2021-11-27T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate2)
+        let newDate3 = "2021-11-28T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate3)
+        let newDate4 = "2021-11-29T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate4)
+    }
+    private func addAllMoods(_ testRealm: Realm) {
+        let currentDate = "2021-11-25T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: currentDate)
+        let newDate = "2021-11-26T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+        let newDate2 = "2021-11-27T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate2)
+        let newDate3 = "2021-11-28T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate3)
+        let newDate4 = "2021-11-29T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate4)
+        let newDate5 = "2021-11-30T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: newDate5)
+        let newDate6 = "2021-12-01T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate6)
+        let newDate7 = "2021-12-02T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate7)
+        let newDate8 = "2021-12-03T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate8)
+        let newDate9 = "2021-12-04T16:15:52+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate9)
+    }
+    
+    private func updateMood(_ testRealm: Realm) {
+        let currentDate = "2021-11-25T06:53:40+00:00".toDate()
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: currentDate)
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: currentDate)
+    }
+    
     // MARK: - Tests DataManager
     
-    func testsaveMoodIfCurrentDateIsTodayAndMoodListIsEmpty() throws {
+    
+    
+    func testUpdateMoodIfMoodListIsEmptyAndAddFirstMood() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        let currentDate = "2021-11-25 10:53:16 +0000".toDate()
+        let currentDate = "2021-11-25T06:53:40+00:00".toDate()
         XCTAssertTrue(testRealm.objects(Mood.self).isEmpty)
-        dataManager.saveMood(realm: testRealm, moodName: "happy", currentDate: currentDate)
+        
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: currentDate)
+        
         XCTAssertFalse(testRealm.objects(Mood.self).isEmpty)
         XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "happy")
         XCTAssertEqual(testRealm.objects(Mood.self).first?.date, "2021-11-25")
     }
     
-    func testSaveMoodIfCurrentDateIsTodayAndUpdateMood() throws {
+    func testUpdateMoodIfMoodAlreadyExistAndUpdateMood() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        let currentDate = "2021-11-25 10:53:16 +0000".toDate()
-        dataManager.saveMood(realm: testRealm, moodName: "happy", currentDate: currentDate)
+        updateMood(testRealm)
+        
         XCTAssertFalse(testRealm.objects(Mood.self).isEmpty)
-        dataManager.saveMood(realm: testRealm, moodName: "sad", currentDate: currentDate)
         XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "sad")
     }
     
-    func testSaveMoodIfCurrentDateIsNotToday() throws {
+    func testUpdateMoodIfAnotherDayIsAdded() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        let currentDate = "2021-11-25 10:53:16 +0000".toDate()
-        dataManager.saveMood(realm: testRealm, moodName: "happy", currentDate: currentDate)
-        let newDate = "2021-11-26 10:53:16 +0000".toDate()
-        dataManager.saveMood(realm: testRealm, moodName: "neutral", currentDate: newDate)
-        let newDate2 = "2021-11-27 10:53:16 +0000".toDate()
-        dataManager.saveMood(realm: testRealm, moodName: "sad", currentDate: newDate2)
+        addMoods(testRealm)
         XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "happy")
         XCTAssertEqual(testRealm.objects(Mood.self)[1].name, "neutral")
-        print("count Mood in test :\(testRealm.objects(Mood.self).count)")
-        
+        XCTAssertEqual(testRealm.objects(Mood.self)[2].name, "sad")
+        XCTAssertTrue(testRealm.objects(Mood.self).count == 3)
     }
     
-//    func testUpdateMood() throws {
-//        guard let testRealm = try? Realm(configuration: config) else { return }
-//        let currentDate = "2021-11-25 10:53:16 +0000".toDate()
-//        dataManager.saveMood(realm: testRealm, moodName: "happy", currentDate: currentDate)
-// //        dataManager.updateMood(realm: testRealm, moodName: "sad")
-//        XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "sad")
-//    }
-    
-    func testDeleteAllMoods() throws {
+    func testRemoveAllMoods() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        let currentDate = "2021-11-25 10:53:16 +0000".toDate()
-        dataManager.saveMood(realm: testRealm, moodName: "happy", currentDate: currentDate)
-        dataManager.deleteAllMood(realm: testRealm)
+        addMoods(testRealm)
+        dataManager.removeAllMoods(realm: testRealm)
+        
         XCTAssertTrue(testRealm.objects(Mood.self).isEmpty)
+    }
+    
+    func testDeleteFirstMood() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        addMoods(testRealm)
+//        let currentDate = "2021-11-25T16:15:52+00:00".toDate()
+//        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: currentDate)
+//        let newDate = "2021-11-26T16:15:52+00:00".toDate()
+//        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+        
+        XCTAssertTrue(testRealm.objects(Mood.self).count == 2)
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "happy")
+        
+        dataManager.removeMood(realm: testRealm)
+        XCTAssertTrue(testRealm.objects(Mood.self).count == 1)
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "neutral")
+
+    }
+    
+    func testGetLastMoodsIfExist5Moods() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        addMoods(testRealm)
+        var lastMoods = [Mood]()
+        lastMoods = dataManager.getLastMoods(realm: testRealm)
+        print("lastMoods in test : \(lastMoods)")
+        XCTAssertFalse(lastMoods.isEmpty)
+        XCTAssertEqual(lastMoods.first?.name, "happy")
+    }
+    
+    func testGetLastMoodsIfMoodsIsEmpty() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        var lastMoods = [Mood]()
+        lastMoods = dataManager.getLastMoods(realm: testRealm)
+        print("lastMoods in test : \(lastMoods)")
+        XCTAssertTrue(lastMoods.isEmpty)
+    }
+    
+    func testGetLastMoodsIfMoods() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        addAllMoods(testRealm)
+        var lastMoods = [Mood]()
+        lastMoods = dataManager.getLastMoods(realm: testRealm)
+        print("lastMoods in test : \(lastMoods)")
+        XCTAssertFalse(lastMoods.isEmpty)
     }
 
 //    func testPerformanceExample() throws {

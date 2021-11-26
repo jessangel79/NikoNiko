@@ -15,6 +15,24 @@ extension String {
         formatter.dateFormat = format
         return formatter.date(from: self) ?? Date()
     }
+    
+    /// transform date no formatted in date formatted
+    func transformDate() -> String {
+        var dateTemp = ""
+        let initialString = self
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        
+        if let date = dateFormatter.date(from: initialString) {
+            let calendar = Calendar.current
+            let dateComponents = calendar.dateComponents([.month, .day], from: date)
+            
+            guard let month = dateComponents.month else { return "" }
+            guard let day = dateComponents.day else { return "" }
+            dateTemp = "\(day)/\(month)"
+        }
+        return dateTemp
+    }
 
     /// get current date
 //    func getCurrentDate(dateFormat: String) -> String {
