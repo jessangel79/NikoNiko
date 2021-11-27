@@ -25,7 +25,7 @@ final class DataManager {
                 addMood(realm, withName: moodName, forDate: date)
             }
             guard let moodToUpdate = moodList.last else { return }
-            if moodToUpdate.date == date.toString(format: FormatDate.formatted.rawValue) {
+            if moodToUpdate.date.toString(format: FormatDate.formatted.rawValue) == date.toString(format: FormatDate.formatted.rawValue) {
                 try realm?.write {
                     moodToUpdate.name = moodName
                 }
@@ -35,18 +35,14 @@ final class DataManager {
         } catch let error as NSError {
             print("error : \(error.localizedDescription)")
         }
-        
-        print("count Mood in update Mood :\(moodList.count)")
-        print("moodList in update Mood :\(String(describing: moodList))")
-        
+                
         // Invalidate notification tokens when done observing
         notificationToken().invalidate()
     }
     
     private func addMood(_ realm: Realm?, withName name: String, forDate date: Date) {
-        let dateStr = date.toString(format: FormatDate.formatted.rawValue)
-        let dateStrNoFormatted = date.toString(format: FormatDate.noFormatted.rawValue)
-        let newMood = Mood(name: name, date: dateStr, dateNoFormatted: dateStrNoFormatted)
+        let dateStrFormatted = date.toString(format: FormatDate.formatted.rawValue)
+        let newMood = Mood(name: name, date: date, dateFormatted: dateStrFormatted)
         do {
             try realm?.write {
                 realm?.add(newMood)
@@ -101,46 +97,15 @@ final class DataManager {
     func getLastMoods(realm: Realm?) -> [Mood] {
         var lastMoods = [Mood]()
         moodList = (realm?.objects(Mood.self))
-        //        let moodListCount = moodList.count
-        
         if moodList.isEmpty {
             lastMoods = [Mood]()
-        } else if moodList.count == 1 {
-            guard let firstMood = moodList.first else { return [Mood]() }
-            lastMoods.append(firstMood)
-        } else if moodList.count == 2 {
-            for index in 0...moodList.count {
-                lastMoods.append(moodList[index])
-            }
         } else {
-            for index in 0...4 { // moodListCount-4...moodListCount
-                lastMoods.append(moodList[index])
+            for mood in moodList {
+                if mood.date < Date().addingTimeInterval(24 * 60 * 60) && mood.date > Date().addingTimeInterval(-(24 * 60 * 60 * Cst.nbOfMoods)) {
+                    lastMoods.append(mood)
+                }
             }
         }
-        
-//        if moodList.isEmpty {
-//            lastMoods = [Mood]()
-//        } else {
-//            switch moodList.count {
-//            case 1:
-//                guard let firstMood = moodList.first else { return [Mood]() }
-//                lastMoods.append(firstMood)
-//            case 2:
-//                for index in 0...moodList.count {
-//                    lastMoods.append(moodList[index])
-//                }
-//            case 3:
-//                for index in 0...moodList.count {
-//                    lastMoods.append(moodList[index])
-//                }
-//            default:
-//                for index in 0...moodList.count { // 0...4
-//                    lastMoods.append(moodList[index])
-//                }
-//            }
-//        }
-        
-        print("lastMoods : \(lastMoods)")
         return lastMoods
     }
     
@@ -171,10 +136,9 @@ final class DataManager {
     //        return moodList[index]
     //    }
 
-    
-    // debug
-    func displayMoodCount(realm: Realm?) {
-        moodList = realm?.objects(Mood.self)
-        print("il y a \(String(describing: moodList.count)) Mood dans la liste")
-    }
+    /// debug
+//    func displayMoodCount(realm: Realm?) {
+//        moodList = realm?.objects(Mood.self)
+//        print("il y a \(String(describing: moodList.count)) Mood dans la liste")
+//    }
 }

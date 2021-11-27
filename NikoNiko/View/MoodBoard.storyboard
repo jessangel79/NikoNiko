@@ -137,7 +137,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-Lm-0D7">
                                                         <rect key="frame" x="9" y="0.0" width="42.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-Gd-ys9">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-Gd-ys9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -146,7 +146,7 @@
                                                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/11" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="riS-wA-Bq4">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--/--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="riS-wA-Bq4">
                                                                 <rect key="frame" x="0.0" y="17.5" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -172,7 +172,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ki-Sh-dpQ">
                                                         <rect key="frame" x="9" y="0.0" width="42.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-t6-dnQ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-t6-dnQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -181,7 +181,7 @@
                                                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/11" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-TH-tU8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--/--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-TH-tU8">
                                                                 <rect key="frame" x="0.0" y="17.5" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -207,7 +207,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OKN-EW-ufM">
                                                         <rect key="frame" x="9" y="0.0" width="42.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Y4U-Bs-PvN">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Y4U-Bs-PvN">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -216,7 +216,7 @@
                                                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24/11" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-6c-MCX">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--/--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-6c-MCX">
                                                                 <rect key="frame" x="0.0" y="17.5" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -242,7 +242,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l07-PL-3KX">
                                                         <rect key="frame" x="9" y="0.0" width="42.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-tP-S99">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-tP-S99">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -251,7 +251,7 @@
                                                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25/11" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-WC-APh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--/--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-WC-APh">
                                                                 <rect key="frame" x="0.0" y="17.5" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -277,7 +277,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Set-cl-4bN">
                                                         <rect key="frame" x="9" y="0.0" width="42.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hWE-tq-RYW">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hWE-tq-RYW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -286,7 +286,7 @@
                                                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26/11" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-fB-ki6">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--/--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-fB-ki6">
                                                                 <rect key="frame" x="0.0" y="17.5" width="42.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                                 <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -368,6 +368,16 @@
                         <outletCollection property="moodTodayButtons" destination="uEA-F0-e9l" collectionClass="NSMutableArray" id="RTz-6U-5IL"/>
                         <outletCollection property="titleLabels" destination="KSd-mr-YVN" collectionClass="NSMutableArray" id="elj-KM-c6y"/>
                         <outletCollection property="titleLabels" destination="mct-XA-21U" collectionClass="NSMutableArray" id="wu4-W7-Pme"/>
+                        <outletCollection property="dayOfWeekLabels" destination="v5a-Gd-ys9" collectionClass="NSMutableArray" id="O4g-4c-qbe"/>
+                        <outletCollection property="dayOfWeekLabels" destination="fa7-t6-dnQ" collectionClass="NSMutableArray" id="jSr-1k-trY"/>
+                        <outletCollection property="dayOfWeekLabels" destination="Y4U-Bs-PvN" collectionClass="NSMutableArray" id="He8-wd-6FM"/>
+                        <outletCollection property="dayOfWeekLabels" destination="Xb6-tP-S99" collectionClass="NSMutableArray" id="PEg-uJ-0fH"/>
+                        <outletCollection property="dayOfWeekLabels" destination="hWE-tq-RYW" collectionClass="NSMutableArray" id="aNe-pE-n0w"/>
+                        <outletCollection property="dateLabels" destination="riS-wA-Bq4" collectionClass="NSMutableArray" id="Zid-hq-sWO"/>
+                        <outletCollection property="dateLabels" destination="EMv-TH-tU8" collectionClass="NSMutableArray" id="Wd0-fj-8P0"/>
+                        <outletCollection property="dateLabels" destination="s3h-6c-MCX" collectionClass="NSMutableArray" id="eW7-L5-J4q"/>
+                        <outletCollection property="dateLabels" destination="9LV-WC-APh" collectionClass="NSMutableArray" id="DKf-ip-mAk"/>
+                        <outletCollection property="dateLabels" destination="7J1-fB-ki6" collectionClass="NSMutableArray" id="aLw-ZF-YDQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
