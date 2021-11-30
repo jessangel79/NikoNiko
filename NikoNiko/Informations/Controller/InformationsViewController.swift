@@ -6,40 +6,27 @@
 //
 
 import UIKit
-
-//import GoogleMobileAds
+import GoogleMobileAds
 
 final class InformationsViewController: UIViewController {
+    
+    // MARK: - Outlets
+
+    @IBOutlet private weak var bannerView: GADBannerView!
 
     // MARK: - Properties
 
-    private let segueToWebsiteInfo = Cst.SegueToWebsiteInfo
+    private let segueToWebsiteInfo = Cst.Segue.ToWebsiteInfo
     private let badgeLinkedIn = "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
-    private let badgeDevTo = "https://dev.to/angelappdev"
-    private let iconfinder = "https://www.iconfinder.com/"
+    private let pngTree = "https://pngtree.com/so/Avion"
     private let angelAppDev = "http://www.angelappdev.io"
-    private let mergersort = "https://github.com/mergesort/TableFlip"
-    private let openStreetMap = "https://www.openstreetmap.org/copyright"
     private var urlString = String()
-
-//    private let adMobService = AdMobService()
-
-    // MARK: - Outlets
-
-//    @IBOutlet private weak var bannerView: GADBannerView!
+    private let adMobService = AdMobService()
 
     // MARK: - Actions
 
-    @IBAction private func iconfinderButtonTapped(_ sender: UIButton) {
-        openWebView(iconfinder)
-    }
-
-    @IBAction private func mergesortButtonTapped(_ sender: UIButton) {
-        openWebView(mergersort)
-    }
-
-    @IBAction private func openStreetMapButtonTapped(_ sender: UIButton) {
-        openWebView(openStreetMap)
+    @IBAction private func pngTreeButtonTapped(_ sender: UIButton) {
+        openWebView(pngTree)
     }
 
     @IBAction private func angelAppDevButtonTapped(_ sender: UIButton) {
@@ -49,12 +36,8 @@ final class InformationsViewController: UIViewController {
     @IBAction private func badgeProButtonTapped(_ sender: UIButton) {
         openWebView(badgeLinkedIn)
     }
-
-    @IBAction private func badgeDevButtonTapped(_ sender: UIButton) {
-        openWebView(badgeDevTo)
-    }
-
-    @IBAction func closeModalBarButtonItemTapped(_ sender: UIBarButtonItem) {
+    
+    @IBAction func closeModalBarButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
 
@@ -63,7 +46,8 @@ final class InformationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
-//        adMobService.setAdMob(bannerView, self)
+        adMobService.setAdMob(bannerView, self)
+        adViewDidReceiveAd(bannerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +65,7 @@ final class InformationsViewController: UIViewController {
         self.urlString = urlString
         performSegue(withIdentifier: segueToWebsiteInfo, sender: self)
     }
+
 }
 
 // MARK: - Navigation

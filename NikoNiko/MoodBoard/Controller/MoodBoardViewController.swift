@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
 final class MoodBoardViewController: UIViewController {
     
@@ -15,13 +16,15 @@ final class MoodBoardViewController: UIViewController {
     @IBOutlet private var moodTodayButtons: [UIButton]!
     @IBOutlet private weak var historyView: UIView!
     @IBOutlet private var titleLabels: [UILabel]!
-    @IBOutlet weak var moodHistoryCollectionView: UICollectionView!
+    @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
+    @IBOutlet private weak var bannerView: GADBannerView!
 
     // MARK: - Properties
     
     private let realm = try? Realm()
     private var inverseMoodList: Results<Mood>?
     private var moodListDefault = [Mood]()
+    private let adMobService = AdMobService()
 //    private let dataManager = DataManager()
 
     // MARK: - Actions
@@ -52,6 +55,7 @@ final class MoodBoardViewController: UIViewController {
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         moodHistoryCollectionView.reloadData()
         moodHistoryCollectionView.collectionViewLayout = setLayout()
+        adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,8 +79,8 @@ final class MoodBoardViewController: UIViewController {
     }
     
     private func setNib() {
-        let nib = UINib(nibName: Cst.MoodHistoryCollectionViewCell, bundle: nil)
-        moodHistoryCollectionView.register(nib, forCellWithReuseIdentifier: Cst.MoodHistoryCell)
+        let nib = UINib(nibName: Cst.Collection.MoodHistoryCollectionViewCell, bundle: nil)
+        moodHistoryCollectionView.register(nib, forCellWithReuseIdentifier: Cst.Collection.MoodHistoryCell)
     }
     
     func setLayout() -> UICollectionViewFlowLayout {
@@ -118,7 +122,7 @@ extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cst.MoodHistoryCell, for: indexPath) as? MoodHistoryCollectionViewCell else {
+        guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cst.Collection.MoodHistoryCell, for: indexPath) as? MoodHistoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         if let inverseMoodList = inverseMoodList {

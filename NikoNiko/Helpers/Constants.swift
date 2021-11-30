@@ -8,18 +8,20 @@
 import Foundation
 
 struct Cst {
-    struct Img {
-        static let active = "active"
-        static let activeGif = "ActiveButton.gif"
-    }
-    
-    static let AdMobAdUnitIDTest = "ca-app-pub-3940256099942544/2934735716"
-    static let AdMobAdUnitIDProd = "ca-app-pub-1785702102693747/?????"
-    
+
     static let nbOfMoods = 20
 
-    static let MoodHistoryCell = "MoodHistoryCell"
-    static let MoodHistoryCollectionViewCell = "MoodHistoryCollectionViewCell"
+    struct AdMob {
+        static let AdUnitIDTest = "ca-app-pub-3940256099942544/2934735716"
+        static let AdUnitIDProd = "ca-app-pub-1785702102693747/5166484662"
+    }
+
+    struct Collection {
+        static let MoodHistoryCell = "MoodHistoryCell"
+        static let MoodHistoryCollectionViewCell = "MoodHistoryCollectionViewCell"
+    }
     
-    static let SegueToWebsiteInfo = "SegueToWebsiteInfo"
+    struct Segue {
+        static let ToWebsiteInfo = "segueToWebsiteInfo"
+    }
 }

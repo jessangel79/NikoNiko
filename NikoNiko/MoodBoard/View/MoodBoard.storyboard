@@ -163,11 +163,11 @@
                                     <constraint firstItem="FBY-BX-XPl" firstAttribute="top" secondItem="mct-XA-21U" secondAttribute="bottom" id="rJO-76-T06"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBu-t7-XcW">
-                                <rect key="frame" x="10" y="469" width="300" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBu-t7-XcW" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="2OC-Qm-RuV"/>
+                                    <constraint firstAttribute="width" constant="320" id="2OC-Qm-RuV"/>
                                     <constraint firstAttribute="height" constant="50" id="m71-ri-DTA"/>
                                 </constraints>
                             </view>
@@ -197,13 +197,14 @@
                                 <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="pPs-rV-pDd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Info" id="0qm-UN-5Cl">
+                        <barButtonItem key="rightBarButtonItem" image="info-credits" id="0qm-UN-5Cl">
                             <connections>
-                                <segue destination="U2z-nR-rao" kind="show" id="sv0-u8-Ug2"/>
+                                <segue destination="U2z-nR-rao" kind="showDetail" id="sv0-u8-Ug2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="JBu-t7-XcW" id="c9P-AT-1gt"/>
                         <outlet property="historyView" destination="dEM-J1-Wxi" id="Sfy-aD-XH4"/>
                         <outlet property="moodHistoryCollectionView" destination="FBY-BX-XPl" id="fDs-fD-rkM"/>
                         <outletCollection property="moodTodayButtons" destination="bwJ-fM-Hmz" collectionClass="NSMutableArray" id="8tQ-6X-j3s"/>
@@ -250,6 +251,7 @@
         <image name="disappointed" width="96" height="96"/>
         <image name="dividingLine" width="2000" height="2000"/>
         <image name="happy" width="96" height="96"/>
+        <image name="info-credits" width="25" height="25"/>
         <image name="neutral" width="96" height="96"/>
         <image name="puzzled" width="25" height="25"/>
         <image name="sad" width="96" height="96"/>

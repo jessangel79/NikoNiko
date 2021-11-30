@@ -6,16 +6,16 @@
 //  Copyright © 2021 Angelique Babin. All rights reserved.
 //
 
-import Foundation
-//import GoogleMobileAds
+import UIKit
+import GoogleMobileAds
 
-//final class AdMobService {
-//
-//    func setAdMob(_ bannerView: GADBannerView, _ viewController: UIViewController) {
-//        bannerView.delegate = viewController
-//        bannerView.adUnitID = Constants.AdMobAdUnitIDTest // Test
-//        bannerView.rootViewController = viewController
-// //        print("Google Mobile Ads SDK version: \(GADMobileAds.sharedInstance().sdkVersion)")
-//        bannerView.load(GADRequest())
-//    }
-//}
+final class AdMobService {
+
+    func setAdMob(_ bannerView: GADBannerView, _ viewController: UIViewController) {
+        bannerView.delegate = viewController
+        bannerView.adUnitID = Cst.AdMob.AdUnitIDTest // Test
+        bannerView.rootViewController = viewController
+ //        print("Google Mobile Ads SDK version: \(GADMobileAds.sharedInstance().sdkVersion)")
+        bannerView.load(GADRequest())
+    }
+}

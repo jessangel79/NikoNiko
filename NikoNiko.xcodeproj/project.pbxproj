@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EF997F5DD03D032AEAE3DDC /* Pods_NikoNiko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BAEAF15EEB91B392B5A4AA /* Pods_NikoNiko.framework */; };
+		3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */; };
 		3A0323E0275116D900D53B12 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323DF275116D900D53B12 /* StringExtensionTests.swift */; };
 		3A0323E22751236700D53B12 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323E12751236700D53B12 /* DateExtensionTests.swift */; };
 		3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB50F274C1805006EE44F /* AppDelegate.swift */; };
@@ -19,6 +21,19 @@
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
 		3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */; };
 		3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284DC275554E50064BA99 /* AdMobService.swift */; };
+		3AAA36A7275691F600FE4975 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A5275691F600FE4975 /* EventKitUI.framework */; };
+		3AAA36A8275691F600FE4975 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A6275691F600FE4975 /* EventKit.framework */; };
+		3AAA36AA275691FD00FE4975 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A9275691FD00FE4975 /* AVFoundation.framework */; };
+		3AAA36AC2756920600FE4975 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36AB2756920600FE4975 /* AdSupport.framework */; };
+		3AAA36AE2756921000FE4975 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36AD2756921000FE4975 /* AudioToolbox.framework */; };
+		3AAA36B12756922300FE4975 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36AF2756922300FE4975 /* CoreTelephony.framework */; };
+		3AAA36B22756922300FE4975 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B02756922300FE4975 /* CoreGraphics.framework */; };
+		3AAA36B42756922D00FE4975 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B32756922D00FE4975 /* CoreMedia.framework */; };
+		3AAA36B62756923700FE4975 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B52756923700FE4975 /* MessageUI.framework */; };
+		3AAA36B82756923F00FE4975 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B72756923F00FE4975 /* StoreKit.framework */; };
+		3AAA36BA2756924800FE4975 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B92756924800FE4975 /* SystemConfiguration.framework */; };
+		3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */; };
+		3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */; };
 		3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */; };
 		3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E41274F9F70002B3960 /* RealmTests.swift */; };
 		3AE2916E274D21780068843A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2916D274D21780068843A /* README.md */; };
@@ -28,9 +43,10 @@
 		3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29176274D2E570068843A /* MoodBoard.storyboard */; };
 		3AE29179274D3AC80068843A /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29178274D3AC70068843A /* Monaco.ttf */; };
 		3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */; };
+		3AEB93742756ACDE00405217 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEB93732756ACDE00405217 /* WebKit.framework */; };
 		3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */; };
 		3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */; };
-		3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */; };
+		3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */; };
 		3AFA312B274EB2C70068FADF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312A274EB2C70068FADF /* Realm */; };
 		3AFA312D274EB2C70068FADF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312C274EB2C70068FADF /* RealmSwift */; };
 		3AFA312F274EB4B90068FADF /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA312E274EB4B90068FADF /* Mood.swift */; };
@@ -38,6 +54,7 @@
 		3AFA3133274EBFF00068FADF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3132274EBFF00068FADF /* String.swift */; };
 		3AFA3135274EC0460068FADF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3134274EC0460068FADF /* Date.swift */; };
 		3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3136274EC0930068FADF /* FormateDate.swift */; };
+		508063948E33F12BF4723A68 /* Pods_NikoNikoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64504EC2608755D7E06FA57E /* Pods_NikoNikoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2724C3C431771F8CB0E331DB /* Pods-NikoNikoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoNikoTests.release.xcconfig"; path = "Target Support Files/Pods-NikoNikoTests/Pods-NikoNikoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GADBannerViewDelegate.swift"; sourceTree = "<group>"; };
 		3A0323DF275116D900D53B12 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		3A0323E12751236700D53B12 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		3A3EB50C274C1805006EE44F /* NikoNiko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoNiko.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +84,19 @@
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284DC275554E50064BA99 /* AdMobService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobService.swift; sourceTree = "<group>"; };
+		3AAA36A5275691F600FE4975 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		3AAA36A6275691F600FE4975 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		3AAA36A9275691FD00FE4975 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3AAA36AB2756920600FE4975 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3AAA36AD2756921000FE4975 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3AAA36AF2756922300FE4975 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3AAA36B02756922300FE4975 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3AAA36B32756922D00FE4975 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3AAA36B52756923700FE4975 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3AAA36B72756923F00FE4975 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3AAA36B92756924800FE4975 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UiViewController+WKWebView.swift"; sourceTree = "<group>"; };
+		3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoNikoTests.swift; sourceTree = "<group>"; };
 		3AB53E41274F9F70002B3960 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
@@ -75,14 +107,20 @@
 		3AE29176274D2E570068843A /* MoodBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodBoard.storyboard; sourceTree = "<group>"; };
 		3AE29178274D3AC70068843A /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
 		3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomUI.swift"; sourceTree = "<group>"; };
+		3AEB93732756ACDE00405217 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+CustomUI.swift"; sourceTree = "<group>"; };
 		3AFA312E274EB4B90068FADF /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		3AFA3130274EB5120068FADF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3AFA3132274EBFF00068FADF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AFA3134274EC0460068FADF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3AFA3136274EC0930068FADF /* FormateDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormateDate.swift; sourceTree = "<group>"; };
+		64504EC2608755D7E06FA57E /* Pods_NikoNikoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoNikoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		716629ED08B58D87C8644F6B /* Pods-NikoNiko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoNiko.debug.xcconfig"; path = "Target Support Files/Pods-NikoNiko/Pods-NikoNiko.debug.xcconfig"; sourceTree = "<group>"; };
+		732EF96DCD7AFE25E16DF4B3 /* Pods-NikoNiko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoNiko.release.xcconfig"; path = "Target Support Files/Pods-NikoNiko/Pods-NikoNiko.release.xcconfig"; sourceTree = "<group>"; };
+		7660031396D8251913734801 /* Pods-NikoNikoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoNikoTests.debug.xcconfig"; path = "Target Support Files/Pods-NikoNikoTests/Pods-NikoNikoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		82BAEAF15EEB91B392B5A4AA /* Pods_NikoNiko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoNiko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +128,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAA36A7275691F600FE4975 /* EventKitUI.framework in Frameworks */,
+				3AAA36B42756922D00FE4975 /* CoreMedia.framework in Frameworks */,
+				3AAA36B62756923700FE4975 /* MessageUI.framework in Frameworks */,
+				3AAA36A8275691F600FE4975 /* EventKit.framework in Frameworks */,
+				3AAA36AA275691FD00FE4975 /* AVFoundation.framework in Frameworks */,
+				3AEB93742756ACDE00405217 /* WebKit.framework in Frameworks */,
+				3AAA36AE2756921000FE4975 /* AudioToolbox.framework in Frameworks */,
 				3AFA312D274EB2C70068FADF /* RealmSwift in Frameworks */,
 				3AFA312B274EB2C70068FADF /* Realm in Frameworks */,
+				3AAA36BA2756924800FE4975 /* SystemConfiguration.framework in Frameworks */,
+				1EF997F5DD03D032AEAE3DDC /* Pods_NikoNiko.framework in Frameworks */,
+				3AAA36B12756922300FE4975 /* CoreTelephony.framework in Frameworks */,
+				3AAA36B22756922300FE4975 /* CoreGraphics.framework in Frameworks */,
+				3AAA36B82756923F00FE4975 /* StoreKit.framework in Frameworks */,
+				3AAA36AC2756920600FE4975 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508063948E33F12BF4723A68 /* Pods_NikoNikoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +172,8 @@
 				3A3EB50E274C1805006EE44F /* NikoNiko */,
 				3AB53E39274F9D85002B3960 /* NikoNikoTests */,
 				3A3EB50D274C1805006EE44F /* Products */,
+				C416985F620E9240A2560792 /* Pods */,
+				575A51495DF16424DE72B43C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,9 +307,9 @@
 		3AE2916B274D21040068843A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3AE29173274D23040068843A /* Constants.swift */,
 				3AA284DB275554D50064BA99 /* AdMob */,
 				3AE2916C274D21090068843A /* Extensions */,
-				3AE29173274D23040068843A /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -263,12 +317,47 @@
 		3AE2916C274D21090068843A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */,
-				3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */,
-				3AFA3132274EBFF00068FADF /* String.swift */,
 				3AFA3134274EC0460068FADF /* Date.swift */,
+				3AFA3132274EBFF00068FADF /* String.swift */,
+				3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */,
+				3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */,
+				3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */,
+				3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */,
+				3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		575A51495DF16424DE72B43C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEB93732756ACDE00405217 /* WebKit.framework */,
+				3AAA36B92756924800FE4975 /* SystemConfiguration.framework */,
+				3AAA36B72756923F00FE4975 /* StoreKit.framework */,
+				3AAA36B52756923700FE4975 /* MessageUI.framework */,
+				3AAA36B32756922D00FE4975 /* CoreMedia.framework */,
+				3AAA36B02756922300FE4975 /* CoreGraphics.framework */,
+				3AAA36AF2756922300FE4975 /* CoreTelephony.framework */,
+				3AAA36AD2756921000FE4975 /* AudioToolbox.framework */,
+				3AAA36AB2756920600FE4975 /* AdSupport.framework */,
+				3AAA36A9275691FD00FE4975 /* AVFoundation.framework */,
+				3AAA36A6275691F600FE4975 /* EventKit.framework */,
+				3AAA36A5275691F600FE4975 /* EventKitUI.framework */,
+				82BAEAF15EEB91B392B5A4AA /* Pods_NikoNiko.framework */,
+				64504EC2608755D7E06FA57E /* Pods_NikoNikoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C416985F620E9240A2560792 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				716629ED08B58D87C8644F6B /* Pods-NikoNiko.debug.xcconfig */,
+				732EF96DCD7AFE25E16DF4B3 /* Pods-NikoNiko.release.xcconfig */,
+				7660031396D8251913734801 /* Pods-NikoNikoTests.debug.xcconfig */,
+				2724C3C431771F8CB0E331DB /* Pods-NikoNikoTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A3EB520274C1807006EE44F /* Build configuration list for PBXNativeTarget "NikoNiko" */;
 			buildPhases = (
+				BDF28FFCE7B347090B378479 /* [CP] Check Pods Manifest.lock */,
 				3A3EB508274C1805006EE44F /* Sources */,
 				3A3EB509274C1805006EE44F /* Frameworks */,
 				3A3EB50A274C1805006EE44F /* Resources */,
 				3AE29175274D26C20068843A /* ShellScript */,
+				972050920A4AD1D476D57F70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +391,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB53E40274F9D85002B3960 /* Build configuration list for PBXNativeTarget "NikoNikoTests" */;
 			buildPhases = (
+				B126474DE31941491A094B38 /* [CP] Check Pods Manifest.lock */,
 				3AB53E34274F9D85002B3960 /* Sources */,
 				3AB53E35274F9D85002B3960 /* Frameworks */,
 				3AB53E36274F9D85002B3960 /* Resources */,
@@ -399,6 +491,67 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		972050920A4AD1D476D57F70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoNiko/Pods-NikoNiko-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoNiko/Pods-NikoNiko-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NikoNiko/Pods-NikoNiko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B126474DE31941491A094B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NikoNikoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDF28FFCE7B347090B378479 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NikoNiko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -411,7 +564,7 @@
 				3AE29174274D23050068843A /* Constants.swift in Sources */,
 				3AFA3135274EC0460068FADF /* Date.swift in Sources */,
 				3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */,
-				3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell.swift in Sources */,
+				3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift in Sources */,
 				3AFA3131274EB5120068FADF /* DataManager.swift in Sources */,
 				3A3EB514274C1805006EE44F /* MoodBoardViewController.swift in Sources */,
 				3AFA3133274EBFF00068FADF /* String.swift in Sources */,
@@ -419,7 +572,10 @@
 				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
 				3AE29170274D22510068843A /* ApiKeys.swift in Sources */,
+				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
+				3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */,
 				3A3EB512274C1805006EE44F /* SceneDelegate.swift in Sources */,
+				3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */,
 				3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */,
 				3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */,
 			);
@@ -584,6 +740,7 @@
 		};
 		3A3EB521274C1807006EE44F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 716629ED08B58D87C8644F6B /* Pods-NikoNiko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -614,6 +771,7 @@
 		};
 		3A3EB522274C1807006EE44F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 732EF96DCD7AFE25E16DF4B3 /* Pods-NikoNiko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -644,6 +802,7 @@
 		};
 		3AB53E3E274F9D85002B3960 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7660031396D8251913734801 /* Pods-NikoNikoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -668,6 +827,7 @@
 		};
 		3AB53E3F274F9D85002B3960 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2724C3C431771F8CB0E331DB /* Pods-NikoNikoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
