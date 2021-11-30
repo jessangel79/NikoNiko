@@ -126,43 +126,59 @@ class RealmTests: XCTestCase {
         dataManager.removeMood(realm: testRealm)
         XCTAssertTrue(testRealm.objects(Mood.self).count == 4)
         XCTAssertEqual(testRealm.objects(Mood.self).first?.name, "neutral")
-
     }
     
-    func testGetLastMoodsIfExist5Moods() throws {
-        guard let testRealm = try? Realm(configuration: config) else { return }
-        add5Moods(testRealm)
-        var lastMoods = [Mood]()
-        lastMoods = dataManager.getLastMoods(realm: testRealm)
-        print("lastMoods in test : \(lastMoods)")
-        XCTAssertFalse(lastMoods.isEmpty)
-        XCTAssertEqual(lastMoods.last?.name, "sad")
-    }
-    
-    func testGetLastMoodsIfMoodsIsEmpty() throws {
-        guard let testRealm = try? Realm(configuration: config) else { return }
-        dataManager.removeAllMoods(realm: testRealm)
-        var lastMoods = [Mood]()
-        lastMoods = dataManager.getLastMoods(realm: testRealm)
-        print("lastMoods in test : \(lastMoods)")
-        XCTAssertTrue(lastMoods.isEmpty)
-    }
-    
-    func testGetLastMoodsIfMoods() throws {
+    func testInverseMoodList() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
         addFullMoods(testRealm)
-//        addFirstMood(testRealm)
-//        add5Moods(testRealm)
-        var lastMoods = [Mood]()
-        lastMoods = dataManager.getLastMoods(realm: testRealm)
-        print("lastMoods in test : \(lastMoods)")
-        
-        XCTAssertFalse(lastMoods.isEmpty)
-        XCTAssertEqual(testRealm.objects(Mood.self).endIndex, 10)
-        XCTAssertEqual(lastMoods.endIndex, 5)
-        XCTAssertEqual(lastMoods.last?.date.toString(format: FormatDate.formatted.rawValue), Date().toString(format: FormatDate.formatted.rawValue))
-
+        let inverseMoodList = dataManager.inverseMoodList(realm: testRealm)
+        XCTAssertFalse(inverseMoodList.isEmpty)
+        XCTAssertEqual(inverseMoodList.first?.name, "sad")
+        print(inverseMoodList)
     }
+    
+    func testCreateMoodListDefault() {
+        let moodListDefault = dataManager.createMoodListDefault()
+        XCTAssertFalse(moodListDefault.isEmpty)
+        XCTAssertEqual(moodListDefault.first?.name, "puzzledColor")
+        XCTAssertEqual(moodListDefault.first?.dateFormatted, "--/--")
+        XCTAssertTrue(moodListDefault.count == 20)
+    }
+    
+//    func testGetLastMoodsIfExist5Moods() throws {
+//        guard let testRealm = try? Realm(configuration: config) else { return }
+//        add5Moods(testRealm)
+//        var lastMoods = [Mood]()
+//        lastMoods = dataManager.getLastMoods(realm: testRealm)
+//        print("lastMoods in test : \(lastMoods)")
+//        XCTAssertFalse(lastMoods.isEmpty)
+//        XCTAssertEqual(lastMoods.last?.name, "sad")
+//    }
+    
+//    func testGetLastMoodsIfMoodsIsEmpty() throws {
+//        guard let testRealm = try? Realm(configuration: config) else { return }
+//        dataManager.removeAllMoods(realm: testRealm)
+//        var lastMoods = [Mood]()
+//        lastMoods = dataManager.getLastMoods(realm: testRealm)
+//        print("lastMoods in test : \(lastMoods)")
+//        XCTAssertTrue(lastMoods.isEmpty)
+//    }
+    
+//    func testGetLastMoodsIfMoods() throws {
+//        guard let testRealm = try? Realm(configuration: config) else { return }
+//        addFullMoods(testRealm)
+////        addFirstMood(testRealm)
+////        add5Moods(testRealm)
+//        var lastMoods = [Mood]()
+//        lastMoods = dataManager.getLastMoods(realm: testRealm)
+//        print("lastMoods in test : \(lastMoods)")
+//
+//        XCTAssertFalse(lastMoods.isEmpty)
+//        XCTAssertEqual(testRealm.objects(Mood.self).endIndex, 10)
+//        XCTAssertEqual(lastMoods.endIndex, 5)
+//        XCTAssertEqual(lastMoods.last?.date.toString(format: FormatDate.formatted.rawValue), Date().toString(format: FormatDate.formatted.rawValue))
+//
+//    }
 
     //    func testPerformanceExample() throws {
     //        // This is an example of a performance test case.

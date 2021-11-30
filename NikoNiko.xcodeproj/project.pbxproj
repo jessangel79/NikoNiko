@@ -15,6 +15,10 @@
 		3A3EB517274C1805006EE44F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB515274C1805006EE44F /* Main.storyboard */; };
 		3A3EB519274C1807006EE44F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB518274C1807006EE44F /* Assets.xcassets */; };
 		3A3EB51C274C1807006EE44F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB51A274C1807006EE44F /* LaunchScreen.storyboard */; };
+		3AA284D6275554380064BA99 /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA284D5275554380064BA99 /* Informations.storyboard */; };
+		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
+		3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */; };
+		3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284DC275554E50064BA99 /* AdMobService.swift */; };
 		3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */; };
 		3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E41274F9F70002B3960 /* RealmTests.swift */; };
 		3AE2916E274D21780068843A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2916D274D21780068843A /* README.md */; };
@@ -24,6 +28,9 @@
 		3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29176274D2E570068843A /* MoodBoard.storyboard */; };
 		3AE29179274D3AC80068843A /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29178274D3AC70068843A /* Monaco.ttf */; };
 		3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */; };
+		3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */; };
+		3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */; };
+		3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */; };
 		3AFA312B274EB2C70068FADF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312A274EB2C70068FADF /* Realm */; };
 		3AFA312D274EB2C70068FADF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312C274EB2C70068FADF /* RealmSwift */; };
 		3AFA312F274EB4B90068FADF /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA312E274EB4B90068FADF /* Mood.swift */; };
@@ -54,6 +61,10 @@
 		3A3EB518274C1807006EE44F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3EB51B274C1807006EE44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A3EB51D274C1807006EE44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AA284D5275554380064BA99 /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
+		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
+		3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
+		3AA284DC275554E50064BA99 /* AdMobService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobService.swift; sourceTree = "<group>"; };
 		3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoNikoTests.swift; sourceTree = "<group>"; };
 		3AB53E41274F9F70002B3960 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
@@ -64,6 +75,9 @@
 		3AE29176274D2E570068843A /* MoodBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodBoard.storyboard; sourceTree = "<group>"; };
 		3AE29178274D3AC70068843A /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
 		3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomUI.swift"; sourceTree = "<group>"; };
+		3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		3AFA312E274EB4B90068FADF /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		3AFA3130274EB5120068FADF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3AFA3132274EBFF00068FADF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -124,13 +138,56 @@
 				3A3EB515274C1805006EE44F /* Main.storyboard */,
 				3AE2916D274D21780068843A /* README.md */,
 				3AE2916A274D20FA0068843A /* Local Storage */,
-				3AE29169274D20F50068843A /* Model */,
-				3AE29166274D20C50068843A /* Controller */,
-				3AE29167274D20CD0068843A /* View */,
+				3AA284D1275553D90064BA99 /* MoodBoard */,
+				3AA284D2275553FD0064BA99 /* Informations */,
 				3AE2916B274D21040068843A /* Helpers */,
 				3AE29168274D20E10068843A /* Supporting Files */,
 			);
 			path = NikoNiko;
+			sourceTree = "<group>";
+		};
+		3AA284D1275553D90064BA99 /* MoodBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3AE29169274D20F50068843A /* Model */,
+				3AE29166274D20C50068843A /* Controller */,
+				3AE29167274D20CD0068843A /* View */,
+			);
+			path = MoodBoard;
+			sourceTree = "<group>";
+		};
+		3AA284D2275553FD0064BA99 /* Informations */ = {
+			isa = PBXGroup;
+			children = (
+				3AA284D4275554150064BA99 /* Controller */,
+				3AA284D32755540B0064BA99 /* View */,
+			);
+			path = Informations;
+			sourceTree = "<group>";
+		};
+		3AA284D32755540B0064BA99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AA284D5275554380064BA99 /* Informations.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AA284D4275554150064BA99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AA284D72755546E0064BA99 /* InformationsViewController.swift */,
+				3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3AA284DB275554D50064BA99 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				3AA284DC275554E50064BA99 /* AdMobService.swift */,
+			);
+			path = AdMob;
 			sourceTree = "<group>";
 		};
 		3AB53E39274F9D85002B3960 /* NikoNikoTests */ = {
@@ -155,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				3AE29176274D2E570068843A /* MoodBoard.storyboard */,
+				3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */,
+				3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,8 +236,6 @@
 		3AE29169274D20F50068843A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3AFA312E274EB4B90068FADF /* Mood.swift */,
-				3AFA3130274EB5120068FADF /* DataManager.swift */,
 				3AFA3136274EC0930068FADF /* FormateDate.swift */,
 			);
 			path = Model;
@@ -187,6 +244,8 @@
 		3AE2916A274D20FA0068843A /* Local Storage */ = {
 			isa = PBXGroup;
 			children = (
+				3AFA312E274EB4B90068FADF /* Mood.swift */,
+				3AFA3130274EB5120068FADF /* DataManager.swift */,
 			);
 			path = "Local Storage";
 			sourceTree = "<group>";
@@ -194,6 +253,7 @@
 		3AE2916B274D21040068843A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3AA284DB275554D50064BA99 /* AdMob */,
 				3AE2916C274D21090068843A /* Extensions */,
 				3AE29173274D23040068843A /* Constants.swift */,
 			);
@@ -204,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE2917C274D67400068843A /* UIViewController+CustomUI.swift */,
+				3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell.swift */,
 				3AFA3132274EBFF00068FADF /* String.swift */,
 				3AFA3134274EC0460068FADF /* Date.swift */,
 			);
@@ -301,10 +362,12 @@
 			files = (
 				3A3EB51C274C1807006EE44F /* LaunchScreen.storyboard in Resources */,
 				3A3EB519274C1807006EE44F /* Assets.xcassets in Resources */,
+				3AA284D6275554380064BA99 /* Informations.storyboard in Resources */,
 				3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */,
 				3AE2916E274D21780068843A /* README.md in Resources */,
 				3A3EB517274C1805006EE44F /* Main.storyboard in Resources */,
 				3AE29179274D3AC80068843A /* Monaco.ttf in Resources */,
+				3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */,
 				3AE29172274D22690068843A /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,12 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */,
+				3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */,
 				3AE29174274D23050068843A /* Constants.swift in Sources */,
 				3AFA3135274EC0460068FADF /* Date.swift in Sources */,
+				3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */,
+				3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell.swift in Sources */,
 				3AFA3131274EB5120068FADF /* DataManager.swift in Sources */,
 				3A3EB514274C1805006EE44F /* MoodBoardViewController.swift in Sources */,
 				3AFA3133274EBFF00068FADF /* String.swift in Sources */,
 				3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */,
+				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
 				3AE29170274D22510068843A /* ApiKeys.swift in Sources */,
 				3A3EB512274C1805006EE44F /* SceneDelegate.swift in Sources */,

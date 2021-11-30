@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nnK-xB-DKK">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Monaco.ttf">
+            <string>Monaco</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Informations-->
+        <scene sceneID="0fz-Uu-EIN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Informations" id="U2z-nR-rao" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nWL-lx-kis"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11E-t6-CQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="-341"/>
+        </scene>
+        <!--MoodBoard-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MoodBoardViewController" customModule="NikoNiko" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was your day today ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-mr-YVN">
+                                <rect key="frame" x="10" y="59" width="300" height="25"/>
+                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-x1-HBh">
+                                <rect key="frame" x="15" y="109" width="290" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="vX1-Qg-nkF">
+                                        <rect key="frame" x="23" y="0.0" width="244" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-fM-Hmz">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bwJ-fM-Hmz" secondAttribute="height" multiplier="1:1" id="MIZ-bq-3YR"/>
+                                                    <constraint firstAttribute="height" constant="60" id="tAv-Xn-jCY"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="smiling" image="smiling"/>
+                                                <connections>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lOu-cw-USL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuP-Fr-dgJ">
+                                                <rect key="frame" x="92" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6LT-8x-PDs"/>
+                                                    <constraint firstAttribute="width" secondItem="nuP-Fr-dgJ" secondAttribute="height" multiplier="1:1" id="ogI-R3-Hh1"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="happy" image="happy"/>
+                                                <connections>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z2s-KS-7uH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-8R-HKI">
+                                                <rect key="frame" x="184" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="MD4-bG-vWO"/>
+                                                    <constraint firstAttribute="width" secondItem="sBd-8R-HKI" secondAttribute="height" multiplier="1:1" id="sFq-C0-nsK"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="neutral" image="neutral"/>
+                                                <connections>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R13-AK-3Le"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="120"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-zf-6ZM">
+                                        <rect key="frame" x="65.5" y="78" width="159" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-F0-e9l">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uEA-F0-e9l" secondAttribute="height" multiplier="1:1" id="I9R-8F-0ba"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Yp4-GY-inp"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="sad" image="sad"/>
+                                                <connections>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNq-kk-qeW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-Id-Myd">
+                                                <rect key="frame" x="99" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Pzn-u4-BOj"/>
+                                                    <constraint firstAttribute="width" secondItem="t45-Id-Myd" secondAttribute="height" multiplier="1:1" id="eCa-av-0p5"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="disappointed" image="disappointed"/>
+                                                <connections>
+                                                    <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZW-nn-xGD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="120"/>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="68"/>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dividingLine" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rk-cq-g1o">
+                                <rect key="frame" x="25" y="266" width="270" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="3qO-vz-WaD"/>
+                                    <constraint firstAttribute="width" constant="270" id="FWf-Uf-xaM"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEM-J1-Wxi">
+                                <rect key="frame" x="8" y="307" width="304" height="152"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Moods" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-XA-21U">
+                                        <rect key="frame" x="92" y="0.0" width="120.5" height="25"/>
+                                        <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                        <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="25"/>
+                                        </variation>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FBY-BX-XPl">
+                                        <rect key="frame" x="0.0" y="25" width="304" height="127"/>
+                                        <color key="backgroundColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="127" id="a2j-la-IPp"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cFj-L0-p2E">
+                                            <size key="itemSize" width="60" height="120"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="mct-XA-21U" firstAttribute="top" secondItem="dEM-J1-Wxi" secondAttribute="top" id="Ge9-c2-Gew"/>
+                                    <constraint firstAttribute="trailing" secondItem="FBY-BX-XPl" secondAttribute="trailing" id="HNN-Hq-oMa"/>
+                                    <constraint firstAttribute="bottom" secondItem="FBY-BX-XPl" secondAttribute="bottom" id="JoY-Ss-qIp"/>
+                                    <constraint firstItem="mct-XA-21U" firstAttribute="centerX" secondItem="dEM-J1-Wxi" secondAttribute="centerX" id="NQ7-GC-rYX"/>
+                                    <constraint firstItem="FBY-BX-XPl" firstAttribute="leading" secondItem="dEM-J1-Wxi" secondAttribute="leading" id="fMm-1B-Jwa"/>
+                                    <constraint firstItem="FBY-BX-XPl" firstAttribute="top" secondItem="mct-XA-21U" secondAttribute="bottom" id="rJO-76-T06"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBu-t7-XcW">
+                                <rect key="frame" x="10" y="469" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2OC-Qm-RuV"/>
+                                    <constraint firstAttribute="height" constant="50" id="m71-ri-DTA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.80191510919999998" green="0.98819977049999996" blue="0.98431676629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3rk-cq-g1o" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="92u-vz-fMK"/>
+                            <constraint firstItem="dEM-J1-Wxi" firstAttribute="top" secondItem="3rk-cq-g1o" secondAttribute="bottom" constant="10" id="93U-PU-84q"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="top" secondItem="dEM-J1-Wxi" secondAttribute="bottom" constant="10" id="BpL-4m-yqt"/>
+                            <constraint firstItem="KSd-mr-YVN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="LWY-ve-1bt"/>
+                            <constraint firstItem="dEM-J1-Wxi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="Lfn-J3-V0c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FSs-x1-HBh" secondAttribute="trailing" constant="15" id="NuL-R2-4jl"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="R3T-sp-wgC"/>
+                            <constraint firstItem="KSd-mr-YVN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="agG-CM-kx5"/>
+                            <constraint firstItem="JBu-t7-XcW" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="btX-5a-IUx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KSd-mr-YVN" secondAttribute="trailing" constant="10" id="fsY-hh-CW8"/>
+                            <constraint firstItem="FSs-x1-HBh" firstAttribute="top" secondItem="KSd-mr-YVN" secondAttribute="bottom" constant="25" id="hN8-jZ-ked"/>
+                            <constraint firstItem="FSs-x1-HBh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="mdh-cU-2Qb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dEM-J1-Wxi" secondAttribute="trailing" constant="8" id="qP7-wR-vYd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MoodBoard" id="0ds-rM-1Yf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="n5h-jq-qG0">
+                            <connections>
+                                <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="pPs-rV-pDd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="0qm-UN-5Cl">
+                            <connections>
+                                <segue destination="U2z-nR-rao" kind="show" id="sv0-u8-Ug2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="historyView" destination="dEM-J1-Wxi" id="Sfy-aD-XH4"/>
+                        <outlet property="moodHistoryCollectionView" destination="FBY-BX-XPl" id="fDs-fD-rkM"/>
+                        <outletCollection property="moodTodayButtons" destination="bwJ-fM-Hmz" collectionClass="NSMutableArray" id="8tQ-6X-j3s"/>
+                        <outletCollection property="moodTodayButtons" destination="nuP-Fr-dgJ" collectionClass="NSMutableArray" id="Cu0-1C-9VS"/>
+                        <outletCollection property="moodTodayButtons" destination="sBd-8R-HKI" collectionClass="NSMutableArray" id="9iE-VM-Zdx"/>
+                        <outletCollection property="moodTodayButtons" destination="t45-Id-Myd" collectionClass="NSMutableArray" id="PdP-84-dOj"/>
+                        <outletCollection property="moodTodayButtons" destination="uEA-F0-e9l" collectionClass="NSMutableArray" id="RTz-6U-5IL"/>
+                        <outletCollection property="titleLabels" destination="KSd-mr-YVN" collectionClass="NSMutableArray" id="elj-KM-c6y"/>
+                        <outletCollection property="titleLabels" destination="mct-XA-21U" collectionClass="NSMutableArray" id="wu4-W7-Pme"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104.375" y="107.74647887323944"/>
+        </scene>
+        <!--NikoNiko-->
+        <scene sceneID="uii-Fp-Kuf">
+            <objects>
+                <navigationController id="nnK-xB-DKK" userLabel="NikoNiko" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MoodBoard" image="puzzled" id="gR6-zn-suj"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dEA-xD-ekS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="5Y1-FO-X1h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h05-e8-tzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.875" y="107.74647887323944"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="disappointed" width="96" height="96"/>
+        <image name="dividingLine" width="2000" height="2000"/>
+        <image name="happy" width="96" height="96"/>
+        <image name="neutral" width="96" height="96"/>
+        <image name="puzzled" width="25" height="25"/>
+        <image name="sad" width="96" height="96"/>
+        <image name="smiling" width="96" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

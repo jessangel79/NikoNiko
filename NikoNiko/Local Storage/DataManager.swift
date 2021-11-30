@@ -94,19 +94,19 @@ final class DataManager {
         }
     }
     
-    func getLastMoods(realm: Realm?) -> [Mood] {
-        var lastMoods = [Mood]()
+    func inverseMoodList(realm: Realm?) -> Results<Mood> {
         moodList = (realm?.objects(Mood.self))
-        if moodList.isEmpty {
-            lastMoods = [Mood]()
-        } else {
-            for mood in moodList {
-                if mood.date < Date().addingTimeInterval(24 * 60 * 60) && mood.date > Date().addingTimeInterval(-(24 * 60 * 60 * Cst.nbOfMoods)) {
-                    lastMoods.append(mood)
-                }
-            }
+        let moodListTemp = moodList.sorted(byKeyPath: "date", ascending: false)
+        return moodListTemp
+    }
+    
+    func createMoodListDefault() -> [Mood] {
+        var moodListDefault = [Mood]()
+        for _ in 1...Cst.nbOfMoods {
+            let mood = Mood(name: "puzzledColor", dateFormatted: "--/--")
+            moodListDefault.append(mood)
         }
-        return lastMoods
+        return moodListDefault
     }
     
     // MARK: - TEST
@@ -136,7 +136,7 @@ final class DataManager {
     //        return moodList[index]
     //    }
 
-    /// debug
+    // debug
 //    func displayMoodCount(realm: Realm?) {
 //        moodList = realm?.objects(Mood.self)
 //        print("il y a \(String(describing: moodList.count)) Mood dans la liste")

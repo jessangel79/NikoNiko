@@ -123,4 +123,14 @@ extension UIViewController {
         view.layer.shadowOpacity = 0.8
         view.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
+    
+    // MARK: - CollectionView custom
+
+    /// custom collectionView
+    func customCollectionView(collectionView: UICollectionView, radius: CGFloat, width: CGFloat, colorBorder: UIColor) {
+        collectionView.layer.cornerRadius = radius
+        collectionView.layer.borderWidth = width
+        collectionView.layer.borderColor = colorBorder.cgColor
+    }
+    
 }

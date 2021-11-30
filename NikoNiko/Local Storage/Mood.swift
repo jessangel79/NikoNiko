@@ -14,7 +14,7 @@ class Mood: Object {
     @Persisted(indexed: true) var date = Date() // ""
     @Persisted var dateFormatted = ""
     
-    convenience init(name: String, date: Date, dateFormatted: String) {
+    convenience init(name: String, date: Date = Date(), dateFormatted: String) {
         self.init()
         self.name = name
         self.date = date
