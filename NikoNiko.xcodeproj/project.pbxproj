@@ -17,6 +17,7 @@
 		3A3EB517274C1805006EE44F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB515274C1805006EE44F /* Main.storyboard */; };
 		3A3EB519274C1807006EE44F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB518274C1807006EE44F /* Assets.xcassets */; };
 		3A3EB51C274C1807006EE44F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB51A274C1807006EE44F /* LaunchScreen.storyboard */; };
+		3A991B332757E2ED0091587F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A991B322757E2ED0091587F /* UIColor.swift */; };
 		3AA284D6275554380064BA99 /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA284D5275554380064BA99 /* Informations.storyboard */; };
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
 		3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */; };
@@ -80,6 +81,7 @@
 		3A3EB518274C1807006EE44F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3EB51B274C1807006EE44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A3EB51D274C1807006EE44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A991B322757E2ED0091587F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3AA284D5275554380064BA99 /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */,
 				3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */,
 				3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */,
+				3A991B322757E2ED0091587F /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
 				3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */,
 				3A3EB512274C1805006EE44F /* SceneDelegate.swift in Sources */,
+				3A991B332757E2ED0091587F /* UIColor.swift in Sources */,
 				3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */,
 				3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */,
 				3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */,

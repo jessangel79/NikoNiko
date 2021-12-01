@@ -13,7 +13,8 @@ extension String {
     func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = format
-        return formatter.date(from: self) ?? Date()
+        guard let date = formatter.date(from: self) else { return Date() }
+        return date
     }
     
     /// transform date no formatted in date formatted

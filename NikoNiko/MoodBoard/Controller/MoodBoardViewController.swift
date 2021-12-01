@@ -18,7 +18,8 @@ final class MoodBoardViewController: UIViewController {
     @IBOutlet private var titleLabels: [UILabel]!
     @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
     @IBOutlet private weak var bannerView: GADBannerView!
-
+    @IBOutlet weak var todayLabel: UILabel!
+    
     // MARK: - Properties
     
     private let realm = try? Realm()
@@ -49,8 +50,8 @@ final class MoodBoardViewController: UIViewController {
         moodHistoryCollectionView.delegate = self
         moodHistoryCollectionView.dataSource = self
         customUI()
-        createMoodListDefault()
         setNib()
+        createMoodListDefault()
         getInverseMoodList()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         moodHistoryCollectionView.reloadData()
@@ -63,6 +64,11 @@ final class MoodBoardViewController: UIViewController {
         moodHistoryCollectionView.reloadData()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {    super.traitCollectionDidChange(previousTraitCollection)
+        customUIDefaultMode()
+        customShadowLabel(label: todayLabel)
+    }
+    
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 //        super.viewWillTransition(to: size, with: coordinator)
 //        moodHistoryCollectionView.collectionViewLayout.invalidateLayout()
@@ -71,11 +77,16 @@ final class MoodBoardViewController: UIViewController {
     // MARK: - Methods
 
     private func customUI() {
-        customShadowButtons(buttons: moodTodayButtons)
-        customShadowView(view: historyView)
-        customView(view: historyView, radius: 20, width: 0.8, colorBorder: #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1))
+        customUIDefaultMode()
         customShadowLabels(labels: titleLabels)
         customCollectionView(collectionView: moodHistoryCollectionView, radius: 20, width: 0.1, colorBorder: .clear)
+    }
+    
+    private func customUIDefaultMode() {
+        customShadowButtons(buttons: moodTodayButtons)
+        customShadowView(view: historyView)
+        guard let borderColor = UIColor.appColor(.backGroundColor) else { return }
+        customView(view: historyView, radius: 20, width: 0.8, colorBorder: borderColor)
     }
     
     private func setNib() {
@@ -91,17 +102,17 @@ final class MoodBoardViewController: UIViewController {
         return layout
     }
     
-    private func createMoodListDefault() {
-        let dataManager = DataManager()
-        moodListDefault = dataManager.createMoodListDefault()
-    }
-    
     private func getMoodForToday(moodName: String) {
         let dataManager = DataManager()
         let currentDate = Date()
         dataManager.updateMood(realm: self.realm, moodName: moodName, forDate: currentDate)
         print("current date : \(currentDate)")
         print("moodName : \(moodName)")
+    }
+    
+    private func createMoodListDefault() {
+        let dataManager = DataManager()
+        moodListDefault = dataManager.createMoodListDefault()
     }
     
     private func getInverseMoodList() {
@@ -114,26 +125,15 @@ extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let inverseMoodList = inverseMoodList else { return 0 }
-        if inverseMoodList.isEmpty {
-            return moodListDefault.count
-        } else {
-            return inverseMoodList.count
-        }
+        let dataManager = DataManager()
+        return dataManager.getCount(inverseMoodList)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cst.Collection.MoodHistoryCell, for: indexPath) as? MoodHistoryCollectionViewCell else {
             return UICollectionViewCell()
         }
-        if let inverseMoodList = inverseMoodList {
-            if !inverseMoodList.isEmpty {
-                let mood = inverseMoodList[indexPath.item]
-                moodHistoryCell.mood = mood
-            } else {
-                let moodDefault = moodListDefault[indexPath.item]
-                moodHistoryCell.moodDefault = moodDefault
-            }
-        }
+        moodHistoryCell.setupCell(indexPath, inverseMoodList, moodListDefault)
         return moodHistoryCell
     }
     

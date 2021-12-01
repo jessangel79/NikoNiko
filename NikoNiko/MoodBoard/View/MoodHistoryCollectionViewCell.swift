@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MoodHistoryCollectionViewCell: UICollectionViewCell {
     
@@ -37,5 +38,22 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         customShadowImageView(imageView: moodHistoryImageView)
     }
-
+    
+    func setupCell(_ indexPath: IndexPath, _ inverseMoodList: Results<Mood>?, _ moodListDefault: [Mood]) {
+        if let inverseMoodList = inverseMoodList {
+            if !inverseMoodList.isEmpty {
+                mood = inverseMoodList[indexPath.item]
+            } else {
+                mood = moodListDefault[indexPath.item]
+            }
+        }
+    }
+    
+//    func getCount(_ inverseMoodList: Results<Mood>, _ moodListDefault: [Mood]) -> Int {
+//        if inverseMoodList.isEmpty {
+//            return moodListDefault.count
+//        } else {
+//            return inverseMoodList.count
+//        }
+//    }
 }

@@ -49,7 +49,7 @@ class RealmTests: XCTestCase {
     }
     
     /// Add 10 moods
-    private func addFullMoods(_ testRealm: Realm) {
+    private func add10Moods(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         let date = Date().addingTimeInterval(-(24 * 60 * 60 * 9))
         dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: date)
@@ -130,7 +130,7 @@ class RealmTests: XCTestCase {
     
     func testInverseMoodList() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        addFullMoods(testRealm)
+        add10Moods(testRealm)
         let inverseMoodList = dataManager.inverseMoodList(realm: testRealm)
         XCTAssertFalse(inverseMoodList.isEmpty)
         XCTAssertEqual(inverseMoodList.first?.name, "sad")
@@ -143,6 +143,24 @@ class RealmTests: XCTestCase {
         XCTAssertEqual(moodListDefault.first?.name, "puzzledColor")
         XCTAssertEqual(moodListDefault.first?.dateFormatted, "--/--")
         XCTAssertTrue(moodListDefault.count == 20)
+    }
+    
+    func testGetCountIfInversListIsEmpty() {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        dataManager.removeAllMoods(realm: testRealm)
+        let inverseMoodList = dataManager.inverseMoodList(realm: testRealm)
+        let getCount = dataManager.getCount(inverseMoodList)
+        XCTAssertTrue(inverseMoodList.isEmpty)
+        XCTAssertEqual(getCount, 20)
+    }
+    
+    func testGetCountIfInversListIsNotEmpty() {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        add10Moods(testRealm)
+        let inverseMoodList = dataManager.inverseMoodList(realm: testRealm)
+        let getCount = dataManager.getCount(inverseMoodList)
+        XCTAssertFalse(inverseMoodList.isEmpty)
+        XCTAssertEqual(getCount, 10)
     }
     
 //    func testGetLastMoodsIfExist5Moods() throws {
@@ -166,7 +184,7 @@ class RealmTests: XCTestCase {
     
 //    func testGetLastMoodsIfMoods() throws {
 //        guard let testRealm = try? Realm(configuration: config) else { return }
-//        addFullMoods(testRealm)
+//        add10Moods(testRealm)
 ////        addFirstMood(testRealm)
 ////        add5Moods(testRealm)
 //        var lastMoods = [Mood]()

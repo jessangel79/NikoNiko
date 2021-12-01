@@ -16,7 +16,7 @@ extension UICollectionViewCell {
     /// custom view with shadow
     func customShadowImageView(imageView: UIImageView) {
         imageView.clipsToBounds = false
-        imageView.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
+        imageView.layer.shadowColor = UIColor.black.cgColor // #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
         imageView.layer.shadowOpacity = 0.8
         imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
     }

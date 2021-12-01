@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarAppearance.titleTextAttributes = [.foregroundColor: myFontcolor, .font: myFontNavBar]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: myFontcolor, .font: myFontNavBar]
         
-        let myBackgroundColor = UIColor(displayP3Red: 0.439, green: 0.711, blue: 0.977, alpha: 1.0)
+        let myBackgroundColor = UIColor(displayP3Red: 0.44, green: 0.71, blue: 0.98, alpha: 1.0)
         navBarAppearance.backgroundColor = myBackgroundColor
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance

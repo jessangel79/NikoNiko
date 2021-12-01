@@ -109,6 +109,15 @@ final class DataManager {
         return moodListDefault
     }
     
+    func getCount(_ inverseMoodList: Results<Mood>) -> Int { // _ inverseMoodList: Results<Mood>, _ moodListDefault: [Mood]
+        let moodListDefault = createMoodListDefault()
+        if inverseMoodList.isEmpty {
+            return moodListDefault.count
+        } else {
+            return inverseMoodList.count
+        }
+    }
+    
     // MARK: - TEST
     
     //    func filterDate(date: String) {

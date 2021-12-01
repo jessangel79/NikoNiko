@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Extension to custom buttons, views and labels
 
 extension UIViewController {
-    
+
     // MARK: - Buttons custom
     
     /// custom collection buttons
@@ -32,8 +32,8 @@ extension UIViewController {
     func customShadowButton(button: UIButton) {
         button.clipsToBounds = false
         button.layer.cornerRadius = 20
-        button.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
-        button.layer.shadowOpacity = 0.8
+        button.layer.shadowColor = UIColor.appColor(.fontColor)?.cgColor
+        button.layer.shadowOpacity = 1.0
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
@@ -64,9 +64,13 @@ extension UIViewController {
     /// custom label with shadow
     func customShadowLabel(label: UILabel) {
         label.clipsToBounds = false
-        label.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
-        label.layer.shadowOpacity = 0.6
+        label.layer.shadowColor = UIColor.appColor(.fontColor)?.cgColor
         label.layer.shadowOffset = CGSize(width: 1, height: 1)
+        if traitCollection.userInterfaceStyle == .dark {
+            label.layer.shadowOpacity = 1.0
+        } else {
+            label.layer.shadowOpacity = 0.5
+        }
     }
     
     /// custom collection labels with shadow
@@ -102,7 +106,7 @@ extension UIViewController {
     /// custom view with shadow
     func customShadowImageView(imageView: UIImageView) {
         imageView.clipsToBounds = false
-        imageView.layer.shadowColor = #colorLiteral(red: 0.04181067646, green: 0, blue: 0.6056833863, alpha: 1)
+        imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.8
         imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
@@ -119,8 +123,8 @@ extension UIViewController {
     /// custom view with shadow
     func customShadowView(view: UIView) {
         view.clipsToBounds = false
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.8
+        view.layer.shadowColor = UIColor.appColor(.fontColor)?.cgColor
+        view.layer.shadowOpacity = 1.0
         view.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     

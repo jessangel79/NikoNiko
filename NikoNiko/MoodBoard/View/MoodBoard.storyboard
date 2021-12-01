@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,11 @@
         <scene sceneID="0fz-Uu-EIN">
             <objects>
                 <viewControllerPlaceholder storyboardName="Informations" id="U2z-nR-rao" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="nWL-lx-kis"/>
+                    <navigationItem key="navigationItem" id="nWL-lx-kis">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SUO-zK-Gtp">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11E-t6-CQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was your day today ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-mr-YVN">
                                 <rect key="frame" x="10" y="59" width="300" height="25"/>
                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
-                                <color key="textColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="fontColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
@@ -173,7 +178,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.80191510919999998" green="0.98819977049999996" blue="0.98431676629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="backGroundColor"/>
                         <constraints>
                             <constraint firstItem="3rk-cq-g1o" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="92u-vz-fMK"/>
                             <constraint firstItem="dEM-J1-Wxi" firstAttribute="top" secondItem="3rk-cq-g1o" secondAttribute="bottom" constant="10" id="93U-PU-84q"/>
@@ -191,13 +196,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MoodBoard" id="0ds-rM-1Yf">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="n5h-jq-qG0">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="pPs-rV-pDd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="info-credits" id="0qm-UN-5Cl">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="U2z-nR-rao" kind="showDetail" id="sv0-u8-Ug2"/>
                             </connections>
@@ -207,6 +216,7 @@
                         <outlet property="bannerView" destination="JBu-t7-XcW" id="c9P-AT-1gt"/>
                         <outlet property="historyView" destination="dEM-J1-Wxi" id="Sfy-aD-XH4"/>
                         <outlet property="moodHistoryCollectionView" destination="FBY-BX-XPl" id="fDs-fD-rkM"/>
+                        <outlet property="todayLabel" destination="KSd-mr-YVN" id="UL8-vW-g3r"/>
                         <outletCollection property="moodTodayButtons" destination="bwJ-fM-Hmz" collectionClass="NSMutableArray" id="8tQ-6X-j3s"/>
                         <outletCollection property="moodTodayButtons" destination="nuP-Fr-dgJ" collectionClass="NSMutableArray" id="Cu0-1C-9VS"/>
                         <outletCollection property="moodTodayButtons" destination="sBd-8R-HKI" collectionClass="NSMutableArray" id="9iE-VM-Zdx"/>
@@ -256,6 +266,12 @@
         <image name="puzzled" width="25" height="25"/>
         <image name="sad" width="96" height="96"/>
         <image name="smiling" width="96" height="96"/>
+        <namedColor name="backGroundColor">
+            <color red="0.80191510919999998" green="0.98819977049999996" blue="0.98431676629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fontColor">
+            <color red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
