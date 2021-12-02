@@ -30,7 +30,7 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
         didSet {
             dayOfWeekLabel.text = "Day"
             dateLabel.text = "--/--"
-            moodHistoryImageView.image = UIImage(named: "puzzledColor")
+            moodHistoryImageView.image = UIImage(named: moodDefault?.name ?? "puzzledColor")
         }
     }
 
@@ -38,22 +38,16 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         customShadowImageView(imageView: moodHistoryImageView)
     }
-    
-    func setupCell(_ indexPath: IndexPath, _ inverseMoodList: Results<Mood>?, _ moodListDefault: [Mood]) {
+
+    func setupCell(_ indexPath: IndexPath, _ inverseMoodList: Results<Mood>?) {
         if let inverseMoodList = inverseMoodList {
             if !inverseMoodList.isEmpty {
                 mood = inverseMoodList[indexPath.item]
             } else {
-                mood = moodListDefault[indexPath.item]
+                let dataManager = DataManager()
+                let moodListDefault = dataManager.createMoodListDefault()
+                moodDefault = moodListDefault[indexPath.item]
             }
         }
     }
-    
-//    func getCount(_ inverseMoodList: Results<Mood>, _ moodListDefault: [Mood]) -> Int {
-//        if inverseMoodList.isEmpty {
-//            return moodListDefault.count
-//        } else {
-//            return inverseMoodList.count
-//        }
-//    }
 }

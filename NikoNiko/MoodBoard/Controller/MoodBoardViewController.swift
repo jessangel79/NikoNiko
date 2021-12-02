@@ -18,13 +18,12 @@ final class MoodBoardViewController: UIViewController {
     @IBOutlet private var titleLabels: [UILabel]!
     @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
     @IBOutlet private weak var bannerView: GADBannerView!
-    @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet private weak var todayLabel: UILabel!
     
     // MARK: - Properties
     
-    private let realm = try? Realm()
+//    private let realm = try? Realm()
     private var inverseMoodList: Results<Mood>?
-    private var moodListDefault = [Mood]()
     private let adMobService = AdMobService()
 //    private let dataManager = DataManager()
 
@@ -38,9 +37,10 @@ final class MoodBoardViewController: UIViewController {
     }
     
     @IBAction private func deleteAllBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        let dataManager = DataManager()
-        dataManager.removeAllMoods(realm: realm)
-        moodHistoryCollectionView.reloadData()
+        guard let inverseMoodList = inverseMoodList else { return }
+        if !inverseMoodList.isEmpty {
+            resetAll()
+        }
     }
     
     // MARK: - View Life Cycle
@@ -51,7 +51,6 @@ final class MoodBoardViewController: UIViewController {
         moodHistoryCollectionView.dataSource = self
         customUI()
         setNib()
-        createMoodListDefault()
         getInverseMoodList()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         moodHistoryCollectionView.reloadData()
@@ -61,6 +60,13 @@ final class MoodBoardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+//        getInverseMoodList()
+        moodHistoryCollectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+//        getInverseMoodList()
         moodHistoryCollectionView.reloadData()
     }
     
@@ -105,35 +111,46 @@ final class MoodBoardViewController: UIViewController {
     private func getMoodForToday(moodName: String) {
         let dataManager = DataManager()
         let currentDate = Date()
-        dataManager.updateMood(realm: self.realm, moodName: moodName, forDate: currentDate)
+        dataManager.updateMood(moodName: moodName, forDate: currentDate)
         print("current date : \(currentDate)")
         print("moodName : \(moodName)")
     }
     
-    private func createMoodListDefault() {
-        let dataManager = DataManager()
-        moodListDefault = dataManager.createMoodListDefault()
-    }
+//    private func createMoodListDefault() {
+// //        let mood = Mood()
+// //        moodListDefault = mood.createMoodListDefault()
+//        let dataManager = DataManager()
+//        moodListDefault = dataManager.createMoodListDefault()
+//    }
     
     private func getInverseMoodList() {
         let dataManager = DataManager()
-        inverseMoodList = dataManager.inverseMoodList(realm: self.realm)
+        inverseMoodList = dataManager.inverseMoodList()
+    }
+    
+    private func resetAll() {
+        let destructiveAction = UIAlertAction(title: "Reset all", style: .destructive, handler: { action in
+            let dataManager = DataManager()
+            dataManager.removeAllMoods()
+            self.moodHistoryCollectionView.reloadData()
+        })
+        showResetAlert(destructiveAction: destructiveAction)
+        
     }
 }
 
 extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let inverseMoodList = inverseMoodList else { return 0 }
         let dataManager = DataManager()
-        return dataManager.getCount(inverseMoodList)
+        return dataManager.getCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cst.Collection.MoodHistoryCell, for: indexPath) as? MoodHistoryCollectionViewCell else {
             return UICollectionViewCell()
         }
-        moodHistoryCell.setupCell(indexPath, inverseMoodList, moodListDefault)
+        moodHistoryCell.setupCell(indexPath, inverseMoodList)
         return moodHistoryCell
     }
     

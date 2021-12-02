@@ -199,12 +199,20 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="n5h-jq-qG0">
-                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="pPs-rV-pDd"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="settings" image="settings" id="n5h-jq-qG0">
+                                <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="FSi-kx-6ub" kind="show" identifier="segueToSettings" id="rgb-cn-X2f"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="Xtm-HP-r4H">
+                                <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="kCC-Gz-0E7"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="info-credits" id="0qm-UN-5Cl">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -229,6 +237,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.375" y="107.74647887323944"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="aSN-KW-aTM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="FSi-kx-6ub" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5dK-wU-cYa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wd2-if-Owz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039" y="-148"/>
         </scene>
         <!--NikoNiko-->
         <scene sceneID="uii-Fp-Kuf">
@@ -265,12 +283,13 @@
         <image name="neutral" width="96" height="96"/>
         <image name="puzzled" width="25" height="25"/>
         <image name="sad" width="96" height="96"/>
+        <image name="settings" width="25" height="25"/>
         <image name="smiling" width="96" height="96"/>
         <namedColor name="backGroundColor">
-            <color red="0.80191510919999998" green="0.98819977049999996" blue="0.98431676629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fontColor">
-            <color red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.034000001847743988" green="0.0" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

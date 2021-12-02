@@ -17,6 +17,10 @@
 		3A3EB517274C1805006EE44F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB515274C1805006EE44F /* Main.storyboard */; };
 		3A3EB519274C1807006EE44F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB518274C1807006EE44F /* Assets.xcassets */; };
 		3A3EB51C274C1807006EE44F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3EB51A274C1807006EE44F /* LaunchScreen.storyboard */; };
+		3A4B1BA127590A2700E5E2BD /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA027590A2600E5E2BD /* UserSettings.swift */; };
+		3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA72759103700E5E2BD /* Settings.storyboard */; };
+		3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */; };
+		3A4B1BAC275941ED00E5E2BD /* NameMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BAB275941ED00E5E2BD /* NameMood.swift */; };
 		3A991B332757E2ED0091587F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A991B322757E2ED0091587F /* UIColor.swift */; };
 		3AA284D6275554380064BA99 /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA284D5275554380064BA99 /* Informations.storyboard */; };
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
@@ -81,6 +85,10 @@
 		3A3EB518274C1807006EE44F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3EB51B274C1807006EE44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A3EB51D274C1807006EE44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4B1BA027590A2600E5E2BD /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		3A4B1BA72759103700E5E2BD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3A4B1BAB275941ED00E5E2BD /* NameMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameMood.swift; sourceTree = "<group>"; };
 		3A991B322757E2ED0091587F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3AA284D5275554380064BA99 /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -195,11 +203,45 @@
 				3AE2916D274D21780068843A /* README.md */,
 				3AE2916A274D20FA0068843A /* Local Storage */,
 				3AA284D1275553D90064BA99 /* MoodBoard */,
+				3A4B1BA32759100400E5E2BD /* Settings */,
 				3AA284D2275553FD0064BA99 /* Informations */,
 				3AE2916B274D21040068843A /* Helpers */,
 				3AE29168274D20E10068843A /* Supporting Files */,
 			);
 			path = NikoNiko;
+			sourceTree = "<group>";
+		};
+		3A4B1BA32759100400E5E2BD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3A4B1BA62759101C00E5E2BD /* Controller */,
+				3A4B1BA52759101900E5E2BD /* View */,
+				3A4B1BA42759101400E5E2BD /* Model */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3A4B1BA42759101400E5E2BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A4B1BA52759101900E5E2BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A4B1BA72759103700E5E2BD /* Settings.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A4B1BA62759101C00E5E2BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		3AA284D1275553D90064BA99 /* MoodBoard */ = {
@@ -301,7 +343,9 @@
 			isa = PBXGroup;
 			children = (
 				3AFA312E274EB4B90068FADF /* Mood.swift */,
+				3A4B1BAB275941ED00E5E2BD /* NameMood.swift */,
 				3AFA3130274EB5120068FADF /* DataManager.swift */,
+				3A4B1BA027590A2600E5E2BD /* UserSettings.swift */,
 			);
 			path = "Local Storage";
 			sourceTree = "<group>";
@@ -464,6 +508,7 @@
 				3AE29179274D3AC80068843A /* Monaco.ttf in Resources */,
 				3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */,
 				3AE29172274D22690068843A /* ApiKeys.plist in Resources */,
+				3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,14 +611,17 @@
 				3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */,
 				3AE29174274D23050068843A /* Constants.swift in Sources */,
 				3AFA3135274EC0460068FADF /* Date.swift in Sources */,
+				3A4B1BA127590A2700E5E2BD /* UserSettings.swift in Sources */,
 				3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */,
 				3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift in Sources */,
 				3AFA3131274EB5120068FADF /* DataManager.swift in Sources */,
+				3A4B1BAC275941ED00E5E2BD /* NameMood.swift in Sources */,
 				3A3EB514274C1805006EE44F /* MoodBoardViewController.swift in Sources */,
 				3AFA3133274EBFF00068FADF /* String.swift in Sources */,
 				3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */,
 				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
+				3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */,
 				3AE29170274D22510068843A /* ApiKeys.swift in Sources */,
 				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
 				3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */,

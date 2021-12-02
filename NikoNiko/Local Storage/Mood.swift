@@ -9,15 +9,13 @@ import Foundation
 import RealmSwift
 
 class Mood: Object {
-//    @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var name = ""
-    @Persisted(indexed: true) var date = Date() // ""
-    @Persisted var dateFormatted = ""
+//    @Persisted var date = Date()
+    @Persisted(indexed: true) var date = Date()
     
-    convenience init(name: String, date: Date = Date(), dateFormatted: String) {
+    convenience init(name: String, date: Date = Date()) {
         self.init()
         self.name = name
         self.date = date
-        self.dateFormatted = dateFormatted
     }
 }
