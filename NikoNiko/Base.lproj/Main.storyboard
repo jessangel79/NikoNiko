@@ -21,6 +21,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Hjw-0D-129" kind="relationship" relationship="viewControllers" id="Qg9-k7-rMK"/>
+                        <segue destination="ExW-IB-naX" kind="relationship" relationship="viewControllers" id="nQ6-he-I81"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zB-rg-h9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -31,11 +32,21 @@
         <scene sceneID="dhV-Qi-IaL">
             <objects>
                 <viewControllerPlaceholder storyboardName="MoodBoard" id="Hjw-0D-129" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CC7-h4-oNm"/>
+                    <tabBarItem key="tabBarItem" title="MoodBoard" id="CC7-h4-oNm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sG-c7-cgS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="214" y="15"/>
+        </scene>
+        <!--StatBoard-->
+        <scene sceneID="XrS-DD-4Wa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StatBoard" id="ExW-IB-naX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="StatBoard" id="858-6b-zLa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOf-Yy-4Rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="262"/>
         </scene>
     </scenes>
 </document>

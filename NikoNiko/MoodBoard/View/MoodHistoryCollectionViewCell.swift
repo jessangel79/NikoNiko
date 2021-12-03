@@ -18,6 +18,9 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    class var identifier: String { return String(describing: self) }
+    class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
+    
     var mood: Mood? {
         didSet {
             dayOfWeekLabel.text = mood?.date.dayOfWeek()

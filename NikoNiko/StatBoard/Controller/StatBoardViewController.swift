@@ -1,0 +1,186 @@
+//
+//  StatBoardViewController.swift
+//  NikoNiko
+//
+//  Created by Angelique Babin on 03/12/2021.
+//
+
+import UIKit
+
+class StatBoardViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private var baseView: UIView!
+    @IBOutlet private weak var fromDateTextField: UITextField!
+    @IBOutlet private weak var toDateTextField: UITextField!
+    @IBOutlet private weak var statTableView: UITableView! {
+        didSet { statTableView.tableFooterView = UIView() }
+    }
+    @IBOutlet private weak var bannerView: UIView!
+    
+    // MARK: - Properties
+    
+    private var statMoodDictionnary = [String: Int]()
+    
+    // MARK: - Actions
+    
+    @IBAction func doneBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        getStatMoodToPeriod()
+        statTableView.reloadData()
+    }
+    
+    // MARK: - View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fromDateTextField.delegate = self
+        toDateTextField.delegate = self
+        statTableView.delegate = self
+        statTableView.dataSource = self
+        customUI()
+        setDatePicker()
+        statTableView.register(StatTableViewCell.nib, forCellReuseIdentifier: StatTableViewCell.identifier)
+        statTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        statTableView.reloadData()
+    }
+
+    // MARK: - Methods
+    
+    private func customUI() {
+        
+    }
+    
+    private func getStatMoodToPeriod() {
+        guard let fromDateStr = fromDateTextField.text, !fromDateStr.isBlank else { return presentAlert(typeError: .noStartDate) }
+        guard let toDateStr = toDateTextField.text, !toDateStr.isBlank else { return presentAlert(typeError: .noEndDate) }
+        let fromDate = fromDateStr.toDate()
+        let toDate = toDateStr.toDate()
+        print(fromDate)
+        print(toDate)
+        if checkIfDateCorrect(fromDate, toDate) {
+            let dataManager = DataManager()
+            statMoodDictionnary = dataManager.createStatMoodDictionnary(fromDate, toDate)
+            print(statMoodDictionnary)
+        }
+    }
+    
+    private func setDatePicker() {
+        self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
+        self.toDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneToDate))
+    }
+    
+    private func checkIfDateCorrect(_ fromDate: Date, _ toDate: Date) -> Bool {
+        if toDate < fromDate {
+            presentAlert(typeError: .errorDate)
+            return false
+        }
+        return true
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension StatBoardViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statMoodDictionnary.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let statTableViewCell = tableView.dequeueReusableCell(withIdentifier: StatTableViewCell.identifier,
+                                                                    for: indexPath) as? StatTableViewCell else {
+            return UITableViewCell()
+        }
+//        let statMood = coreDataManager?.detailsTrips[indexPath.row]
+//        detailsMyTripCell.detailsTripEntity = detailsTrip
+//        statTableViewCell.setupCell()
+//        statTableViewCell = statMoodDictionnary
+        statTableViewCell.setupCell(indexPath, statMoodDictionnary)
+//        statTableViewCell.moodImageView.image = UIImage(named: "puzzledColor")
+//        statTableViewCell.statLabel.text = "12"
+        return statTableViewCell
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.cellSelected = coreDataManager?.detailsTrips[indexPath.row]
+//        celluleActive = true
+//        celluleIndex = indexPath.row
+//        performSegue(withIdentifier: self.segueToAddDetails, sender: self)
+//    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension StatBoardViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Set Dates and click on Done to search stats of Moods"
+        label.font = UIFont(name: "Monaco", size: 14)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = UIColor.appColor(.fontColor)
+        label.backgroundColor = UIColor.appColor(.backGroundColor)
+        return label
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return statMoodDictionnary.isEmpty ? 300 : 0
+    }
+}
+
+// MARK: - DatePicker
+
+extension StatBoardViewController {
+    
+    @objc func tapDoneFromDate() {
+        if let datePicker = self.fromDateTextField.inputView as? UIDatePicker {
+            self.fromDateTextField.text = setSelectedDate(datePicker: datePicker)
+        }
+        self.fromDateTextField.resignFirstResponder()
+    }
+    
+    @objc func tapDoneToDate() {
+        if let datePicker = self.toDateTextField.inputView as? UIDatePicker {
+            self.toDateTextField.text = setSelectedDate(datePicker: datePicker)
+         }
+        self.toDateTextField.resignFirstResponder()
+    }
+    
+    private func setSelectedDate(datePicker: UIDatePicker) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateStyle = .short
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        print("Selected value \(selectedDate)")
+        return selectedDate
+    }
+}
+
+// MARK: - Keyboard
+
+extension StatBoardViewController: UITextFieldDelegate {
+    
+    @IBAction func dismissKeyBoardTapGesture( _ sender: UITapGestureRecognizer) {
+        textFieldResignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        getStatMoodToPeriod()
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func textFieldResignFirstResponder() {
+        fromDateTextField.resignFirstResponder()
+        toDateTextField.resignFirstResponder()
+    }
+}

@@ -21,9 +21,9 @@ extension UIViewController {
         case errorAccess
 //        case noNameTrip
 //        case noTraveller
-//        case noStartDate
-//        case noEndDate
-//        case errorDate
+        case noStartDate
+        case noEndDate
+        case errorDate
 //        case nameExist
         case nothingToShare
 //        case noItem
@@ -57,15 +57,15 @@ extension UIViewController {
 //        case .noTraveller:
 //            title = "No traveller"
 //            message = "Please to set a traveller."
-//        case .noStartDate:
-//            title = "No start date"
-//            message = "Please to set a start date."
-//        case .noEndDate:
-//            title = "No end date"
-//            message = "Please to set an end date."
-//        case .errorDate:
-//            title = "Error date"
-//            message = "Please to set correct start and end dates."
+        case .noStartDate:
+            title = "No start date"
+            message = "Please to set a start date."
+        case .noEndDate:
+            title = "No end date"
+            message = "Please to set an end date."
+        case .errorDate:
+            title = "Error date"
+            message = "Please to set correct start and end dates."
 //        case .nameExist:
 //            title = "This name of trip already exist"
 //            message = "Please to set another name for you trip."

@@ -58,6 +58,9 @@
                         <barButtonItem key="backBarButtonItem" title="Settings" id="hkg-O9-brN">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="En0-V0-Ako">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="IEv-Xc-o3X" id="qFB-2A-Ueb"/>

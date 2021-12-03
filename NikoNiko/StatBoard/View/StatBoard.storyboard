@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lVz-cd-FuB">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Monaco.ttf">
+            <string>Monaco</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Mood Stats-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController title="Mood Stats" id="Y6W-OH-hqX" customClass="StatBoardViewController" customModule="NikoNiko" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-TR-Ig6">
+                                <rect key="frame" x="0.0" y="470" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="iEr-p3-B1M"/>
+                                    <constraint firstAttribute="height" constant="50" id="wd8-ND-alx"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XO5-TQ-06V">
+                                <rect key="frame" x="15" y="52" width="290" height="76"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-HR-jjc">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnj-Zo-L5g">
+                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                                <color key="textColor" name="fontColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01/11/2021" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7d-UD-0Qu">
+                                                <rect key="frame" x="82.5" y="0.0" width="207.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-a8-lha">
+                                        <rect key="frame" x="0.0" y="42" width="290" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzM-Bx-vuY">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
+                                                <color key="textColor" name="fontColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="30/11/2021" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvr-6X-wQG">
+                                                <rect key="frame" x="82.5" y="0.0" width="207.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-8a-aoX">
+                                <rect key="frame" x="0.0" y="136" width="320" height="334"/>
+                                <color key="backgroundColor" name="backGroundColor"/>
+                                <color key="separatorColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="backGroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HwB-8a-aoX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1bp-r9-VdR"/>
+                            <constraint firstItem="HwB-8a-aoX" firstAttribute="top" secondItem="XO5-TQ-06V" secondAttribute="bottom" constant="8" id="7d9-kF-Giu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XO5-TQ-06V" secondAttribute="trailing" constant="15" id="CbV-zr-54t"/>
+                            <constraint firstItem="QdY-TR-Ig6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JEk-NK-43t"/>
+                            <constraint firstItem="XO5-TQ-06V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Jo1-fF-GlQ"/>
+                            <constraint firstItem="QdY-TR-Ig6" firstAttribute="top" secondItem="HwB-8a-aoX" secondAttribute="bottom" id="M7U-uo-8Sb"/>
+                            <constraint firstItem="QdY-TR-Ig6" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="1" id="c4C-uQ-04t"/>
+                            <constraint firstItem="HwB-8a-aoX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sMt-T4-IDV"/>
+                            <constraint firstItem="XO5-TQ-06V" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="twn-Wc-hJz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mood Stats" id="CLY-bF-D6F">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="aYL-Ra-KCJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zkV-2L-03R">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="doneBarButtonItemPressed:" destination="Y6W-OH-hqX" id="qaz-FZ-Cqu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bannerView" destination="QdY-TR-Ig6" id="btx-yI-4gI"/>
+                        <outlet property="baseView" destination="5EZ-qb-Rvc" id="URv-CR-HgC"/>
+                        <outlet property="fromDateTextField" destination="z7d-UD-0Qu" id="0OC-I3-gX7"/>
+                        <outlet property="statTableView" destination="HwB-8a-aoX" id="1MU-at-aCf"/>
+                        <outlet property="toDateTextField" destination="Dvr-6X-wQG" id="ChZ-i0-LTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zOC-iy-hrM">
+                    <connections>
+                        <action selector="dismissKeyBoardTapGesture:" destination="Y6W-OH-hqX" id="Mko-Gz-pof"/>
+                        <outlet property="delegate" destination="Y6W-OH-hqX" id="s6K-Ns-VTg"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1083.75" y="69.718309859154928"/>
+        </scene>
+        <!--Statistics-->
+        <scene sceneID="l1J-Ti-fam">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVz-cd-FuB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" image="statistics" id="KRD-mv-HLc"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pQd-cj-7Xy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Isw-X0-MSN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hr0-u4-KzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.25" y="69.718309859154928"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="statistics" width="25" height="25"/>
+        <namedColor name="backGroundColor">
+            <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fontColor">
+            <color red="0.034000001847743988" green="0.0" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

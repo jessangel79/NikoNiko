@@ -29,6 +29,7 @@ final class DataManager {
             }
         } catch let error as NSError {
             print("error : \(error.localizedDescription)")
+            return
         }
                 
         // Invalidate notification tokens when done observing

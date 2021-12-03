@@ -9,6 +9,25 @@ import Foundation
  
 extension String {
     
+    /// Check if a string contains at least one element
+    var isBlank: Bool {
+        return self.trimmingCharacters(in: .whitespaces) == String() ? true : false
+    }
+    
+    func cutEndString() -> String {
+        guard let endOfSentence = self.firstIndex(of: ",") else { return "" }
+        var firstSentence = self[...endOfSentence]
+        firstSentence.removeLast()
+        return String(firstSentence)
+    }
+    
+    func cutStartString() -> String {
+        guard let endOfSentence = self.firstIndex(of: ",") else { return "" }
+        var firstSentence = self[endOfSentence...]
+        firstSentence.removeFirst()
+        return String(firstSentence)
+     }
+    
     /// format type string in type date
     func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date {
         let formatter = DateFormatter()
@@ -34,7 +53,7 @@ extension String {
         }
         return dateTemp
     }
-
+    
     /// get current date
 //    func getCurrentDate(dateFormat: String) -> String {
 //        let currentDate = Date()

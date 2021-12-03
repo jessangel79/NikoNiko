@@ -195,8 +195,9 @@ class RealmTests: XCTestCase {
         let statMood = dataManager.getStatMood(Date().addingTimeInterval(-(24 * 60 * 60 * 22)), Date().addingTimeInterval(-(24 * 60 * 60 * 6)))
         XCTAssertEqual(statMood?.first?.name, "sad")
         XCTAssertEqual(statMood?.last?.name, "neutral")
-        XCTAssertEqual(statMood?.first?.date.toString(format: FormatDate.formatted.rawValue), "2021-11-26")
-        XCTAssertEqual(statMood?.last?.date.toString(format: FormatDate.formatted.rawValue), "2021-11-10")
+        XCTAssertEqual(statMood?.first?.date.toString(format: FormatDate.formatted.rawValue), Date().addingTimeInterval(-(24 * 60 * 60 * 6)).toString(format: FormatDate.formatted.rawValue))
+        XCTAssertEqual(statMood?.last?.date.toString(format: FormatDate.formatted.rawValue), Date().addingTimeInterval(-(24 * 60 * 60 * 22)).toString(format: FormatDate.formatted.rawValue))
+        XCTAssertTrue(statMood?.count == 17)
     }
 
     func testGetStatMoodCount() {

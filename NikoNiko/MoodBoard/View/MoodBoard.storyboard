@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -200,7 +201,7 @@
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                         <leftBarButtonItems>
-                            <barButtonItem title="settings" image="settings" id="n5h-jq-qG0">
+                            <barButtonItem title="settings" image="gear" catalog="system" id="n5h-jq-qG0">
                                 <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="FSi-kx-6ub" kind="show" identifier="segueToSettings" id="rgb-cn-X2f"/>
@@ -213,7 +214,8 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" image="info-credits" id="0qm-UN-5Cl">
+                        <barButtonItem key="rightBarButtonItem" id="0qm-UN-5Cl">
+                            <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="U2z-nR-rao" kind="showDetail" id="sv0-u8-Ug2"/>
@@ -259,10 +261,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="25"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="25"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -278,12 +280,12 @@
     <resources>
         <image name="disappointed" width="96" height="96"/>
         <image name="dividingLine" width="2000" height="2000"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="happy" width="96" height="96"/>
-        <image name="info-credits" width="25" height="25"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="neutral" width="96" height="96"/>
         <image name="puzzled" width="25" height="25"/>
         <image name="sad" width="96" height="96"/>
-        <image name="settings" width="25" height="25"/>
         <image name="smiling" width="96" height="96"/>
         <namedColor name="backGroundColor">
             <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

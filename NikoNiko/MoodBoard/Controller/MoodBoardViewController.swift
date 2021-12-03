@@ -22,10 +22,8 @@ final class MoodBoardViewController: UIViewController {
     
     // MARK: - Properties
     
-//    private let realm = try? Realm()
     private var inverseMoodList: Results<Mood>?
     private let adMobService = AdMobService()
-//    private let dataManager = DataManager()
 
     // MARK: - Actions
     
@@ -50,7 +48,8 @@ final class MoodBoardViewController: UIViewController {
         moodHistoryCollectionView.delegate = self
         moodHistoryCollectionView.dataSource = self
         customUI()
-        setNib()
+        moodHistoryCollectionView.register(MoodHistoryCollectionViewCell.nib,
+                                           forCellWithReuseIdentifier: MoodHistoryCollectionViewCell.identifier)
         getInverseMoodList()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         moodHistoryCollectionView.reloadData()
@@ -60,13 +59,11 @@ final class MoodBoardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        getInverseMoodList()
         moodHistoryCollectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        getInverseMoodList()
         moodHistoryCollectionView.reloadData()
     }
     
@@ -95,11 +92,6 @@ final class MoodBoardViewController: UIViewController {
         customView(view: historyView, radius: 20, width: 0.8, colorBorder: borderColor)
     }
     
-    private func setNib() {
-        let nib = UINib(nibName: Cst.Collection.MoodHistoryCollectionViewCell, bundle: nil)
-        moodHistoryCollectionView.register(nib, forCellWithReuseIdentifier: Cst.Collection.MoodHistoryCell)
-    }
-    
     func setLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 60, height: 120)
@@ -115,13 +107,6 @@ final class MoodBoardViewController: UIViewController {
         print("current date : \(currentDate)")
         print("moodName : \(moodName)")
     }
-    
-//    private func createMoodListDefault() {
-// //        let mood = Mood()
-// //        moodListDefault = mood.createMoodListDefault()
-//        let dataManager = DataManager()
-//        moodListDefault = dataManager.createMoodListDefault()
-//    }
     
     private func getInverseMoodList() {
         let dataManager = DataManager()
@@ -139,6 +124,8 @@ final class MoodBoardViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource - UICollectionViewDelegate
+
 extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -147,7 +134,7 @@ extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cst.Collection.MoodHistoryCell, for: indexPath) as? MoodHistoryCollectionViewCell else {
+        guard let moodHistoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: MoodHistoryCollectionViewCell.identifier, for: indexPath) as? MoodHistoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         moodHistoryCell.setupCell(indexPath, inverseMoodList)

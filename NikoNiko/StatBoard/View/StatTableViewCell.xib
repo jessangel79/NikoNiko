@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Monaco.ttf">
+            <string>Monaco</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatTableViewCell" rowHeight="64" id="KGk-i7-Jjw" customClass="StatTableViewCell" customModule="NikoNiko" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-cL-XdL">
+                        <rect key="frame" x="10" y="2" width="300" height="60"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="tnm-6a-nqI">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5Wd-jf-LLr"/>
+                                    <constraint firstAttribute="width" secondItem="tnm-6a-nqI" secondAttribute="height" multiplier="1:1" id="sTJ-Vw-kyu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5N1-pa-9YW">
+                                <rect key="frame" x="90" y="0.0" width="210" height="60"/>
+                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
+                                <color key="textColor" name="fontColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="backGroundColor"/>
+                <constraints>
+                    <constraint firstItem="DKT-cL-XdL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8S7-33-rnn"/>
+                    <constraint firstItem="DKT-cL-XdL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="ghD-ob-vmZ"/>
+                    <constraint firstAttribute="bottom" secondItem="DKT-cL-XdL" secondAttribute="bottom" constant="2" id="ppm-yI-eJY"/>
+                    <constraint firstAttribute="trailing" secondItem="DKT-cL-XdL" secondAttribute="trailing" constant="10" id="wUb-2E-j6d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="backGroundColor"/>
+            <connections>
+                <outlet property="moodImageView" destination="tnm-6a-nqI" id="ASJ-hX-wvd"/>
+                <outlet property="statLabel" destination="5N1-pa-9YW" id="C5D-Ma-r6m"/>
+            </connections>
+            <point key="canvasLocation" x="98.550724637681171" y="77.34375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="puzzledColor" width="96" height="96"/>
+        <namedColor name="backGroundColor">
+            <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fontColor">
+            <color red="0.034000001847743988" green="0.0" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

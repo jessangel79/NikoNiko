@@ -16,10 +16,10 @@ struct Cst {
         static let AdUnitIDProd = "ca-app-pub-1785702102693747/5166484662"
     }
 
-    struct Collection {
-        static let MoodHistoryCell = "MoodHistoryCell"
-        static let MoodHistoryCollectionViewCell = "MoodHistoryCollectionViewCell"
-    }
+//    struct Collection {
+//        static let MoodHistoryCell = "MoodHistoryCell"
+//        static let MoodHistoryCollectionViewCell = "MoodHistoryCollectionViewCell"
+//    }
     
     struct Segue {
         static let ToWebsiteInfo = "segueToWebsiteInfo"

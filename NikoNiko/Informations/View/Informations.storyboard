@@ -231,14 +231,14 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem image="share-app" id="maG-8T-rLf">
+                        <barButtonItem image="square.and.arrow.up" catalog="system" id="maG-8T-rLf">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="shareBarButtonItemTapped:" destination="7nY-SW-XHO" id="zpB-1Q-NYR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="WRa-le-HhH"/>
-                        <barButtonItem image="safari" id="wZP-Fs-Cqh">
+                        <barButtonItem image="safari" catalog="system" id="wZP-Fs-Cqh">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="safariBarButtonItemTapped:" destination="7nY-SW-XHO" id="4CI-p5-HxA"/>
@@ -265,8 +265,8 @@
     </scenes>
     <resources>
         <image name="BadgeLinkedIn_dark" width="658" height="482"/>
-        <image name="safari" width="25" height="25"/>
-        <image name="share-app" width="25" height="25"/>
+        <image name="safari" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="backGroundColor">
             <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

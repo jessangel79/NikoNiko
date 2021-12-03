@@ -41,6 +41,11 @@
 		3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */; };
 		3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */; };
 		3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E41274F9F70002B3960 /* RealmTests.swift */; };
+		3AD35F1F275A4C64000BBCBD /* StatBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */; };
+		3AD35F21275A4C8C000BBCBD /* StatBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD35F20275A4C8C000BBCBD /* StatBoard.storyboard */; };
+		3AD35F28275A5E59000BBCBD /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F26275A5E59000BBCBD /* StatTableViewCell.swift */; };
+		3AD35F29275A5E59000BBCBD /* StatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD35F27275A5E59000BBCBD /* StatTableViewCell.xib */; };
+		3AD35F2B275A6398000BBCBD /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F2A275A6398000BBCBD /* UITextField.swift */; };
 		3AE2916E274D21780068843A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2916D274D21780068843A /* README.md */; };
 		3AE29170274D22510068843A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2916F274D22510068843A /* ApiKeys.swift */; };
 		3AE29172274D22690068843A /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29171274D22690068843A /* ApiKeys.plist */; };
@@ -110,6 +115,11 @@
 		3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoNikoTests.swift; sourceTree = "<group>"; };
 		3AB53E41274F9F70002B3960 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
+		3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoardViewController.swift; sourceTree = "<group>"; };
+		3AD35F20275A4C8C000BBCBD /* StatBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatBoard.storyboard; sourceTree = "<group>"; };
+		3AD35F26275A5E59000BBCBD /* StatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
+		3AD35F27275A5E59000BBCBD /* StatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatTableViewCell.xib; sourceTree = "<group>"; };
+		3AD35F2A275A6398000BBCBD /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		3AE2916D274D21780068843A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3AE2916F274D22510068843A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		3AE29171274D22690068843A /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
@@ -203,6 +213,7 @@
 				3AE2916D274D21780068843A /* README.md */,
 				3AE2916A274D20FA0068843A /* Local Storage */,
 				3AA284D1275553D90064BA99 /* MoodBoard */,
+				3AD35F1A275A4C08000BBCBD /* StatBoard */,
 				3A4B1BA32759100400E5E2BD /* Settings */,
 				3AA284D2275553FD0064BA99 /* Informations */,
 				3AE2916B274D21040068843A /* Helpers */,
@@ -298,6 +309,41 @@
 			path = NikoNikoTests;
 			sourceTree = "<group>";
 		};
+		3AD35F1A275A4C08000BBCBD /* StatBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3AD35F1D275A4C32000BBCBD /* Controller */,
+				3AD35F1C275A4C2F000BBCBD /* View */,
+				3AD35F1B275A4C2B000BBCBD /* Model */,
+			);
+			path = StatBoard;
+			sourceTree = "<group>";
+		};
+		3AD35F1B275A4C2B000BBCBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AD35F1C275A4C2F000BBCBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AD35F20275A4C8C000BBCBD /* StatBoard.storyboard */,
+				3AD35F27275A5E59000BBCBD /* StatTableViewCell.xib */,
+				3AD35F26275A5E59000BBCBD /* StatTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AD35F1D275A4C32000BBCBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3AE29166274D20C50068843A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +417,7 @@
 				3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */,
 				3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */,
 				3A991B322757E2ED0091587F /* UIColor.swift */,
+				3AD35F2A275A6398000BBCBD /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,11 +549,13 @@
 				3A3EB51C274C1807006EE44F /* LaunchScreen.storyboard in Resources */,
 				3A3EB519274C1807006EE44F /* Assets.xcassets in Resources */,
 				3AA284D6275554380064BA99 /* Informations.storyboard in Resources */,
+				3AD35F21275A4C8C000BBCBD /* StatBoard.storyboard in Resources */,
 				3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */,
 				3AE2916E274D21780068843A /* README.md in Resources */,
 				3A3EB517274C1805006EE44F /* Main.storyboard in Resources */,
 				3AE29179274D3AC80068843A /* Monaco.ttf in Resources */,
 				3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */,
+				3AD35F29275A5E59000BBCBD /* StatTableViewCell.xib in Resources */,
 				3AE29172274D22690068843A /* ApiKeys.plist in Resources */,
 				3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */,
 			);
@@ -610,8 +659,11 @@
 				3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */,
 				3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */,
 				3AE29174274D23050068843A /* Constants.swift in Sources */,
+				3AD35F1F275A4C64000BBCBD /* StatBoardViewController.swift in Sources */,
 				3AFA3135274EC0460068FADF /* Date.swift in Sources */,
+				3AD35F2B275A6398000BBCBD /* UITextField.swift in Sources */,
 				3A4B1BA127590A2700E5E2BD /* UserSettings.swift in Sources */,
+				3AD35F28275A5E59000BBCBD /* StatTableViewCell.swift in Sources */,
 				3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */,
 				3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift in Sources */,
 				3AFA3131274EB5120068FADF /* DataManager.swift in Sources */,
