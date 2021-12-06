@@ -24,16 +24,17 @@ Lien ...
 
 #### App previews and screenshots / Aperçus d’app et captures d’écran
 
-| Nom d'écran - Light mode | Nom d'écran - Dark mode |
-| -------- | ------------- |
-|![Nom d'écran Light](source/images/NomEcranLight.png) |![Nom d'écran Dark](source/images/NomEcranDark.png) |
+| MoodBoard - Light mode | Statistics - Light mode | Statistics Search - Light mode |
+| -------- | ------------- | ------------- |
+|![MoodBoard Light](source/images/MoodBoardLight.png) |![Statistics Empty Light](source/images/StatisticsEmptyLight.png) |![Statistics Search Light](source/images/StatisticsSearchLight.png) |
+
+| MoodBoard - Dark mode | Statistics - Dark mode | Statistics Search - Dark mode |
+| -------- | ------------- | ------------- |
+|![MoodBoard Dark](source/images/MoodBoardDark.png) |![Statistics Empty Dark](source/images/StatisticsEmptyDark.png) |![Statistics Search Dark](source/images/StatisticsSearchDark.png) |
 
 ---
 
 #### Credits :
 
-<!---
-Icons made by Freepik : [Freepik](https://www.flaticon.com/authors/freepik) from Flaticon : [Flaticon](https://www.flaticon.com)
-API : [NomAPI](https://adressAPI.org/api)
-Gif créé avec : [makeagif.com](https://makeagif.com)
--->
+Icons made by .pngtree.com : [Avion png de .pngtree.com ](https://.pngtree.com/so/Avion)
+
