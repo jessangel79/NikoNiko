@@ -11,24 +11,11 @@ import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setColorNavBar()
         setRealm()
-        let ads = GADMobileAds.sharedInstance()
-        ads.start { status in
-            // Optional: Log each adapter's initialization latency.
-            let adapterStatuses = status.adapterStatusesByClassName
-            for adapter in adapterStatuses {
-                let adapterStatus = adapter.value
-                NSLog("Adapter Name: %@, Description: %@, Latency: %f", adapter.key,
-                      adapterStatus.description, adapterStatus.latency)
-            }
-            
-        }
-//        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, "04b5955b04ab689e9a3e11e6927572c3" ]
-        
+        setAdMob()
         return true
     }
 
@@ -39,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+    
+    // MARK: - Methods
     
     private func setColorNavBar() {
         guard let myFontNavBar = UIFont(name: "Monaco", size: 25) else { return }
@@ -59,11 +48,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setRealm() {
         let config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 3,
             migrationBlock: { (migration: Migration, oldSchemaVersion: UInt64) in
                 
             })
         Realm.Configuration.defaultConfiguration = config
         //        deleteRealmIfMigrationNeeded: true
+    }
+    
+    private func setAdMob() {
+        let ads = GADMobileAds.sharedInstance()
+        ads.start { status in
+            // Optional: Log each adapter's initialization latency.
+            let adapterStatuses = status.adapterStatusesByClassName
+            for adapter in adapterStatuses {
+                let adapterStatus = adapter.value
+                NSLog("Adapter Name: %@, Description: %@, Latency: %f", adapter.key,
+                      adapterStatus.description, adapterStatus.latency)
+            }
+            
+        }
+        //        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, "04b5955b04ab689e9a3e11e6927572c3" ]
     }
 }

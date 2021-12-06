@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-TR-Ig6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-TR-Ig6" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="470" width="320" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -31,75 +31,97 @@
                                     <constraint firstAttribute="height" constant="50" id="wd8-ND-alx"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XO5-TQ-06V">
-                                <rect key="frame" x="15" y="52" width="290" height="76"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-8a-aoX">
+                                <rect key="frame" x="0.0" y="137" width="320" height="333"/>
+                                <color key="backgroundColor" name="backGroundColor"/>
+                                <color key="separatorColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d54-Ea-Swc">
+                                <rect key="frame" x="10" y="52" width="300" height="77"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-HR-jjc">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wKv-KG-DnV">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnj-Zo-L5g">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="34.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="6HO-o1-UQ5"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
                                                 <color key="textColor" name="fontColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                 </variation>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01/11/2021" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7d-UD-0Qu">
-                                                <rect key="frame" x="82.5" y="0.0" width="207.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01/11/2021" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z7d-UD-0Qu">
+                                                <rect key="frame" x="120" y="0.0" width="180" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
+                                                </variation>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-a8-lha">
-                                        <rect key="frame" x="0.0" y="42" width="290" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ovd-lm-GxR">
+                                        <rect key="frame" x="0.0" y="42.5" width="300" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzM-Bx-vuY">
-                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="34.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="y8b-n8-8t9"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
                                                 <color key="textColor" name="fontColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
                                                 </variation>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="30/11/2021" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvr-6X-wQG">
-                                                <rect key="frame" x="82.5" y="0.0" width="207.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="30/11/2021" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Dvr-6X-wQG">
+                                                <rect key="frame" x="120" y="0.0" width="180" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="30"/>
+                                                </variation>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-8a-aoX">
-                                <rect key="frame" x="0.0" y="136" width="320" height="334"/>
-                                <color key="backgroundColor" name="backGroundColor"/>
-                                <color key="separatorColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="backGroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HwB-8a-aoX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1bp-r9-VdR"/>
-                            <constraint firstItem="HwB-8a-aoX" firstAttribute="top" secondItem="XO5-TQ-06V" secondAttribute="bottom" constant="8" id="7d9-kF-Giu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XO5-TQ-06V" secondAttribute="trailing" constant="15" id="CbV-zr-54t"/>
+                            <constraint firstItem="HwB-8a-aoX" firstAttribute="top" secondItem="d54-Ea-Swc" secondAttribute="bottom" constant="8" id="7Fu-BS-eUC"/>
                             <constraint firstItem="QdY-TR-Ig6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JEk-NK-43t"/>
-                            <constraint firstItem="XO5-TQ-06V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Jo1-fF-GlQ"/>
                             <constraint firstItem="QdY-TR-Ig6" firstAttribute="top" secondItem="HwB-8a-aoX" secondAttribute="bottom" id="M7U-uo-8Sb"/>
                             <constraint firstItem="QdY-TR-Ig6" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="1" id="c4C-uQ-04t"/>
+                            <constraint firstItem="d54-Ea-Swc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="gEr-Sh-WMu"/>
+                            <constraint firstItem="d54-Ea-Swc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="opk-LI-CXT"/>
                             <constraint firstItem="HwB-8a-aoX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sMt-T4-IDV"/>
-                            <constraint firstItem="XO5-TQ-06V" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="twn-Wc-hJz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="d54-Ea-Swc" secondAttribute="trailing" constant="10" id="uey-1W-J2D"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p4X-MW-GGv" appends="YES" id="HVq-J3-RNh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Stats" id="CLY-bF-D6F">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aYL-Ra-KCJ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zkV-2L-03R">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="CoZ-XW-d65">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="doneBarButtonItemPressed:" destination="Y6W-OH-hqX" id="qaz-FZ-Cqu"/>
+                                <action selector="refreshBarButtonItemPressed:" destination="Y6W-OH-hqX" id="mLi-rs-qZ1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zkV-2L-03R">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="searchBarButtonItemPressed:" destination="Y6W-OH-hqX" id="DQ3-G6-5bw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -112,10 +134,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zOC-iy-hrM">
+                <tapGestureRecognizer id="p4X-MW-GGv">
                     <connections>
-                        <action selector="dismissKeyBoardTapGesture:" destination="Y6W-OH-hqX" id="Mko-Gz-pof"/>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="s6K-Ns-VTg"/>
+                        <action selector="dismissKeyBoardTapGesture:" destination="Y6W-OH-hqX" id="k8e-WM-nh5"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

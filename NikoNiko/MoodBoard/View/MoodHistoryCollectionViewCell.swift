@@ -43,14 +43,18 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(_ indexPath: IndexPath, _ inverseMoodList: Results<Mood>?) {
-        if let inverseMoodList = inverseMoodList {
-            if !inverseMoodList.isEmpty {
-                mood = inverseMoodList[indexPath.item]
-            } else {
-                let dataManager = DataManager()
-                let moodListDefault = dataManager.createMoodListDefault()
-                moodDefault = moodListDefault[indexPath.item]
+//        if indexPath.item < inverseMoodListCount {
+            if let inverseMoodList = inverseMoodList {
+                if !inverseMoodList.isEmpty {
+                    mood = inverseMoodList[indexPath.item]
+                } else {
+                    let dataManager = DataManager()
+                    let moodListDefault = dataManager.createMoodListDefault()
+                    moodDefault = moodListDefault[indexPath.item]
+                }
             }
-        }
+//        } else {
+//            print("error in setupCell")
+//        }
     }
 }

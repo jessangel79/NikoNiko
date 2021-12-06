@@ -60,6 +60,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="En0-V0-Ako">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="closeModalBarButtonTapped:" destination="Y6W-OH-hqX" id="drb-SL-Rzo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

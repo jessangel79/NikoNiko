@@ -1,5 +1,5 @@
 //
-//  UICollectionViewCell.swift
+//  UICollectionViewCell+CustomUI.swift
 //  NikoNiko
 //
 //  Created by Angelique Babin on 29/11/2021.

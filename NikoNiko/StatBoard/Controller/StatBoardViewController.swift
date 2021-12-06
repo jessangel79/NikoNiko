@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class StatBoardViewController: UIViewController {
     
@@ -17,16 +18,24 @@ class StatBoardViewController: UIViewController {
     @IBOutlet private weak var statTableView: UITableView! {
         didSet { statTableView.tableFooterView = UIView() }
     }
-    @IBOutlet private weak var bannerView: UIView!
+    @IBOutlet private weak var bannerView: GADBannerView!
     
     // MARK: - Properties
     
-    private var statMoodDictionnary = [String: Int]()
+    private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
+    private let adMobService = AdMobService()
     
     // MARK: - Actions
     
-    @IBAction func doneBarButtonItemPressed(_ sender: UIBarButtonItem) {
+    @IBAction func searchBarButtonItemPressed(_ sender: UIBarButtonItem) {
         getStatMoodToPeriod()
+        statTableView.reloadData()
+    }
+    
+    @IBAction func refreshBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        fromDateTextField.text = ""
+        toDateTextField.text = ""
+        statMoodTupleList.removeAll()
         statTableView.reloadData()
     }
     
@@ -38,10 +47,10 @@ class StatBoardViewController: UIViewController {
         toDateTextField.delegate = self
         statTableView.delegate = self
         statTableView.dataSource = self
-        customUI()
         setDatePicker()
         statTableView.register(StatTableViewCell.nib, forCellReuseIdentifier: StatTableViewCell.identifier)
         statTableView.reloadData()
+        adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,28 +59,16 @@ class StatBoardViewController: UIViewController {
     }
 
     // MARK: - Methods
-    
-    private func customUI() {
-        
-    }
-    
+
     private func getStatMoodToPeriod() {
         guard let fromDateStr = fromDateTextField.text, !fromDateStr.isBlank else { return presentAlert(typeError: .noStartDate) }
         guard let toDateStr = toDateTextField.text, !toDateStr.isBlank else { return presentAlert(typeError: .noEndDate) }
-        let fromDate = fromDateStr.toDate()
-        let toDate = toDateStr.toDate()
-        print(fromDate)
-        print(toDate)
+        let fromDate = fromDateStr.toDate(format: FormatDate.onDisplay.rawValue)
+        let toDate = toDateStr.toDate(format: FormatDate.onDisplay.rawValue)
         if checkIfDateCorrect(fromDate, toDate) {
             let dataManager = DataManager()
-            statMoodDictionnary = dataManager.createStatMoodDictionnary(fromDate, toDate)
-            print(statMoodDictionnary)
+            statMoodTupleList = dataManager.createStatMoodTupleList(fromDate, toDate)
         }
-    }
-    
-    private func setDatePicker() {
-        self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
-        self.toDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneToDate))
     }
     
     private func checkIfDateCorrect(_ fromDate: Date, _ toDate: Date) -> Bool {
@@ -80,6 +77,11 @@ class StatBoardViewController: UIViewController {
             return false
         }
         return true
+    }
+    
+    private func setDatePicker() {
+        self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
+        self.toDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneToDate))
     }
 }
 
@@ -91,7 +93,7 @@ extension StatBoardViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statMoodDictionnary.count
+        return statMoodTupleList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,22 +101,9 @@ extension StatBoardViewController: UITableViewDataSource {
                                                                     for: indexPath) as? StatTableViewCell else {
             return UITableViewCell()
         }
-//        let statMood = coreDataManager?.detailsTrips[indexPath.row]
-//        detailsMyTripCell.detailsTripEntity = detailsTrip
-//        statTableViewCell.setupCell()
-//        statTableViewCell = statMoodDictionnary
-        statTableViewCell.setupCell(indexPath, statMoodDictionnary)
-//        statTableViewCell.moodImageView.image = UIImage(named: "puzzledColor")
-//        statTableViewCell.statLabel.text = "12"
+        statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList)
         return statTableViewCell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.cellSelected = coreDataManager?.detailsTrips[indexPath.row]
-//        celluleActive = true
-//        celluleIndex = indexPath.row
-//        performSegue(withIdentifier: self.segueToAddDetails, sender: self)
-//    }
 }
 
 // MARK: - UITableViewDelegate
@@ -123,17 +112,19 @@ extension StatBoardViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.text = "Set Dates and click on Done to search stats of Moods"
-        label.font = UIFont(name: "Monaco", size: 14)
+        label.text = "Set Dates and click on search to get stats of Moods"
+        label.font = UIFont(name: "Monaco", size: 30)
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.textColor = UIColor.appColor(.fontColor)
         label.backgroundColor = UIColor.appColor(.backGroundColor)
+        label.adjustsFontSizeToFitWidth = true
+        label.sizeToFit()
         return label
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return statMoodDictionnary.isEmpty ? 300 : 0
+        return statMoodTupleList.isEmpty ? 300 : 0
     }
 }
 
@@ -157,7 +148,7 @@ extension StatBoardViewController {
     
     private func setSelectedDate(datePicker: UIDatePicker) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = FormatDate.onDisplay.rawValue
         dateFormatter.dateStyle = .short
         let selectedDate = dateFormatter.string(from: datePicker.date)
         print("Selected value \(selectedDate)")
@@ -171,12 +162,6 @@ extension StatBoardViewController: UITextFieldDelegate {
     
     @IBAction func dismissKeyBoardTapGesture( _ sender: UITapGestureRecognizer) {
         textFieldResignFirstResponder()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        getStatMoodToPeriod()
-        textField.resignFirstResponder()
-        return true
     }
     
     private func textFieldResignFirstResponder() {

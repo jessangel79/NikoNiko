@@ -31,6 +31,8 @@ extension UITextField {
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancel = UIBarButtonItem(title: "Cancel", style: .done, target: nil, action: #selector(tapCancel))
         let barButton = UIBarButtonItem(title: "Done", style: .done, target: target, action: selector)
+        cancel.tintColor = UIColor.appColor(.fontColor)
+        barButton.tintColor = UIColor.appColor(.fontColor)
         toolBar.setItems([cancel, flexible, barButton], animated: false)
         self.inputAccessoryView = toolBar
     }
@@ -38,4 +40,6 @@ extension UITextField {
     @objc func tapCancel() {
         self.resignFirstResponder()
     }
+    
+//    private func set
 }

@@ -21,6 +21,10 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Actions
     
+    @IBAction func closeModalBarButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func deleteAllDatasButtonPressed(_ sender: UIButton) {
 //        let dataManager = DataManager()
 //        dataManager.removeAllMoods()

@@ -7,8 +7,11 @@
 
 import Foundation
 
+/// formatted = "yyyy-MM-dd"
+/// noFormatted = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+/// onDisplay = "dd/MM/yyyy"
 enum FormatDate: String {
     case formatted = "yyyy-MM-dd"
     case noFormatted = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-//    case toDisplay = "dd/MM/yyyy"
+    case onDisplay = "dd/MM/yyyy"
 }

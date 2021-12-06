@@ -60,9 +60,8 @@ final class DataManager {
                 print("Deleted indices: ", deletions)
                 print("Inserted indices: ", insertions)
                 print("Modified modifications: ", modifications)
-            case .error(let error):
+            case .error(let error): print(error.localizedDescription)
                 // An error occurred while opening the Realm file on the background worker thread
-                print(error.localizedDescription)
                 return
             }
         }
@@ -80,19 +79,19 @@ final class DataManager {
         }
     }
     
-    func removeMood(realm: Realm? = try? Realm()) {
-        do {
-            moodList = (realm?.objects(Mood.self)) // ?
-            try realm?.write {
-                guard let moodToDelete = moodList.first else { return }
-                realm?.delete(moodToDelete)
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
+//    func removeMood(realm: Realm? = try? Realm()) {
+//        do {
+//            moodList = (realm?.objects(Mood.self)) // ?
+//            try realm?.write {
+//                guard let moodToDelete = moodList.first else { return }
+//                realm?.delete(moodToDelete)
+//            }
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+//    }
     
-    func inverseMoodList(realm: Realm? = try? Realm()) -> Results<Mood> {
+    func inverseMoodList(realm: Realm? = try? Realm()) -> Results<Mood>? {
         moodList = (realm?.objects(Mood.self))
         return moodList.sorted(byKeyPath: "date", ascending: false)
     }
@@ -100,7 +99,7 @@ final class DataManager {
     func createMoodListDefault() -> [Mood] {
         var moodListDefault = [Mood]()
         for _ in 1...Cst.nbOfMoods {
-            let mood = Mood(name: "puzzledColor") // , dateFormatted: String
+            let mood = Mood(name: "puzzledColor", date: Date()) // , dateFormatted: String
             moodListDefault.append(mood)
         }
         return moodListDefault
@@ -109,73 +108,45 @@ final class DataManager {
     func getCount(realm: Realm? = try? Realm()) -> Int {
         let inverseMoodList = inverseMoodList()
         let moodListDefault = createMoodListDefault()
-        var count = Int()
+        guard let inverseMoodList = inverseMoodList else { return 0 }
         if inverseMoodList.isEmpty {
-            count = moodListDefault.count
+            return moodListDefault.count
         } else {
-            count = inverseMoodList.count
+            return inverseMoodList.count
         }
-        return count
     }
     
-    func getStatMood(realm: Realm? = try? Realm(), _ fromDate: Date, _ toDate: Date) -> Results<Mood>? {
+    private func getStatMood(realm: Realm? = try? Realm(), _ fromDate: Date, _ toDate: Date) -> Results<Mood>? {
         moodList = (realm?.objects(Mood.self))
         let statMood = moodList.where {
-            $0.date > fromDate.addingTimeInterval(-(24 * 60 * 60)) && $0.date < toDate
+            $0.date > fromDate && $0.date < toDate.addingTimeInterval(24 * 60 * 60)
         }
         return statMood
     }
     
-    func getMoodCount(_ fromDate: Date, _ toDate: Date, name: String) -> Int? {
+    private func getMoodCount(_ fromDate: Date, _ toDate: Date, _ name: String) -> Int {
         let statMood = getStatMood(fromDate, toDate)
         let mood = statMood?.where {
             $0.name == name
         }
-        return mood?.count
+        return mood?.count ?? 0
     }
-    
-    func createStatMoodDictionnary(_ fromDate: Date, _ toDate: Date) -> [String: Int] {
-        var statMoodDic = [String: Int]()
-        statMoodDic[NameMood.sad.rawValue] = getMoodCount(fromDate, toDate, name: NameMood.sad.rawValue)
-        statMoodDic[NameMood.happy.rawValue] = getMoodCount(fromDate, toDate, name: NameMood.happy.rawValue)
-        statMoodDic[NameMood.smiling.rawValue] = getMoodCount(fromDate, toDate, name: NameMood.smiling.rawValue)
-        statMoodDic[NameMood.disappointed.rawValue] = getMoodCount(fromDate, toDate, name: NameMood.disappointed.rawValue)
-        statMoodDic[NameMood.neutral.rawValue] = getMoodCount(fromDate, toDate, name: NameMood.neutral.rawValue)
-        return statMoodDic
-    }
-        
-//    mood.date < Date().addingTimeInterval(24 * 60 * 60) && mood.date > Date().addingTimeInterval(-(24 * 60 * 60 * Cst.nbOfMoods))
-    
-    // MARK: - TEST
-    
-    //    func filterDate(date: String) {
-    //        let dateOfMood = moodList.where {
-    //            $0.date.contains(date)
-    //        }
-    //        print("date Of Mood : \(dateOfMood)")
-    //    }
-    
-    //    func removeMood(atIndex index: Int) {
-    //        do {
-    //            try realm?.write {
-    //                realm?.delete(getMood(atIndex: index))
-    //            }
-    //        } catch let error as NSError {
-    //            print(error.localizedDescription)
-    //        }
-    //    }
-    
-    //    func getMoodCount() -> Int {
-    //        return moodList.count
-    //    }
-        
-    //    func getMood(atIndex index: Int) -> Mood {
-    //        return moodList[index]
-    //    }
 
-    // debug
-//    func displayMoodCount(realm: Realm?) {
-//        moodList = realm?.objects(Mood.self)
-//        print("il y a \(String(describing: moodList.count)) Mood dans la liste")
-//    }
+    func createStatMoodTupleList(_ fromDate: Date, _ toDate: Date) -> [(nameMood: String, statMood: Int)] {
+        let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
+        let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
+        var statMoodList = [(nameMood: String, statMood: Int)]()
+        let moodSmiling = (nameMood: NameMood.smiling.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.smiling.rawValue))
+        let moodHappy = (nameMood: NameMood.happy.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.happy.rawValue))
+        let moodNeutral = (nameMood: NameMood.neutral.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.neutral.rawValue))
+        let moodSad = (nameMood: NameMood.sad.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.sad.rawValue))
+        let moodDisappointed = (nameMood: NameMood.disappointed.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.disappointed.rawValue))
+        statMoodList.append(moodSmiling)
+        statMoodList.append(moodHappy)
+        statMoodList.append(moodNeutral)
+        statMoodList.append(moodSad)
+        statMoodList.append(moodDisappointed)
+        return statMoodList
+    }
+
 }
