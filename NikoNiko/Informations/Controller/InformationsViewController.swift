@@ -16,7 +16,6 @@ final class InformationsViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let segueToWebsiteInfo = Cst.Segue.ToWebsiteInfo
     private let badgeLinkedIn = "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
     private let pngTree = "https://pngtree.com/so/Avion"
     private let angelAppDev = "http://www.angelappdev.io"
@@ -63,16 +62,15 @@ final class InformationsViewController: UIViewController {
 
     private func openWebView(_ urlString: String) {
         self.urlString = urlString
-        performSegue(withIdentifier: segueToWebsiteInfo, sender: self)
+        performSegue(withIdentifier: Cst.Segue.ToWebsiteInfo, sender: self)
     }
-
 }
 
 // MARK: - Navigation
 
 extension InformationsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueToWebsiteInfo {
+        if segue.identifier == Cst.Segue.ToWebsiteInfo {
             guard let websiteInfoVC = segue.destination as? WebViewInformationsViewController else { return }
             websiteInfoVC.urlString = self.urlString
         }

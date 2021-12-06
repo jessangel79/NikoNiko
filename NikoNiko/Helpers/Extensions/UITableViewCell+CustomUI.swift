@@ -16,8 +16,9 @@ extension UITableViewCell {
     /// custom view with shadow
     func customShadowImageView(imageView: UIImageView) {
         imageView.clipsToBounds = false
-        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowColor = UIColor.appColor(.fontColor)?.cgColor
         imageView.layer.shadowOpacity = 0.8
         imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
+
     }
 }

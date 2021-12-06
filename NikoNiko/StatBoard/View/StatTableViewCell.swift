@@ -25,9 +25,9 @@ class StatTableViewCell: UITableViewCell {
         super.awakeFromNib()
         customShadowImageView(imageView: moodImageView)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {    super.traitCollectionDidChange(previousTraitCollection)
+        customShadowImageView(imageView: moodImageView)
     }
     
     // MARK: - Methods
