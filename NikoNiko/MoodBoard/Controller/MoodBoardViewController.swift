@@ -16,7 +16,7 @@ final class MoodBoardViewController: UIViewController {
     @IBOutlet private var moodTodayButtons: [UIButton]!
     @IBOutlet private weak var historyView: UIView!
     @IBOutlet private var titleLabels: [UILabel]!
-    @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
+    @IBOutlet weak var moodHistoryCollectionView: UICollectionView!
     @IBOutlet private weak var bannerView: GADBannerView!
     @IBOutlet private weak var todayLabel: UILabel!
     
@@ -24,6 +24,9 @@ final class MoodBoardViewController: UIViewController {
     
     private var inverseMoodList: Results<Mood>?
     private let adMobService = AdMobService()
+    private var useDeviceSetting = true
+    private var cuteTheme = false
+    private var theme = Theme.def.rawValue
 
     // MARK: - Actions
     
@@ -33,20 +36,24 @@ final class MoodBoardViewController: UIViewController {
         getInverseMoodList()
         moodHistoryCollectionView.reloadData()
     }
-    
-    @IBAction private func deleteAllBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        guard let inverseMoodList = inverseMoodList else { return }
-        if !inverseMoodList.isEmpty {
-            resetAll()
+        
+    @IBAction private func unwindToViewController(segue: UIStoryboardSegue) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
+                self.setImageButtons()
+                self.moodHistoryCollectionView.reloadData()
+            }
         }
     }
     
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         moodHistoryCollectionView.delegate = self
         moodHistoryCollectionView.dataSource = self
+        loadUserDefaults()
+        setImageButtons()
         customUI()
         moodHistoryCollectionView.register(MoodHistoryCollectionViewCell.nib,
                                            forCellWithReuseIdentifier: MoodHistoryCollectionViewCell.identifier)
@@ -56,9 +63,11 @@ final class MoodBoardViewController: UIViewController {
         moodHistoryCollectionView.collectionViewLayout = setLayout()
         adMobService.setAdMob(bannerView, self)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        loadUserDefaults()
+        setImageButtons()
         getInverseMoodList()
         moodHistoryCollectionView.reloadData()
     }
@@ -70,6 +79,8 @@ final class MoodBoardViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {    super.traitCollectionDidChange(previousTraitCollection)
         customUIDefaultMode()
         customShadowLabel(label: todayLabel)
+        setImageButtons()
+        moodHistoryCollectionView.reloadData()
     }
     
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -92,12 +103,36 @@ final class MoodBoardViewController: UIViewController {
         customView(view: historyView, radius: 20, width: 0.8, colorBorder: borderColor)
     }
     
-    func setLayout() -> UICollectionViewFlowLayout {
+    private func setLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 60, height: 120)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
         return layout
+    }
+    
+    private func loadUserDefaults() {
+        useDeviceSetting = UserSettings.useDeviceSetting
+        cuteTheme = UserSettings.cuteTheme
+        theme = UserSettings.theme
+    }
+    
+    private func setImageButtons() {
+//        if cuteTheme {
+//            for moodTodayButton in moodTodayButtons {
+//                if moodTodayButton.tag == 0 {
+//                    moodTodayButton.imageView?.image = UIImage(named: "def-smiling") // UIImage.appImage(.smiling)
+//                } else if moodTodayButton.tag == 1 {
+//                    moodTodayButton.imageView?.image = UIImage.appImage(.happy)
+//                } else if moodTodayButton.tag == 2 {
+//                    moodTodayButton.imageView?.image = UIImage.appImage(.neutral)
+//                } else if moodTodayButton.tag == 3 {
+//                    moodTodayButton.imageView?.image = UIImage.appImage(.sad)
+//                } else if moodTodayButton.tag == 4 {
+//                    moodTodayButton.imageView?.image = UIImage.appImage(.disappointed)
+//                }
+//            }
+//        }
     }
     
     private func getMoodForToday(moodName: String) {
@@ -113,15 +148,6 @@ final class MoodBoardViewController: UIViewController {
         inverseMoodList = dataManager.inverseMoodList()
     }
     
-    private func resetAll() {
-        let destructiveAction = UIAlertAction(title: "Reset all", style: .destructive, handler: { action in
-            let dataManager = DataManager()
-            dataManager.removeAllMoods()
-            self.moodHistoryCollectionView.reloadData()
-        })
-        showResetAlert(destructiveAction: destructiveAction)
-        
-    }
 }
 
 // MARK: - UICollectionViewDataSource - UICollectionViewDelegate

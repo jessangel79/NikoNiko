@@ -60,31 +60,31 @@
                                                     <constraint firstAttribute="height" constant="60" id="tAv-Xn-jCY"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="smiling" image="smiling"/>
+                                                <state key="normal" title="smiling"/>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lOu-cw-USL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuP-Fr-dgJ">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuP-Fr-dgJ">
                                                 <rect key="frame" x="92" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6LT-8x-PDs"/>
                                                     <constraint firstAttribute="width" secondItem="nuP-Fr-dgJ" secondAttribute="height" multiplier="1:1" id="ogI-R3-Hh1"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="happy" image="happy"/>
+                                                <state key="normal" title="happy"/>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z2s-KS-7uH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-8R-HKI">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-8R-HKI">
                                                 <rect key="frame" x="184" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="MD4-bG-vWO"/>
                                                     <constraint firstAttribute="width" secondItem="sBd-8R-HKI" secondAttribute="height" multiplier="1:1" id="sFq-C0-nsK"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="neutral" image="neutral"/>
+                                                <state key="normal" title="neutral"/>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R13-AK-3Le"/>
                                                 </connections>
@@ -95,26 +95,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-zf-6ZM">
                                         <rect key="frame" x="65.5" y="78" width="159" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-F0-e9l">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-F0-e9l">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uEA-F0-e9l" secondAttribute="height" multiplier="1:1" id="I9R-8F-0ba"/>
                                                     <constraint firstAttribute="height" constant="60" id="Yp4-GY-inp"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="sad" image="sad"/>
+                                                <state key="normal" title="sad"/>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNq-kk-qeW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-Id-Myd">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-Id-Myd">
                                                 <rect key="frame" x="99" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Pzn-u4-BOj"/>
                                                     <constraint firstAttribute="width" secondItem="t45-Id-Myd" secondAttribute="height" multiplier="1:1" id="eCa-av-0p5"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="disappointed" image="disappointed"/>
+                                                <state key="normal" title="disappointed"/>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZW-nn-xGD"/>
                                                 </connections>
@@ -200,20 +200,12 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Smq-MV-R9Z">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
-                        <leftBarButtonItems>
-                            <barButtonItem title="settings" image="gear" catalog="system" id="n5h-jq-qG0">
-                                <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="FSi-kx-6ub" kind="show" identifier="segueToSettings" id="rgb-cn-X2f"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="Xtm-HP-r4H">
-                                <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="deleteAllBarButtonItemPressed:" destination="Y6W-OH-hqX" id="kCC-Gz-0E7"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="settings" image="gear" catalog="system" id="n5h-jq-qG0">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="FSi-kx-6ub" kind="show" identifier="segueToSettings" id="rgb-cn-X2f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="0qm-UN-5Cl">
                             <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -278,15 +270,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="disappointed" width="96" height="96"/>
         <image name="dividingLine" width="2000" height="2000"/>
         <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="happy" width="96" height="96"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="neutral" width="96" height="96"/>
         <image name="puzzled" width="25" height="25"/>
-        <image name="sad" width="96" height="96"/>
-        <image name="smiling" width="96" height="96"/>
         <namedColor name="backGroundColor">
             <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

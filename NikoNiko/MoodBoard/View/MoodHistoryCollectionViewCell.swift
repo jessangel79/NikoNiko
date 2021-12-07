@@ -25,7 +25,7 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
         didSet {
             dayOfWeekLabel.text = mood?.date.dayOfWeek()
             dateLabel.text = mood?.date.toString().transformDate()
-            moodHistoryImageView.image = UIImage(named: mood?.name ?? "puzzledColor")
+            moodHistoryImageView.image = UIImage.appImage(AssetsImage(rawValue: mood?.name ?? "puzzledColor") ?? .puzzledColor) // UIImage(named: mood?.name ?? "puzzledColor")
         }
     }
     
@@ -33,7 +33,7 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
         didSet {
             dayOfWeekLabel.text = "Day"
             dateLabel.text = "--/--"
-            moodHistoryImageView.image = UIImage(named: moodDefault?.name ?? "puzzledColor")
+            moodHistoryImageView.image = UIImage.appImage(.puzzledColor) // UIImage(named: moodDefault?.name ?? "puzzledColor")
         }
     }
 

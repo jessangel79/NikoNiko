@@ -25,10 +25,12 @@ struct MyUserDefaults<DataType> {
 
 struct UserSettings {
     
-    @MyUserDefaults(key: "theme", defaultValue: 0)
-    static var theme: Int
-
-//    @MyUserDefaults(key: "isNotificationIsActivated", defaultValue: false)
-//    static var isNotificationIsActivated: Bool
+    @MyUserDefaults(key: "useDeviceSetting", defaultValue: true)
+    static var useDeviceSetting: Bool
     
+    @MyUserDefaults(key: "theme", defaultValue: "def")
+    static var theme: String
+    
+    @MyUserDefaults(key: "cuteTheme", defaultValue: false)
+    static var cuteTheme: Bool
 }

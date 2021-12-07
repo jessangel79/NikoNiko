@@ -10,7 +10,6 @@ import RealmSwift
 
 class Mood: Object {
     @Persisted var name = ""
-//    @Persisted var date = Date()
     @Persisted(indexed: true) var date = Date()
     
     convenience init(name: String, date: Date = Date()) {

@@ -43,15 +43,57 @@
                                     <action selector="deleteAllDatasButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uuV-im-n85"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-ov-IBd">
+                                <rect key="frame" x="25" y="69" width="270" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use device settings " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQI-Kh-bWo">
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="31"/>
+                                        <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="18"/>
+                                        <color key="textColor" name="fontColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DfO-up-lxg">
+                                        <rect key="frame" x="221" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="useDeviceSettingsSwitchSelected:" destination="Y6W-OH-hqX" eventType="valueChanged" id="fff-ho-VPw"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-mr-jLb">
+                                <rect key="frame" x="25" y="125" width="270" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cute theme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyc-Do-S7n">
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="31"/>
+                                        <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="18"/>
+                                        <color key="textColor" name="fontColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JLv-Ym-7QR">
+                                        <rect key="frame" x="221" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.44316029550000002" green="0.84570068119999997" blue="0.92942816019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="themeSwitchSelected:" destination="Y6W-OH-hqX" eventType="valueChanged" id="kAo-6S-EYO"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="backGroundColor"/>
                         <constraints>
+                            <constraint firstItem="HC7-mr-jLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="0Kw-sQ-YBc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4hz-5G-fjJ" secondAttribute="trailing" constant="25" id="0dP-Fp-Zy5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IEv-Xc-o3X" secondAttribute="bottom" id="HHH-HE-yGN"/>
                             <constraint firstItem="IEv-Xc-o3X" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MgH-kS-LgI"/>
                             <constraint firstItem="4hz-5G-fjJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="WMP-ri-CaH"/>
                             <constraint firstItem="IEv-Xc-o3X" firstAttribute="top" secondItem="4hz-5G-fjJ" secondAttribute="bottom" constant="15" id="aKI-IH-NNp"/>
+                            <constraint firstItem="uYJ-ov-IBd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="bUt-6f-lQn"/>
+                            <constraint firstItem="HC7-mr-jLb" firstAttribute="top" secondItem="uYJ-ov-IBd" secondAttribute="bottom" constant="25" id="e9M-DB-dj5"/>
+                            <constraint firstItem="uYJ-ov-IBd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="gaq-0S-43t"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HC7-mr-jLb" secondAttribute="trailing" constant="25" id="xmQ-Pg-Ide"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uYJ-ov-IBd" secondAttribute="trailing" constant="25" id="y2T-hS-PCz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="vys-XB-im1">
@@ -67,9 +109,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="IEv-Xc-o3X" id="qFB-2A-Ueb"/>
+                        <outlet property="themeSwitch" destination="JLv-Ym-7QR" id="z8E-GX-dak"/>
+                        <outlet property="useDeviceSettingsSwitch" destination="DfO-up-lxg" id="o1q-vn-m02"/>
+                        <segue destination="ka5-I2-QGS" kind="unwind" identifier="segueToMoodBoard" unwindAction="unwindToViewControllerWithSegue:" id="myL-Y5-qIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ka5-I2-QGS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1128.75" y="63.380281690140848"/>
         </scene>
@@ -96,6 +142,9 @@
     <resources>
         <namedColor name="backGroundColor">
             <color red="0.80199998617172241" green="0.98799997568130493" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fontColor">
+            <color red="0.034000001847743988" green="0.0" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>

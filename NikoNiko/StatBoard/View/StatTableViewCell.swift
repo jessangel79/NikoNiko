@@ -35,6 +35,6 @@ class StatTableViewCell: UITableViewCell {
     func setupCellWithTuple(_ indexPath: IndexPath, _ statMoodTupleList: [(nameMood: String, statMood: Int)]) {
         let moodRow = statMoodTupleList[indexPath.row]
         statLabel.text = String(moodRow.statMood)
-        moodImageView.image = UIImage(named: moodRow.nameMood)
+        moodImageView.image = UIImage.appImage(AssetsImage(rawValue: moodRow.nameMood) ?? .puzzledColor) // UIImage(named: moodRow.nameMood)
     }
 }

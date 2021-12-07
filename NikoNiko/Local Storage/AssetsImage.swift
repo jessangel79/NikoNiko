@@ -1,5 +1,5 @@
 //
-//  NameMood.swift
+//  AssetsImage.swift
 //  NikoNiko
 //
 //  Created by Angelique Babin on 02/12/2021.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum NameMood: String {
-    case happy
+enum AssetsImage: String {
     case smiling
+    case happy
     case neutral
     case sad
     case disappointed

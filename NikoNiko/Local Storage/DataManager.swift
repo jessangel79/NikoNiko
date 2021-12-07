@@ -13,19 +13,20 @@ final class DataManager {
     var moodList: Results<Mood>!
     
     func updateMood(realm: Realm? = try? Realm(), moodName: String, forDate date: Date) {
+        let moodNameCutPrefixTheme = moodName //.cutStartString()
         let notificationToken = notificationToken()
         do {
             moodList = (realm?.objects(Mood.self))
             if moodList.isEmpty {
-                addMood(realm, withName: moodName, forDate: date)
+                addMood(realm, withName: moodNameCutPrefixTheme, forDate: date)
             }
             guard let moodToUpdate = moodList.last else { return }
             if moodToUpdate.date.toString(format: FormatDate.formatted.rawValue) == date.toString(format: FormatDate.formatted.rawValue) {
                 try realm?.write {
-                    moodToUpdate.name = moodName
+                    moodToUpdate.name = moodNameCutPrefixTheme
                 }
             } else {
-                addMood(realm, withName: moodName, forDate: date)
+                addMood(realm, withName: moodNameCutPrefixTheme, forDate: date)
             }
         } catch let error as NSError {
             print("error : \(error.localizedDescription)")
@@ -136,11 +137,11 @@ final class DataManager {
         let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
         let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
         var statMoodList = [(nameMood: String, statMood: Int)]()
-        let moodSmiling = (nameMood: NameMood.smiling.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.smiling.rawValue))
-        let moodHappy = (nameMood: NameMood.happy.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.happy.rawValue))
-        let moodNeutral = (nameMood: NameMood.neutral.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.neutral.rawValue))
-        let moodSad = (nameMood: NameMood.sad.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.sad.rawValue))
-        let moodDisappointed = (nameMood: NameMood.disappointed.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, NameMood.disappointed.rawValue))
+        let moodSmiling = (nameMood: AssetsImage.smiling.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.smiling.rawValue))
+        let moodHappy = (nameMood: AssetsImage.happy.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.happy.rawValue))
+        let moodNeutral = (nameMood: AssetsImage.neutral.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.neutral.rawValue))
+        let moodSad = (nameMood: AssetsImage.sad.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.sad.rawValue))
+        let moodDisappointed = (nameMood: AssetsImage.disappointed.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.disappointed.rawValue))
         statMoodList.append(moodSmiling)
         statMoodList.append(moodHappy)
         statMoodList.append(moodNeutral)

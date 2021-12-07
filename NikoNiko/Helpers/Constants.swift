@@ -18,5 +18,6 @@ struct Cst {
     
     struct Segue {
         static let ToWebsiteInfo = "segueToWebsiteInfo"
+        static let ToMoodBoard = "segueToMoodBoard"
     }
 }
