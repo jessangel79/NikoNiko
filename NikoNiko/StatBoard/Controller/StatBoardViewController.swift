@@ -45,20 +45,31 @@ class StatBoardViewController: UIViewController {
         super.viewDidLoad()
         fromDateTextField.delegate = self
         toDateTextField.delegate = self
-        statTableView.delegate = self
-        statTableView.dataSource = self
         setDatePicker()
-        statTableView.register(StatTableViewCell.nib, forCellReuseIdentifier: StatTableViewCell.identifier)
-        statTableView.reloadData()
+        setTableView()
+        setUserInterfaceStyle()
         adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        setUserInterfaceStyle()
         statTableView.reloadData()
     }
 
     // MARK: - Methods
+    
+    private func setDatePicker() {
+        self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
+        self.toDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneToDate))
+    }
+
+    private func setTableView() {
+        statTableView.delegate = self
+        statTableView.dataSource = self
+        statTableView.register(StatTableViewCell.nib, forCellReuseIdentifier: StatTableViewCell.identifier)
+        statTableView.reloadData()
+    }
 
     private func getStatMoodToPeriod() {
         guard let fromDateStr = fromDateTextField.text, !fromDateStr.isBlank else { return presentAlert(typeError: .noStartDate) }
@@ -79,10 +90,6 @@ class StatBoardViewController: UIViewController {
         return true
     }
     
-    private func setDatePicker() {
-        self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
-        self.toDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneToDate))
-    }
 }
 
 // MARK: - UITableViewDataSource

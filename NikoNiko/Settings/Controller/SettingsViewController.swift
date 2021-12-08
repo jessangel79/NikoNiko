@@ -26,24 +26,32 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction private func closeModalBarButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func doneModalBarButtonItemTapped(_ sender: UIBarButtonItem) {
         UserSettings.useDeviceSetting = useDeviceSetting
         UserSettings.cuteTheme = cuteTheme
         UserSettings.theme = theme
         performSegue(withIdentifier: Cst.Segue.ToMoodBoard, sender: self)
     }
     
+    @IBAction func cancelModalBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     @IBAction private func useDeviceSettingsSwitchSelected(_ sender: UISwitch) {
-        useDeviceSetting = sender.isOn
+        if sender.isOn {
+            useDeviceSetting = true
+        } else {
+            useDeviceSetting = false
+        }
     }
     
     @IBAction private func themeSwitchSelected(_ sender: UISwitch) {
-        if !sender.isOn {
-            theme = Theme.def.rawValue
-            cuteTheme = false
-        } else {
+        if sender.isOn {
             theme = Theme.cute.rawValue
             cuteTheme = true
+        } else {
+            theme = Theme.def.rawValue
+            cuteTheme = false
         }
     }
     
@@ -60,16 +68,23 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserDefaults()
+        setUserInterfaceStyle()
         adMobService.setAdMob(bannerView, self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUserInterfaceStyle()
     }
     
     // MARK: - Methods
 
     private func loadUserDefaults() {
+        useDeviceSetting = UserSettings.useDeviceSetting
+        useDeviceSettingsSwitch.isOn = useDeviceSetting
         theme = UserSettings.theme
         cuteTheme = UserSettings.cuteTheme
-        themeSwitch.isOn = UserSettings.cuteTheme
-        useDeviceSetting = UserSettings.useDeviceSetting
+        themeSwitch.isOn = cuteTheme
     }
 
     private func resetAll() {

@@ -11,6 +11,15 @@ import UIKit
 
 extension UIViewController {
 
+    /// UserInterfaceStyle - Light and Dark Mode
+    func setUserInterfaceStyle() {
+        if !UserSettings.useDeviceSetting {
+            overrideUserInterfaceStyle = .light
+        } else {
+            overrideUserInterfaceStyle = .unspecified
+        }
+    }
+
     // MARK: - Buttons custom
     
     /// custom collection buttons

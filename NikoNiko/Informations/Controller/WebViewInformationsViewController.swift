@@ -44,10 +44,16 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        adMobService.setAdMob(bannerView, self)
+        setUserInterfaceStyle()
         let barItemsCollection: [UIBarButtonItem] = [forwardBarItem, refreshBarItem, backBarItem]
         setupWebView(webView: webView, barItemsCollection: barItemsCollection)
         loadWebsite(urlString, webView: webView)
+        adMobService.setAdMob(bannerView, self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUserInterfaceStyle()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -13,20 +13,19 @@ final class DataManager {
     var moodList: Results<Mood>!
     
     func updateMood(realm: Realm? = try? Realm(), moodName: String, forDate date: Date) {
-        let moodNameCutPrefixTheme = moodName //.cutStartString()
         let notificationToken = notificationToken()
         do {
             moodList = (realm?.objects(Mood.self))
             if moodList.isEmpty {
-                addMood(realm, withName: moodNameCutPrefixTheme, forDate: date)
+                addMood(realm, withName: moodName, forDate: date)
             }
             guard let moodToUpdate = moodList.last else { return }
             if moodToUpdate.date.toString(format: FormatDate.formatted.rawValue) == date.toString(format: FormatDate.formatted.rawValue) {
                 try realm?.write {
-                    moodToUpdate.name = moodNameCutPrefixTheme
+                    moodToUpdate.name = moodName
                 }
             } else {
-                addMood(realm, withName: moodNameCutPrefixTheme, forDate: date)
+                addMood(realm, withName: moodName, forDate: date)
             }
         } catch let error as NSError {
             print("error : \(error.localizedDescription)")

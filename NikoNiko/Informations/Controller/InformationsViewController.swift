@@ -45,6 +45,7 @@ final class InformationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
+        setUserInterfaceStyle()
         adMobService.setAdMob(bannerView, self)
         adViewDidReceiveAd(bannerView)
     }
@@ -52,6 +53,7 @@ final class InformationsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isToolbarHidden = true
+        setUserInterfaceStyle()
     }
 
     override func viewDidAppear(_ animated: Bool) {

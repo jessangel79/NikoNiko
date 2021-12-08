@@ -32,8 +32,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hz-5G-fjJ">
-                                <rect key="frame" x="25" y="424" width="270" height="30"/>
+                                <rect key="frame" x="25" y="410" width="270" height="44"/>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6fc-sQ-be8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Delete all your datas ?">
@@ -100,10 +103,16 @@
                         <barButtonItem key="backBarButtonItem" title="Settings" id="hkg-O9-brN">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="En0-V0-Ako">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YD5-sh-nxy">
                             <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="closeModalBarButtonTapped:" destination="Y6W-OH-hqX" id="drb-SL-Rzo"/>
+                                <action selector="cancelModalBarButtonItemTapped:" destination="Y6W-OH-hqX" id="VGs-uk-6ku"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="En0-V0-Ako">
+                            <color key="tintColor" red="0.034298732880000002" green="0.0002846512652" blue="0.5804288983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="doneModalBarButtonItemTapped:" destination="Y6W-OH-hqX" id="Ire-zj-Wi9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

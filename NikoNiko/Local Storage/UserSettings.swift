@@ -28,7 +28,7 @@ struct UserSettings {
     @MyUserDefaults(key: "useDeviceSetting", defaultValue: true)
     static var useDeviceSetting: Bool
     
-    @MyUserDefaults(key: "theme", defaultValue: "def")
+    @MyUserDefaults(key: "theme", defaultValue: Theme.def.rawValue)
     static var theme: String
     
     @MyUserDefaults(key: "cuteTheme", defaultValue: false)
