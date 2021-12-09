@@ -35,6 +35,7 @@ class StatBoardViewController: UIViewController {
     @IBAction func refreshBarButtonItemPressed(_ sender: UIBarButtonItem) {
         fromDateTextField.text = ""
         toDateTextField.text = ""
+//        setDefaultDatesTextField()
         statMoodTupleList.removeAll()
         statTableView.reloadData()
     }
@@ -45,6 +46,7 @@ class StatBoardViewController: UIViewController {
         super.viewDidLoad()
         fromDateTextField.delegate = self
         toDateTextField.delegate = self
+        setDefaultDatesTextField()
         setDatePicker()
         setTableView()
         setUserInterfaceStyle()
@@ -58,6 +60,11 @@ class StatBoardViewController: UIViewController {
     }
 
     // MARK: - Methods
+    
+    private func setDefaultDatesTextField() {
+        fromDateTextField.text = Date().addingTimeInterval(-(Double(24 * 60 * 60 * 30))).toString(format: FormatDate.onDisplay.rawValue)
+        toDateTextField.text = Date().toString(format: FormatDate.onDisplay.rawValue)
+    }
     
     private func setDatePicker() {
         self.fromDateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDoneFromDate))
@@ -151,6 +158,8 @@ extension StatBoardViewController {
             self.toDateTextField.text = setSelectedDate(datePicker: datePicker)
          }
         self.toDateTextField.resignFirstResponder()
+        self.getStatMoodToPeriod()
+        self.statTableView.reloadData()
     }
     
     private func setSelectedDate(datePicker: UIDatePicker) -> String {
@@ -168,10 +177,6 @@ extension StatBoardViewController {
 extension StatBoardViewController: UITextFieldDelegate {
     
     @IBAction func dismissKeyBoardTapGesture( _ sender: UITapGestureRecognizer) {
-        textFieldResignFirstResponder()
-    }
-    
-    private func textFieldResignFirstResponder() {
         fromDateTextField.resignFirstResponder()
         toDateTextField.resignFirstResponder()
     }

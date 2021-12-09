@@ -31,46 +31,46 @@ class RealmTests: XCTestCase {
     
     private func addFirstMood(_ testRealm: Realm) {
         let date = Date()
-        dataManager.updateMood(realm: testRealm, moodName: "def-happy", forDate: date)
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: date)
     }
     
     private func add5Moods(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         let date = Date().addingTimeInterval(-(24 * 60 * 60 * 4))
-        dataManager.updateMood(realm: testRealm, moodName: "def-happy", forDate: date)
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: date)
         let newDate = Date().addingTimeInterval(-(24 * 60 * 60 * 3))
-        dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: newDate)
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
         let newDate2 = Date().addingTimeInterval(-(24 * 60 * 60 * 2))
-        dataManager.updateMood(realm: testRealm, moodName: "def-disappointed", forDate: newDate2)
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate2)
         let newDate3 = Date().addingTimeInterval(-(24 * 60 * 60))
-        dataManager.updateMood(realm: testRealm, moodName: "def-smiling", forDate: newDate3)
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate3)
         let newDate4 = Date()
-        dataManager.updateMood(realm: testRealm, moodName: "def-sad", forDate: newDate4)
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate4)
     }
     
     /// Add 10 moods
     private func add10Moods(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         let newDate9 = Date().addingTimeInterval(-(24 * 60 * 60 * 9))
-        dataManager.updateMood(realm: testRealm, moodName: "def-happy", forDate: newDate9)
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: newDate9)
         let newDate8 = Date().addingTimeInterval(-(24 * 60 * 60 * 8))
-        dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: newDate8)
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate8)
         let newDate7 = Date().addingTimeInterval(-(24 * 60 * 60 * 7))
-        dataManager.updateMood(realm: testRealm, moodName: "def-disappointed", forDate: newDate7)
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate7)
         let newDate6 = Date().addingTimeInterval(-(24 * 60 * 60 * 6))
-        dataManager.updateMood(realm: testRealm, moodName: "def-smiling", forDate: newDate6)
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate6)
         let newDate5 = Date().addingTimeInterval(-(24 * 60 * 60 * 5))
-        dataManager.updateMood(realm: testRealm, moodName: "def-sad", forDate: newDate5)
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate5)
         let newDate4 = Date().addingTimeInterval(-(24 * 60 * 60 * 4))
-        dataManager.updateMood(realm: testRealm, moodName: "def-happy", forDate: newDate4)
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: newDate4)
         let newDate3 = Date().addingTimeInterval(-(24 * 60 * 60 * 3))
-        dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: newDate3)
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate3)
         let newDate2 = Date().addingTimeInterval(-(24 * 60 * 60 * 2))
-        dataManager.updateMood(realm: testRealm, moodName: "def-disappointed", forDate: newDate2)
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate2)
         let newDate1 = Date().addingTimeInterval(-(24 * 60 * 60))
-        dataManager.updateMood(realm: testRealm, moodName: "def-smiling", forDate: newDate1)
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate1)
         let newDate = Date()
-        dataManager.updateMood(realm: testRealm, moodName: "def-sad", forDate: newDate)
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate)
     }
     
     /// Add 35 moods
@@ -78,35 +78,35 @@ class RealmTests: XCTestCase {
         dataManager.removeAllMoods(realm: testRealm)
         
         let newDate = Date() // 1
-        dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: newDate)
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
         
         for index in 1...6 { // 6
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
-            dataManager.updateMood(realm: testRealm, moodName: "def-sad", forDate: newDate)
+            dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate)
         }
         for index in 7...16 { // 10
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
-            dataManager.updateMood(realm: testRealm, moodName: "def-happy", forDate: newDate)
+            dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: newDate)
         }
         for index in 17...19 { // 3
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
-            dataManager.updateMood(realm: testRealm, moodName: "def-smiling", forDate: newDate)
+            dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate)
         }
         for index in 20...26 { // 7
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
-            dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: newDate)
+            dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
         }
         for index in 27...34 { // 8
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
-            dataManager.updateMood(realm: testRealm, moodName: "def-disappointed", forDate: newDate)
+            dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate)
         }
     }
     
     private func updateMood(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         let date = Date()
-        dataManager.updateMood(realm: testRealm, moodName: "def-sad", forDate: date)
-        dataManager.updateMood(realm: testRealm, moodName: "def-neutral", forDate: date)
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: date)
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: date)
     }
     
     // MARK: - Tests DataManager
@@ -231,12 +231,4 @@ class RealmTests: XCTestCase {
         XCTAssertEqual(statMoodTupleList[3].statMood, 2)
         XCTAssertEqual(statMoodTupleList[4].statMood, 0)
     }
-
-    //    func testPerformanceExample() throws {
-    //        // This is an example of a performance test case.
-    //        self.measure {
-    //            // Put the code you want to measure the time of here.
-    //        }
-    //    }
-
 }

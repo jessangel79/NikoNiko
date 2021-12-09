@@ -35,14 +35,14 @@ final class MoodBoardViewController: UIViewController {
     }
     
     @IBAction private func unwindToViewController(segue: UIStoryboardSegue) {
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInteractive).async { //.userInitiated
             DispatchQueue.main.async {
-                self.setUserInterfaceStyle()
                 self.setImageButtons()
                 self.moodHistoryCollectionView.reloadData()
+                self.setUserInterfaceStyle()
+                self.customUI()
             }
         }
-        customUI()
     }
     
     // MARK: - View Life Cycle
@@ -61,8 +61,6 @@ final class MoodBoardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        setUserInterfaceStyle()
-//        setImageButtons()
         customUI()
         getInverseMoodList()
         moodHistoryCollectionView.reloadData()

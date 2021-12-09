@@ -26,6 +26,8 @@
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
 		3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */; };
 		3AA284DD275554E50064BA99 /* AdMobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284DC275554E50064BA99 /* AdMobService.swift */; };
+		3AA984F22762849700BA18AB /* MoodBoardViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA984F12762849700BA18AB /* MoodBoardViewControllerUITests.swift */; };
+		3AA984F42762849700BA18AB /* NikoNikoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA984F32762849700BA18AB /* NikoNikoUITestsLaunchTests.swift */; };
 		3AAA36A7275691F600FE4975 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A5275691F600FE4975 /* EventKitUI.framework */; };
 		3AAA36A8275691F600FE4975 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A6275691F600FE4975 /* EventKit.framework */; };
 		3AAA36AA275691FD00FE4975 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36A9275691FD00FE4975 /* AVFoundation.framework */; };
@@ -71,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3AA984F52762849700BA18AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A3EB504274C1805006EE44F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A3EB50B274C1805006EE44F;
+			remoteInfo = NikoNiko;
+		};
 		3AB53E3C274F9D85002B3960 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A3EB504274C1805006EE44F /* Project object */;
@@ -102,6 +111,9 @@
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284DC275554E50064BA99 /* AdMobService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobService.swift; sourceTree = "<group>"; };
+		3AA984EF2762849700BA18AB /* NikoNikoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA984F12762849700BA18AB /* MoodBoardViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardViewControllerUITests.swift; sourceTree = "<group>"; };
+		3AA984F32762849700BA18AB /* NikoNikoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoNikoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3AAA36A5275691F600FE4975 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		3AAA36A6275691F600FE4975 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		3AAA36A9275691FD00FE4975 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +184,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AA984EC2762849700BA18AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AB53E35274F9D85002B3960 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +216,7 @@
 			children = (
 				3A3EB50E274C1805006EE44F /* NikoNiko */,
 				3AB53E39274F9D85002B3960 /* NikoNikoTests */,
+				3AA984F02762849700BA18AB /* NikoNikoUITests */,
 				3A3EB50D274C1805006EE44F /* Products */,
 				C416985F620E9240A2560792 /* Pods */,
 				575A51495DF16424DE72B43C /* Frameworks */,
@@ -208,6 +228,7 @@
 			children = (
 				3A3EB50C274C1805006EE44F /* NikoNiko.app */,
 				3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */,
+				3AA984EF2762849700BA18AB /* NikoNikoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,9 +252,9 @@
 		3A4B1BA32759100400E5E2BD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3A4B1BA42759101400E5E2BD /* Model */,
 				3A4B1BA62759101C00E5E2BD /* Controller */,
 				3A4B1BA52759101900E5E2BD /* View */,
-				3A4B1BA42759101400E5E2BD /* Model */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -306,6 +327,15 @@
 			path = AdMob;
 			sourceTree = "<group>";
 		};
+		3AA984F02762849700BA18AB /* NikoNikoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3AA984F12762849700BA18AB /* MoodBoardViewControllerUITests.swift */,
+				3AA984F32762849700BA18AB /* NikoNikoUITestsLaunchTests.swift */,
+			);
+			path = NikoNikoUITests;
+			sourceTree = "<group>";
+		};
 		3AB53E39274F9D85002B3960 /* NikoNikoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,16 +351,8 @@
 			children = (
 				3AD35F1D275A4C32000BBCBD /* Controller */,
 				3AD35F1C275A4C2F000BBCBD /* View */,
-				3AD35F1B275A4C2B000BBCBD /* Model */,
 			);
 			path = StatBoard;
-			sourceTree = "<group>";
-		};
-		3AD35F1B275A4C2B000BBCBD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3AD35F1C275A4C2F000BBCBD /* View */ = {
@@ -490,6 +512,24 @@
 			productReference = 3A3EB50C274C1805006EE44F /* NikoNiko.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3AA984EE2762849700BA18AB /* NikoNikoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AA984F72762849800BA18AB /* Build configuration list for PBXNativeTarget "NikoNikoUITests" */;
+			buildPhases = (
+				3AA984EB2762849700BA18AB /* Sources */,
+				3AA984EC2762849700BA18AB /* Frameworks */,
+				3AA984ED2762849700BA18AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AA984F62762849700BA18AB /* PBXTargetDependency */,
+			);
+			name = NikoNikoUITests;
+			productName = NikoNikoUITests;
+			productReference = 3AA984EF2762849700BA18AB /* NikoNikoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		3AB53E37274F9D85002B3960 /* NikoNikoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB53E40274F9D85002B3960 /* Build configuration list for PBXNativeTarget "NikoNikoTests" */;
@@ -522,6 +562,10 @@
 					3A3EB50B274C1805006EE44F = {
 						CreatedOnToolsVersion = 13.1;
 					};
+					3AA984EE2762849700BA18AB = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 3A3EB50B274C1805006EE44F;
+					};
 					3AB53E37274F9D85002B3960 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = 3A3EB50B274C1805006EE44F;
@@ -546,6 +590,7 @@
 			targets = (
 				3A3EB50B274C1805006EE44F /* NikoNiko */,
 				3AB53E37274F9D85002B3960 /* NikoNikoTests */,
+				3AA984EE2762849700BA18AB /* NikoNikoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -567,6 +612,13 @@
 				3AD35F29275A5E59000BBCBD /* StatTableViewCell.xib in Resources */,
 				3AE29172274D22690068843A /* ApiKeys.plist in Resources */,
 				3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA984ED2762849700BA18AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +749,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AA984EB2762849700BA18AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AA984F42762849700BA18AB /* NikoNikoUITestsLaunchTests.swift in Sources */,
+				3AA984F22762849700BA18AB /* MoodBoardViewControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AB53E34274F9D85002B3960 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -711,6 +772,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3AA984F62762849700BA18AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A3EB50B274C1805006EE44F /* NikoNiko */;
+			targetProxy = 3AA984F52762849700BA18AB /* PBXContainerItemProxy */;
+		};
 		3AB53E3D274F9D85002B3960 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A3EB50B274C1805006EE44F /* NikoNiko */;
@@ -916,6 +982,52 @@
 			};
 			name = Release;
 		};
+		3AA984F82762849800BA18AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AS4ZG3MAQH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.NikoNikoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NikoNiko;
+			};
+			name = Debug;
+		};
+		3AA984F92762849800BA18AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AS4ZG3MAQH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.NikoNikoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NikoNiko;
+			};
+			name = Release;
+		};
 		3AB53E3E274F9D85002B3960 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7660031396D8251913734801 /* Pods-NikoNikoTests.debug.xcconfig */;
@@ -983,6 +1095,15 @@
 			buildConfigurations = (
 				3A3EB521274C1807006EE44F /* Debug */,
 				3A3EB522274C1807006EE44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AA984F72762849800BA18AB /* Build configuration list for PBXNativeTarget "NikoNikoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA984F82762849800BA18AB /* Debug */,
+				3AA984F92762849800BA18AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

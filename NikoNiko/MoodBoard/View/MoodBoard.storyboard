@@ -60,7 +60,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="tAv-Xn-jCY"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="smiling"/>
+                                                <state key="normal" title="smiling">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lOu-cw-USL"/>
                                                 </connections>
@@ -72,7 +74,9 @@
                                                     <constraint firstAttribute="width" secondItem="nuP-Fr-dgJ" secondAttribute="height" multiplier="1:1" id="ogI-R3-Hh1"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="happy"/>
+                                                <state key="normal" title="happy">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z2s-KS-7uH"/>
                                                 </connections>
@@ -84,7 +88,9 @@
                                                     <constraint firstAttribute="width" secondItem="sBd-8R-HKI" secondAttribute="height" multiplier="1:1" id="sFq-C0-nsK"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="neutral"/>
+                                                <state key="normal" title="neutral">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R13-AK-3Le"/>
                                                 </connections>
@@ -102,7 +108,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="Yp4-GY-inp"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="sad"/>
+                                                <state key="normal" title="sad">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNq-kk-qeW"/>
                                                 </connections>
@@ -114,7 +122,9 @@
                                                     <constraint firstAttribute="width" secondItem="t45-Id-Myd" secondAttribute="height" multiplier="1:1" id="eCa-av-0p5"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="disappointed"/>
+                                                <state key="normal" title="disappointed">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="moodTodayButtonsPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZW-nn-xGD"/>
                                                 </connections>

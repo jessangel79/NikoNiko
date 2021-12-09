@@ -39,11 +39,4 @@ extension String {
         }
         return dateTemp
     }
-    
-    func cutStartString() -> String { // _ int: Int
-        guard let endOfSentence = self.firstIndex(of: "-") else { return "" }
-        var firstSentence = self[endOfSentence...]
-        firstSentence.removeFirst()
-        return String(firstSentence)
-     }
 }

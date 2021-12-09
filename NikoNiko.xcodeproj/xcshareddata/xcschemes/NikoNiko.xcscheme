@@ -49,6 +49,16 @@
                ReferencedContainer = "container:NikoNiko.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3AA984EE2762849700BA18AB"
+               BuildableName = "NikoNikoUITests.xctest"
+               BlueprintName = "NikoNikoUITests"
+               ReferencedContainer = "container:NikoNiko.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
