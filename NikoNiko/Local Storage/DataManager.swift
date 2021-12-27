@@ -79,18 +79,6 @@ final class DataManager {
         }
     }
     
-//    func removeMood(realm: Realm? = try? Realm()) {
-//        do {
-//            moodList = (realm?.objects(Mood.self)) // ?
-//            try realm?.write {
-//                guard let moodToDelete = moodList.first else { return }
-//                realm?.delete(moodToDelete)
-//            }
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//    }
-    
     func inverseMoodList(realm: Realm? = try? Realm()) -> Results<Mood>? {
         moodList = (realm?.objects(Mood.self))
         return moodList.sorted(byKeyPath: "date", ascending: false)

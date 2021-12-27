@@ -11,6 +11,9 @@
 		3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */; };
 		3A0323E0275116D900D53B12 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323DF275116D900D53B12 /* StringExtensionTests.swift */; };
 		3A0323E22751236700D53B12 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0323E12751236700D53B12 /* DateExtensionTests.swift */; };
+		3A23AC9C277A111800CF22CC /* StatBoardViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23AC9B277A111800CF22CC /* StatBoardViewControllerUITests.swift */; };
+		3A23AC9E277A115A00CF22CC /* SettingsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23AC9D277A115A00CF22CC /* SettingsViewControllerUITests.swift */; };
+		3A23ACA0277A117E00CF22CC /* InformationsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23AC9F277A117E00CF22CC /* InformationsViewControllerUITests.swift */; };
 		3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB50F274C1805006EE44F /* AppDelegate.swift */; };
 		3A3EB512274C1805006EE44F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB511274C1805006EE44F /* SceneDelegate.swift */; };
 		3A3EB514274C1805006EE44F /* MoodBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB513274C1805006EE44F /* MoodBoardViewController.swift */; };
@@ -52,8 +55,6 @@
 		3AD35F29275A5E59000BBCBD /* StatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD35F27275A5E59000BBCBD /* StatTableViewCell.xib */; };
 		3AD35F2B275A6398000BBCBD /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F2A275A6398000BBCBD /* UITextField.swift */; };
 		3AE2916E274D21780068843A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2916D274D21780068843A /* README.md */; };
-		3AE29170274D22510068843A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2916F274D22510068843A /* ApiKeys.swift */; };
-		3AE29172274D22690068843A /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29171274D22690068843A /* ApiKeys.plist */; };
 		3AE29174274D23050068843A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE29173274D23040068843A /* Constants.swift */; };
 		3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29176274D2E570068843A /* MoodBoard.storyboard */; };
 		3AE29179274D3AC80068843A /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE29178274D3AC70068843A /* Monaco.ttf */; };
@@ -94,6 +95,9 @@
 		3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GADBannerViewDelegate.swift"; sourceTree = "<group>"; };
 		3A0323DF275116D900D53B12 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		3A0323E12751236700D53B12 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		3A23AC9B277A111800CF22CC /* StatBoardViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoardViewControllerUITests.swift; sourceTree = "<group>"; };
+		3A23AC9D277A115A00CF22CC /* SettingsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerUITests.swift; sourceTree = "<group>"; };
+		3A23AC9F277A117E00CF22CC /* InformationsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewControllerUITests.swift; sourceTree = "<group>"; };
 		3A3EB50C274C1805006EE44F /* NikoNiko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoNiko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3EB50F274C1805006EE44F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A3EB511274C1805006EE44F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +143,6 @@
 		3AD35F27275A5E59000BBCBD /* StatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatTableViewCell.xib; sourceTree = "<group>"; };
 		3AD35F2A275A6398000BBCBD /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		3AE2916D274D21780068843A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		3AE2916F274D22510068843A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		3AE29171274D22690068843A /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		3AE29173274D23040068843A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AE29176274D2E570068843A /* MoodBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodBoard.storyboard; sourceTree = "<group>"; };
 		3AE29178274D3AC70068843A /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
@@ -331,6 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				3AA984F12762849700BA18AB /* MoodBoardViewControllerUITests.swift */,
+				3A23AC9B277A111800CF22CC /* StatBoardViewControllerUITests.swift */,
+				3A23AC9D277A115A00CF22CC /* SettingsViewControllerUITests.swift */,
+				3A23AC9F277A117E00CF22CC /* InformationsViewControllerUITests.swift */,
 				3AA984F32762849700BA18AB /* NikoNikoUITestsLaunchTests.swift */,
 			);
 			path = NikoNikoUITests;
@@ -395,8 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				3AE29178274D3AC70068843A /* Monaco.ttf */,
-				3AE2916F274D22510068843A /* ApiKeys.swift */,
-				3AE29171274D22690068843A /* ApiKeys.plist */,
 				3A3EB50F274C1805006EE44F /* AppDelegate.swift */,
 				3A3EB511274C1805006EE44F /* SceneDelegate.swift */,
 				3A3EB518274C1807006EE44F /* Assets.xcassets */,
@@ -610,7 +613,6 @@
 				3AE29179274D3AC80068843A /* Monaco.ttf in Resources */,
 				3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */,
 				3AD35F29275A5E59000BBCBD /* StatTableViewCell.xib in Resources */,
-				3AE29172274D22690068843A /* ApiKeys.plist in Resources */,
 				3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,7 +739,6 @@
 				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
 				3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */,
-				3AE29170274D22510068843A /* ApiKeys.swift in Sources */,
 				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
 				3AABD364275F6E800021FA91 /* Theme.swift in Sources */,
 				3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */,
@@ -754,7 +755,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA984F42762849700BA18AB /* NikoNikoUITestsLaunchTests.swift in Sources */,
+				3A23AC9E277A115A00CF22CC /* SettingsViewControllerUITests.swift in Sources */,
 				3AA984F22762849700BA18AB /* MoodBoardViewControllerUITests.swift in Sources */,
+				3A23AC9C277A111800CF22CC /* StatBoardViewControllerUITests.swift in Sources */,
+				3A23ACA0277A117E00CF22CC /* InformationsViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Extension to custom buttons, views and labels
+// MARK: - Extension to custom buttons, views and labels - UIViewController
 
 extension UIViewController {
 

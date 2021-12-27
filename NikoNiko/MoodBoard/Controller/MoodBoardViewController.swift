@@ -35,7 +35,7 @@ final class MoodBoardViewController: UIViewController {
     }
     
     @IBAction private func unwindToViewController(segue: UIStoryboardSegue) {
-        DispatchQueue.global(qos: .userInteractive).async { //.userInitiated
+        DispatchQueue.global(qos: .userInteractive).async {
             DispatchQueue.main.async {
                 self.setImageButtons()
                 self.moodHistoryCollectionView.reloadData()
@@ -50,12 +50,7 @@ final class MoodBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
-        setCollectionView()
-        setUserInterfaceStyle()
-        setImageButtons()
-        customUI()
-        getInverseMoodList()
-        moodHistoryCollectionView.reloadData()
+        setApp()
         adMobService.setAdMob(bannerView, self)
     }
     
@@ -75,11 +70,6 @@ final class MoodBoardViewController: UIViewController {
         customShadowLabel(label: todayLabel)
         moodHistoryCollectionView.reloadData()
     }
-    
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        moodHistoryCollectionView.collectionViewLayout.invalidateLayout()
-//    }
 
     // MARK: - Methods
     
@@ -99,13 +89,14 @@ final class MoodBoardViewController: UIViewController {
         return layout
     }
     
-//    private func setApp() {
-//        setUserInterfaceStyle()
-//        setImageButtons()
-//        customUI()
-//        getInverseMoodList()
-//        moodHistoryCollectionView.reloadData()
-//    }
+    private func setApp() {
+        setCollectionView()
+        setUserInterfaceStyle()
+        setImageButtons()
+        customUI()
+        getInverseMoodList()
+        moodHistoryCollectionView.reloadData()
+    }
     
     private func setImageButtons() {
         for moodTodayButton in moodTodayButtons {

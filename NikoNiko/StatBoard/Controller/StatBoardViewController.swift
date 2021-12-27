@@ -33,9 +33,7 @@ class StatBoardViewController: UIViewController {
     }
     
     @IBAction func refreshBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        fromDateTextField.text = ""
-        toDateTextField.text = ""
-//        setDefaultDatesTextField()
+        setDefaultDatesTextField()
         statMoodTupleList.removeAll()
         statTableView.reloadData()
     }
@@ -46,10 +44,7 @@ class StatBoardViewController: UIViewController {
         super.viewDidLoad()
         fromDateTextField.delegate = self
         toDateTextField.delegate = self
-        setDefaultDatesTextField()
-        setDatePicker()
-        setTableView()
-        setUserInterfaceStyle()
+        setApp()
         adMobService.setAdMob(bannerView, self)
     }
     
@@ -60,6 +55,13 @@ class StatBoardViewController: UIViewController {
     }
 
     // MARK: - Methods
+    
+    private func setApp() {
+        setDefaultDatesTextField()
+        setDatePicker()
+        setTableView()
+        setUserInterfaceStyle()
+    }
     
     private func setDefaultDatesTextField() {
         fromDateTextField.text = Date().addingTimeInterval(-(Double(24 * 60 * 60 * 30))).toString(format: FormatDate.onDisplay.rawValue)
@@ -167,7 +169,7 @@ extension StatBoardViewController {
         dateFormatter.dateFormat = FormatDate.onDisplay.rawValue
         dateFormatter.dateStyle = .short
         let selectedDate = dateFormatter.string(from: datePicker.date)
-        print("Selected value \(selectedDate)")
+//        print("Selected value \(selectedDate)")
         return selectedDate
     }
 }

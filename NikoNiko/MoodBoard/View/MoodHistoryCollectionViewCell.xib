@@ -44,7 +44,7 @@
                                     <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="18"/>
                                 </variation>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledColor" translatesAutoresizingMaskIntoConstraints="NO" id="byv-NG-gkI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="byv-NG-gkI">
                                 <rect key="frame" x="0.0" y="60" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HWc-FX-MXo"/>
@@ -83,7 +83,4 @@
             <point key="canvasLocation" x="13.043478260869566" y="168.75"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="puzzledColor" width="96" height="96"/>
-    </resources>
 </document>

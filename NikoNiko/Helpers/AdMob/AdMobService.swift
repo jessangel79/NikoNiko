@@ -13,7 +13,7 @@ final class AdMobService {
 
     func setAdMob(_ bannerView: GADBannerView, _ viewController: UIViewController) {
         bannerView.delegate = viewController
-        bannerView.adUnitID = Cst.AdMob.AdUnitIDTest // Test
+        bannerView.adUnitID = Cst.AdMob.AdUnitIDProd
         bannerView.rootViewController = viewController
  //        print("Google Mobile Ads SDK version: \(GADMobileAds.sharedInstance().sdkVersion)")
         bannerView.load(GADRequest())
