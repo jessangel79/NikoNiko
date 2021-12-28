@@ -9,7 +9,11 @@ import XCTest
 
 class StatBoardViewControllerUITests: XCTestCase {
     
+    // MARK: - Properties
+    
     var app: XCUIApplication!
+    
+    // MARK: - Tests Life Cycle
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,6 +29,16 @@ class StatBoardViewControllerUITests: XCTestCase {
     }
 
     override func tearDownWithError() throws {}
+    
+    // MARK: - Helpers
+
+    enum FormatDate: String {
+        case formatted = "yyyy-MM-dd"
+        case noFormatted = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        case onDisplay = "dd/MM/yyyy"
+    }
+    
+    // MARK: - Tests StatBoardViewControllerUI
 
     func testTapEndDateInStatistics() throws {
         app.buttons["disappointed"].tap()
@@ -36,12 +50,12 @@ class StatBoardViewControllerUITests: XCTestCase {
         XCTAssertFalse(app.label.isEmpty)
 
         let datePickersQuery = app.datePickers
-        app.textFields["01/11/2021"].tap()
+        app.textFields["fromDate"].tap()
         datePickersQuery.pickers.pickerWheels["December"].swipeUp()
 
         let doneButton = app.toolbars["Toolbar"].buttons["Done"]
         doneButton.tap()
-        app.textFields["30/11/2021"].tap()
+        app.textFields["toDate"].tap()
         doneButton.tap()
         
         XCTAssertEqual(app.otherElements.element.staticTexts["0"].exists, true)
@@ -57,20 +71,38 @@ class StatBoardViewControllerUITests: XCTestCase {
     
     func testSearchButtonInStatistics() throws {
         app.tabBars["Tab Bar"].buttons["Statistics"].tap()
-        app.textFields["01/11/2021"].tap()
-        app.textFields["30/11/2021"].tap()
-        let doneButton = app.toolbars["Toolbar"].buttons["Done"]
-        doneButton.tap()
+        app.textFields["fromDate"].tap()
+        app.textFields["toDate"].tap()
+        let cancelButton = app.toolbars["Toolbar"].buttons["Cancel"]
+        cancelButton.tap()
         app.navigationBars["Mood Stats"].buttons["Search"].tap()
         let toDate = Date().toString(format: FormatDate.onDisplay.rawValue)
         let fromDate = Date().addingTimeInterval(-(24 * 60 * 60 * 30)).toString(format: FormatDate.onDisplay.rawValue)
         XCTAssertEqual(app.textFields[fromDate].exists, true)
         XCTAssertEqual(app.textFields[toDate].exists, true)
     }
-}
-
-enum FormatDate: String {
-    case formatted = "yyyy-MM-dd"
-    case noFormatted = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-    case onDisplay = "dd/MM/yyyy"
+    
+    func testIfStartDateIsEmpty() throws {
+        app.tabBars["Tab Bar"].buttons["Statistics"].tap()
+        app.textFields["fromDate"].buttons["Clear text"].tap()
+        app.navigationBars["Mood Stats"].buttons["Search"].tap()
+        XCTAssertEqual(app.alerts.staticTexts["No start date"].exists, true)
+    }
+    
+    func testIfEndDateIsEmpty() throws {
+        app.tabBars["Tab Bar"].buttons["Statistics"].tap()
+        app.textFields["toDate"].buttons["Clear text"].tap()
+        app.navigationBars["Mood Stats"].buttons["Search"].tap()
+        XCTAssertEqual(app.alerts.staticTexts["No end date"].exists, true)
+    }
+    
+    func testIfDateIsIncorrect() throws {
+        app.tabBars["Tab Bar"].buttons["Statistics"].tap()
+        let datePickersQuery = app.datePickers
+        app.textFields["toDate"].tap()
+        datePickersQuery.pickers.pickerWheels["December"].swipeUp()
+        let doneButton = app.toolbars["Toolbar"].buttons["Done"]
+        doneButton.tap()
+        XCTAssertEqual(app.alerts.staticTexts["Error date"].exists, true)
+    }
 }

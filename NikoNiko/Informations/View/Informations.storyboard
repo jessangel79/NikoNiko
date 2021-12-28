@@ -37,6 +37,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-JL-dlO">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="iconPngTree"/>
                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                 <connections>
                                                     <action selector="pngTreeButtonTapped:" destination="xSj-Tc-4qv" eventType="touchUpInside" id="Nk7-7E-AL2"/>
@@ -67,6 +68,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K39-Kd-YfT">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="devios"/>
                                                 <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                                 <connections>
                                                     <action selector="angelAppDevButtonTapped:" destination="xSj-Tc-4qv" eventType="touchUpInside" id="ktB-Yd-IOk"/>
@@ -99,6 +101,7 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-Nj-43w" userLabel="LinkedInButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="badgeLinkedIn"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -221,6 +224,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5hs-fX-KpE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="webView"/>
                         <constraints>
                             <constraint firstItem="fN6-Tq-jfS" firstAttribute="bottom" secondItem="5hs-fX-KpE" secondAttribute="bottom" id="5Q2-Yh-98l"/>
                             <constraint firstItem="qku-HA-tsm" firstAttribute="top" secondItem="5hs-fX-KpE" secondAttribute="top" id="AJm-JA-eIg"/>

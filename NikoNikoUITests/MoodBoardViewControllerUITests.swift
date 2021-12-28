@@ -6,11 +6,14 @@
 //
 
 import XCTest
-//@testable import NikoNiko
 
 class MoodBoardViewControllerUITests: XCTestCase {
     
+    // MARK: - Properties
+    
     var app: XCUIApplication!
+    
+    // MARK: - Tests Life Cycle
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,14 +31,19 @@ class MoodBoardViewControllerUITests: XCTestCase {
 
     override func tearDownWithError() throws {}
     
+    // MARK: - Tests MoodBoardViewControllerUI
+    
     func testTapOnMoodButton() throws {
         app.buttons["happy"].tap()
         let dateString = Date().toString().transformDate()
+        guard let dayOfWeek = Date().dayOfWeek() else { return }
         XCTAssertTrue(app.collectionViews.cells.staticTexts[dateString].exists)
         XCTAssertTrue(app.collectionViews.cells.images.element.exists)
-        XCTAssertEqual(app.collectionViews.cells.otherElements.otherElements.staticTexts["Mon"].exists, true)
+        print(dateString)
+        print(dayOfWeek)
+        print(Date())
+        XCTAssertEqual(app.collectionViews.cells.otherElements.otherElements.staticTexts[dayOfWeek].exists, true)
         XCTAssertEqual(app.collectionViews.cells.otherElements.otherElements.staticTexts[dateString].exists, true)
-
         XCTAssertEqual(app.otherElements.element.staticTexts["smiling"].exists, true)
         XCTAssertEqual(app.otherElements.element.staticTexts["happy"].exists, true)
         XCTAssertEqual(app.otherElements.element.staticTexts["neutral"].exists, true)
@@ -44,17 +52,17 @@ class MoodBoardViewControllerUITests: XCTestCase {
         XCTAssertEqual(app.otherElements.element.staticTexts["puzzledColor"].exists, false)
     }
 
-//    func testLaunchPerformance() throws {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTApplicationLaunchMetric()]) {
-//                XCUIApplication().launch()
-//            }
-//        }
-//    }
+    func testLaunchPerformance() throws {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+            // This measures how long it takes to launch your application.
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
+                XCUIApplication().launch()
+            }
+        }
+    }
 }
 
-// MARK: - Helpers
+// MARK: - Extension Date to UI Tests
 
 extension Date {
     
@@ -67,11 +75,14 @@ extension Date {
     
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = "EEE"
         return dateFormatter.string(from: self).capitalized
     }
 
 }
+
+// MARK: - Extension String to UI Tests
 
 extension String {
     /// transform date no formatted in date formatted

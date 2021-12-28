@@ -9,7 +9,11 @@ import XCTest
 
 class SettingsViewControllerUITests: XCTestCase {
     
+    // MARK: - Properties
+    
     var app: XCUIApplication!
+    
+    // MARK: - Tests Life Cycle
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,6 +29,8 @@ class SettingsViewControllerUITests: XCTestCase {
     }
     
     override func tearDownWithError() throws {}
+    
+    // MARK: - Tests SettingsViewControllerUI
 
     func testResetAllButtonInSettings() throws {
         app.buttons["happy"].tap()
@@ -46,18 +52,6 @@ class SettingsViewControllerUITests: XCTestCase {
         XCTAssertTrue(app.collectionViews.cells.images.element.exists)
     }
     
-//    func enableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
-//        if !(switchPath.value.debugDescription == "Optional(1)") {
-//            switchPath.tap()
-//        }
-//    }
-
-//    func disableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
-//        if switchPath.value.debugDescription == "Optional(1)" {
-//            switchPath.tap()
-//        }
-//    }
-    
     func testSwitchExists() throws {
         app.navigationBars["MoodBoard"].buttons["settings"].tap()
         print(app.debugDescription)
@@ -75,14 +69,19 @@ class SettingsViewControllerUITests: XCTestCase {
         app.navigationBars["Settings"].buttons["Cancel"].tap()
         XCTAssertEqual(app.otherElements.staticTexts["Use device settings"].exists, false)
         XCTAssertEqual(app.otherElements.staticTexts["Cute theme"].exists, false)
-        
-//        XCTAssertEqual(cuteSwitch.isSelected.description, "Optional(1)")
-        //        XCTAssertEqual(app.otherElements.switches["Use device settings"].value.debugDescription, "0")
-        //        XCTAssertEqual(app.otherElements.switches["Use device settings"].value.debugDescription, "0")
-        //        print(app.otherElements.switches["Use device settings"].valueIndicators.debugDescription)
-        //        print(app.otherElements.switches["Use device settings"].value.debugDescription)
-                
     }
+
+//    func disableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
+//        if switchPath.value.debugDescription == "1" {
+//            switchPath.tap()
+//        }
+//    }
+    
+//    func enableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
+//        if !(switchPath.value.debugDescription == "Optional(1)") {
+//            switchPath.tap()
+//        }
+//    }
 }
 
 //extension XCUIElement {
