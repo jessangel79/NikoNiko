@@ -46,7 +46,6 @@
 		3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */; };
 		3AABD362275F6D030021FA91 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AABD361275F6D030021FA91 /* UIImage.swift */; };
 		3AABD364275F6E800021FA91 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AABD363275F6E800021FA91 /* Theme.swift */; };
-		3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */; };
 		3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E41274F9F70002B3960 /* RealmTests.swift */; };
 		3AB5602A275B8CB40052732E /* UITableViewCell+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */; };
 		3AD35F1F275A4C64000BBCBD /* StatBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */; };
@@ -134,7 +133,6 @@
 		3AABD361275F6D030021FA91 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		3AABD363275F6E800021FA91 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoNikoTests.swift; sourceTree = "<group>"; };
 		3AB53E41274F9F70002B3960 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CustomUI.swift"; sourceTree = "<group>"; };
 		3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoardViewController.swift; sourceTree = "<group>"; };
@@ -345,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				3A0323DE275116D000D53B12 /* Extensions */,
-				3AB53E3A274F9D85002B3960 /* NikoNikoTests.swift */,
 				3AB53E41274F9F70002B3960 /* RealmTests.swift */,
 			);
 			path = NikoNikoTests;
@@ -766,7 +763,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB53E3B274F9D85002B3960 /* NikoNikoTests.swift in Sources */,
 				3A0323E22751236700D53B12 /* DateExtensionTests.swift in Sources */,
 				3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */,
 				3A0323E0275116D900D53B12 /* StringExtensionTests.swift in Sources */,

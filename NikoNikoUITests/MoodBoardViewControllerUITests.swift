@@ -26,7 +26,7 @@ class MoodBoardViewControllerUITests: XCTestCase {
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
         XCUIDevice.shared.orientation = .portrait
-        print(app.debugDescription)
+//        print(app.debugDescription)
     }
 
     override func tearDownWithError() throws {}
@@ -79,7 +79,20 @@ extension Date {
         dateFormatter.dateFormat = "EEE"
         return dateFormatter.string(from: self).capitalized
     }
-
+    
+    func getCurrentMonth() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self).capitalized
+    }
+    
+    func getCurrentYear() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "YYYY"
+        return dateFormatter.string(from: self).capitalized
+    }
 }
 
 // MARK: - Extension String to UI Tests

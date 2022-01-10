@@ -43,19 +43,19 @@ class StatBoardViewControllerUITests: XCTestCase {
     func testTapEndDateInStatistics() throws {
         app.buttons["disappointed"].tap()
         app.tabBars["Tab Bar"].buttons["Statistics"].tap()
-        print(app.debugDescription)
+//        print(app.debugDescription)
 
         XCTAssertEqual(app.tableRows.cells.element.exists, false)
         XCTAssertEqual(app.tableRows.cells.images.element.exists, false)
         XCTAssertFalse(app.label.isEmpty)
 
         let datePickersQuery = app.datePickers
-        app.textFields["fromDate"].tap()
-        datePickersQuery.pickers.pickerWheels["December"].swipeUp()
-
-        let doneButton = app.toolbars["Toolbar"].buttons["Done"]
-        doneButton.tap()
+        guard let month = Date().getCurrentMonth() else { return }
+        guard let year = Date().getCurrentYear() else { return }
         app.textFields["toDate"].tap()
+        datePickersQuery.pickers.pickerWheels[month].swipeUp(velocity: .slow)
+        datePickersQuery.pickers.pickerWheels[year].swipeUp(velocity: .slow)
+        let doneButton = app.toolbars["Toolbar"].buttons["Done"]
         doneButton.tap()
         
         XCTAssertEqual(app.otherElements.element.staticTexts["0"].exists, true)
@@ -98,10 +98,15 @@ class StatBoardViewControllerUITests: XCTestCase {
     
     func testIfDateIsIncorrect() throws {
         app.tabBars["Tab Bar"].buttons["Statistics"].tap()
+        guard let month = Date().getCurrentMonth() else { return }
+        guard let year = Date().getCurrentYear() else { return }
         let datePickersQuery = app.datePickers
-        app.textFields["toDate"].tap()
-        datePickersQuery.pickers.pickerWheels["December"].swipeUp()
+        app.textFields["fromDate"].tap()
+        datePickersQuery.pickers.pickerWheels[month].swipeUp()
         let doneButton = app.toolbars["Toolbar"].buttons["Done"]
+        doneButton.tap()
+        app.textFields["toDate"].tap()
+        datePickersQuery.pickers.pickerWheels[year].swipeDown()
         doneButton.tap()
         XCTAssertEqual(app.alerts.staticTexts["Error date"].exists, true)
     }

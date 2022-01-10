@@ -35,7 +35,7 @@ class SettingsViewControllerUITests: XCTestCase {
     func testResetAllButtonInSettings() throws {
         app.buttons["happy"].tap()
         app.navigationBars["MoodBoard"].buttons["settings"].tap()
-        print(app.debugDescription)
+//        print(app.debugDescription)
         app.buttons["Delete all your datas ?"].staticTexts["Delete all your datas ?"].tap()
         XCTAssertTrue(app.alerts.element.exists)
         XCTAssertEqual(app.alerts.staticTexts["Warning Reset All"].exists, true)
@@ -54,7 +54,7 @@ class SettingsViewControllerUITests: XCTestCase {
     
     func testSwitchExists() throws {
         app.navigationBars["MoodBoard"].buttons["settings"].tap()
-        print(app.debugDescription)
+//        print(app.debugDescription)
         XCTAssertEqual(app.otherElements.staticTexts["Use device settings"].exists, true)
         XCTAssertEqual(app.otherElements.staticTexts["Cute theme"].exists, true)
 
@@ -70,22 +70,4 @@ class SettingsViewControllerUITests: XCTestCase {
         XCTAssertEqual(app.otherElements.staticTexts["Use device settings"].exists, false)
         XCTAssertEqual(app.otherElements.staticTexts["Cute theme"].exists, false)
     }
-
-//    func disableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
-//        if switchPath.value.debugDescription == "1" {
-//            switchPath.tap()
-//        }
-//    }
-    
-//    func enableSwitch(app: XCUIApplication, switchPath: XCUIElement) {
-//        if !(switchPath.value.debugDescription == "Optional(1)") {
-//            switchPath.tap()
-//        }
-//    }
 }
-
-//extension XCUIElement {
-//    var isOn: Bool? {
-//        return (self.value as? String).map { $0 == "1" }
-//    }
-//}
