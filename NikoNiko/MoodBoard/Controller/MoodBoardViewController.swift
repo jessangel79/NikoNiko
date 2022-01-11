@@ -7,23 +7,27 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
+//import GoogleMobileAds
+import AdColony
 
 final class MoodBoardViewController: UIViewController {
-    
+            
     // MARK: - Outlets
     
     @IBOutlet private var moodTodayButtons: [UIButton]!
     @IBOutlet private weak var historyView: UIView!
     @IBOutlet private var titleLabels: [UILabel]!
     @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
-    @IBOutlet private weak var bannerView: GADBannerView!
     @IBOutlet private weak var todayLabel: UILabel!
+//    @IBOutlet private weak var bannerView: GADBannerView!
+    @IBOutlet private weak var bannerPlacement: UIView!
     
     // MARK: - Properties
     
     private var inverseMoodList: Results<Mood>?
-    private let adMobService = AdMobService()
+    private weak var banner: AdColonyAdView?
+    private var adColonyService = AdColonyService()
+//    private let adMobService = AdMobService()
 
     // MARK: - Actions
     
@@ -51,7 +55,10 @@ final class MoodBoardViewController: UIViewController {
         super.viewDidLoad()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         setApp()
-        adMobService.setAdMob(bannerView, self)
+        adColonyService.requestBannerAd1(viewController: self)
+        
+//        adMobService.setAdMob(bannerView, self)
+//        adViewDidReceiveAd(bannerView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +70,8 @@ final class MoodBoardViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+//        adMobService.loadBannerAd(bannerView, view)
+//        adMobService.setAdMob(bannerView, self)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {    super.traitCollectionDidChange(previousTraitCollection)
@@ -165,5 +174,28 @@ extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 60, height: 120)
+    }
+}
+
+// MARK: - Extension AdColony AdView Delegate
+
+extension MoodBoardViewController {
+    
+    override func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
+        if let oldBanner = self.banner {
+            // remove previous banner if exists
+            oldBanner.destroy()
+        }
+        
+        // you can set AdView size to be the same as placement size
+        // AdView will take care about banner centering
+        let placementSize = self.bannerPlacement.frame.size
+        adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
+        
+        // add banner to view
+        self.bannerPlacement.addSubview(adView)
+        
+        // store banner reference to be able to clear it later
+        self.banner = adView
     }
 }

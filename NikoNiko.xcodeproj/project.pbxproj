@@ -24,6 +24,8 @@
 		3A4B1BA82759103700E5E2BD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA72759103700E5E2BD /* Settings.storyboard */; };
 		3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */; };
 		3A4B1BAC275941ED00E5E2BD /* AssetsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BAB275941ED00E5E2BD /* AssetsImage.swift */; };
+		3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8A278DDB360007405C /* AdColonyService.swift */; };
+		3A52AB8D278DE1F70007405C /* UIViewController+ADColonyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */; };
 		3A991B332757E2ED0091587F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A991B322757E2ED0091587F /* UIColor.swift */; };
 		3AA284D6275554380064BA99 /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA284D5275554380064BA99 /* Informations.storyboard */; };
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
@@ -109,6 +111,12 @@
 		3A4B1BA72759103700E5E2BD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3A4B1BAB275941ED00E5E2BD /* AssetsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsImage.swift; sourceTree = "<group>"; };
+		3A52AB79278DAA5F0007405C /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		3A52AB7A278DAA5F0007405C /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurementIdentitySupport.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		3A52AB7B278DAA5F0007405C /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		3A52AB7C278DAA5F0007405C /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A52AB8A278DDB360007405C /* AdColonyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyService.swift; sourceTree = "<group>"; };
+		3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ADColonyBanner.swift"; sourceTree = "<group>"; };
 		3A991B322757E2ED0091587F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3AA284D5275554380064BA99 /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -319,12 +327,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3AA284DB275554D50064BA99 /* AdMob */ = {
+		3AA284DB275554D50064BA99 /* AdServices */ = {
 			isa = PBXGroup;
 			children = (
+				3A52AB8A278DDB360007405C /* AdColonyService.swift */,
 				3AA284DC275554E50064BA99 /* AdMobService.swift */,
 			);
-			path = AdMob;
+			path = AdServices;
 			sourceTree = "<group>";
 		};
 		3AA984F02762849700BA18AB /* NikoNikoUITests */ = {
@@ -429,7 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE29173274D23040068843A /* Constants.swift */,
-				3AA284DB275554D50064BA99 /* AdMob */,
+				3AA284DB275554D50064BA99 /* AdServices */,
 				3AE2916C274D21090068843A /* Extensions */,
 			);
 			path = Helpers;
@@ -444,6 +453,7 @@
 				3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */,
 				3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */,
 				3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */,
+				3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */,
 				3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */,
 				3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */,
 				3AD35F2A275A6398000BBCBD /* UITextField.swift */,
@@ -456,6 +466,10 @@
 		575A51495DF16424DE72B43C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A52AB79278DAA5F0007405C /* GoogleAppMeasurement.xcframework */,
+				3A52AB7A278DAA5F0007405C /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				3A52AB7B278DAA5F0007405C /* GoogleMobileAds.xcframework */,
+				3A52AB7C278DAA5F0007405C /* GoogleUtilities.framework */,
 				3AEB93732756ACDE00405217 /* WebKit.framework */,
 				3AAA36B92756924800FE4975 /* SystemConfiguration.framework */,
 				3AAA36B72756923F00FE4975 /* StoreKit.framework */,
@@ -735,6 +749,7 @@
 				3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */,
 				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
+				3A52AB8D278DE1F70007405C /* UIViewController+ADColonyBanner.swift in Sources */,
 				3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */,
 				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
 				3AABD364275F6E800021FA91 /* Theme.swift in Sources */,
@@ -744,6 +759,7 @@
 				3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */,
 				3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */,
 				3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */,
+				3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,6 +1001,7 @@
 		3AA984F82762849800BA18AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
@@ -1008,6 +1025,7 @@
 		3AA984F92762849800BA18AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;

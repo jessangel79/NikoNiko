@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import GoogleMobileAds
+import AdColony
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setColorNavBar()
         setRealm()
         setAdMob()
+        setAdColony()
         return true
     }
 
@@ -26,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        .all
+//    }
     
     // MARK: - Methods
     
@@ -66,9 +72,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Adapter Name: %@, Description: %@, Latency: %f", adapter.key,
                       adapterStatus.description, adapterStatus.latency)
             }
-            
+
         }
-        //        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, "04b5955b04ab689e9a3e11e6927572c3" ]
+    }
+    
+    private func setAdColony() {
+        AdColony.configure(withAppID: "appfdcf4491fc88422781", zoneIDs: ["vzb85522c99b784ad1a1", "vz6aec3496ad0343b08a"], options: nil) { [weak self] (zones) in
+            // configured
+        }
     }
 }

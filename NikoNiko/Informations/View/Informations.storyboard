@@ -131,7 +131,7 @@
                                     <constraint firstItem="ccZ-AO-ePA" firstAttribute="leading" secondItem="TwM-3Y-dNS" secondAttribute="leading" constant="30" id="uXv-II-hJl"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQr-sT-rpJ" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQr-sT-rpJ">
                                 <rect key="frame" x="0.0" y="469" width="320" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -165,7 +165,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="DQr-sT-rpJ" id="Q6W-Xy-pSI"/>
+                        <outlet property="bannerPlacement" destination="DQr-sT-rpJ" id="clI-dk-GKY"/>
                         <segue destination="7nY-SW-XHO" kind="show" identifier="segueToWebsiteInfo" id="Km1-vF-q00"/>
                     </connections>
                 </viewController>

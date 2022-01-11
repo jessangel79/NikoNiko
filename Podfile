@@ -7,6 +7,7 @@ target 'NikoNiko' do
   use_frameworks!
 
   pod 'Google-Mobile-Ads-SDK'
+  pod 'AdColony'
 
   target 'NikoNikoTests' do
     inherit! :search_paths

@@ -6,13 +6,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
+import AdColony
 
 final class InformationsViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet private weak var bannerView: GADBannerView!
+//    @IBOutlet private weak var bannerView: GADBannerView!
+    @IBOutlet private weak var bannerPlacement: UIView!
 
     // MARK: - Properties
 
@@ -20,7 +22,9 @@ final class InformationsViewController: UIViewController {
     private let pngTree = "https://pngtree.com/so/Avion"
     private let angelAppDev = "http://www.angelappdev.io"
     private var urlString = String()
-    private let adMobService = AdMobService()
+//    private let adMobService = AdMobService()
+    private weak var banner: AdColonyAdView?
+    private var adColonyService = AdColonyService()
 
     // MARK: - Actions
 
@@ -46,8 +50,10 @@ final class InformationsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
         setUserInterfaceStyle()
-        adMobService.setAdMob(bannerView, self)
-        adViewDidReceiveAd(bannerView)
+        adColonyService.requestBannerAd2(viewController: self)
+
+//        adMobService.setAdMob(bannerView, self)
+//        adViewDidReceiveAd(bannerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +64,7 @@ final class InformationsViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+//        adMobService.loadBannerAd(bannerView, view)
     }
 
     // MARK: - Methods
@@ -76,5 +83,19 @@ extension InformationsViewController {
             guard let websiteInfoVC = segue.destination as? WebViewInformationsViewController else { return }
             websiteInfoVC.urlString = self.urlString
         }
+    }
+}
+
+// MARK: - Extension AdColony AdView Delegate
+
+extension InformationsViewController {
+    override func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
+        if let oldBanner = self.banner {
+            oldBanner.destroy()
+        }
+        let placementSize = self.bannerPlacement.frame.size
+        adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
+        self.bannerPlacement.addSubview(adView)
+        self.banner = adView
     }
 }
