@@ -7,19 +7,23 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
+//import GoogleMobileAds
+import AdColony
 
 class SettingsViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private weak var bannerView: GADBannerView!
+//    @IBOutlet private weak var bannerView: GADBannerView!
+    @IBOutlet private weak var bannerPlacement: UIView!
     @IBOutlet private weak var useDeviceSettingsSwitch: UISwitch!
     @IBOutlet private weak var themeSwitch: UISwitch!
     
     // MARK: - Properties
     
-    private let adMobService = AdMobService()
+//    private let adMobService = AdMobService()
+    private weak var banner: AdColonyAdView?
+    private var adColonyService = AdColonyService()
     private var cuteTheme = false
     private var theme = Theme.def.rawValue
     private var useDeviceSetting = true
@@ -69,7 +73,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         loadUserDefaults()
         setUserInterfaceStyle()
-        adMobService.setAdMob(bannerView, self)
+        adColonyService.requestMediumRectBannerAd(Cst.AdColony.BannerMediumRect, self)
+//        adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,4 +101,19 @@ class SettingsViewController: UIViewController {
         showResetAlert(destructiveAction: destructiveAction)
     }
 
+}
+
+// MARK: - Extension AdColony AdView Delegate
+
+extension SettingsViewController {
+    override func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
+        if let oldBanner = self.banner {
+            oldBanner.destroy()
+        }
+        let placementSize = kAdColonyAdSizeMediumRectangle // 320x250
+//        let placementSize = self.bannerPlacement.frame.size
+        adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
+        self.bannerPlacement.addSubview(adView)
+        self.banner = adView
+    }
 }

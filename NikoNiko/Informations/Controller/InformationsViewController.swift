@@ -50,7 +50,7 @@ final class InformationsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
         setUserInterfaceStyle()
-        adColonyService.requestBannerAd2(viewController: self)
+        adColonyService.requestBannerAd(Cst.AdColony.Banner2, self) // 2
 
 //        adMobService.setAdMob(bannerView, self)
 //        adViewDidReceiveAd(bannerView)

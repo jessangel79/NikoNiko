@@ -25,8 +25,11 @@
 		3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BA92759107700E5E2BD /* SettingsViewController.swift */; };
 		3A4B1BAC275941ED00E5E2BD /* AssetsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BAB275941ED00E5E2BD /* AssetsImage.swift */; };
 		3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8A278DDB360007405C /* AdColonyService.swift */; };
-		3A52AB8D278DE1F70007405C /* UIViewController+ADColonyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */; };
+		3A52AB8D278DE1F70007405C /* UIViewController+AdColonyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8C278DE1F70007405C /* UIViewController+AdColonyBanner.swift */; };
 		3A991B332757E2ED0091587F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A991B322757E2ED0091587F /* UIColor.swift */; };
+		3AA28254278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA28253278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift */; };
+		3AA28257278F3C0600CAB5ED /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA28255278F3C0600CAB5ED /* Keys.swift */; };
+		3AA28258278F3C0600CAB5ED /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA28256278F3C0600CAB5ED /* Keys.plist */; };
 		3AA284D6275554380064BA99 /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA284D5275554380064BA99 /* Informations.storyboard */; };
 		3AA284D82755546E0064BA99 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D72755546E0064BA99 /* InformationsViewController.swift */; };
 		3AA284DA2755548B0064BA99 /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */; };
@@ -116,8 +119,11 @@
 		3A52AB7B278DAA5F0007405C /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		3A52AB7C278DAA5F0007405C /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A52AB8A278DDB360007405C /* AdColonyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyService.swift; sourceTree = "<group>"; };
-		3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ADColonyBanner.swift"; sourceTree = "<group>"; };
+		3A52AB8C278DE1F70007405C /* UIViewController+AdColonyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AdColonyBanner.swift"; sourceTree = "<group>"; };
 		3A991B322757E2ED0091587F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3AA28253278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AdColonyInterstitial.swift"; sourceTree = "<group>"; };
+		3AA28255278F3C0600CAB5ED /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		3AA28256278F3C0600CAB5ED /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		3AA284D5275554380064BA99 /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
 		3AA284D72755546E0064BA99 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3AA284D92755548B0064BA99 /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +411,8 @@
 		3AE29168274D20E10068843A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AA28256278F3C0600CAB5ED /* Keys.plist */,
+				3AA28255278F3C0600CAB5ED /* Keys.swift */,
 				3AE29178274D3AC70068843A /* Monaco.ttf */,
 				3A3EB50F274C1805006EE44F /* AppDelegate.swift */,
 				3A3EB511274C1805006EE44F /* SceneDelegate.swift */,
@@ -453,7 +461,8 @@
 				3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */,
 				3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */,
 				3AAA36BD2756A59900FE4975 /* UIViewController+Alert.swift */,
-				3A52AB8C278DE1F70007405C /* UIViewController+ADColonyBanner.swift */,
+				3A52AB8C278DE1F70007405C /* UIViewController+AdColonyBanner.swift */,
+				3AA28253278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift */,
 				3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */,
 				3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */,
 				3AD35F2A275A6398000BBCBD /* UITextField.swift */,
@@ -619,6 +628,7 @@
 				3AA284D6275554380064BA99 /* Informations.storyboard in Resources */,
 				3AD35F21275A4C8C000BBCBD /* StatBoard.storyboard in Resources */,
 				3AE29177274D2E570068843A /* MoodBoard.storyboard in Resources */,
+				3AA28258278F3C0600CAB5ED /* Keys.plist in Resources */,
 				3AE2916E274D21780068843A /* README.md in Resources */,
 				3A3EB517274C1805006EE44F /* Main.storyboard in Resources */,
 				3AE29179274D3AC80068843A /* Monaco.ttf in Resources */,
@@ -749,7 +759,7 @@
 				3A3EB510274C1805006EE44F /* AppDelegate.swift in Sources */,
 				3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */,
 				3AFA312F274EB4B90068FADF /* Mood.swift in Sources */,
-				3A52AB8D278DE1F70007405C /* UIViewController+ADColonyBanner.swift in Sources */,
+				3A52AB8D278DE1F70007405C /* UIViewController+AdColonyBanner.swift in Sources */,
 				3A4B1BAA2759107700E5E2BD /* SettingsViewController.swift in Sources */,
 				3A011B042756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift in Sources */,
 				3AABD364275F6E800021FA91 /* Theme.swift in Sources */,
@@ -759,6 +769,8 @@
 				3AAA36BE2756A59900FE4975 /* UIViewController+Alert.swift in Sources */,
 				3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */,
 				3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */,
+				3AA28254278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift in Sources */,
+				3AA28257278F3C0600CAB5ED /* Keys.swift in Sources */,
 				3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,4 +20,13 @@ struct Cst {
         static let ToWebsiteInfo = "segueToWebsiteInfo"
         static let ToMoodBoard = "segueToMoodBoard"
     }
+    
+    struct AdColony {
+        static let AppUUID = valueForUUIDKey(named: "AdColonyAppUUID")
+        static let Banner1 = "vzb85522c99b784ad1a1"
+        static let Banner2 = "vz6aec3496ad0343b08a"
+        static let Interstitial = "vzf7d1df791b5446a5b7"
+        static let BannerMediumRect = "vz9c33d64665964a36be"
+        // "vzb85522c99b784ad1a1", "vz6aec3496ad0343b08a", "vzf7d1df791b5446a5b7"
+    }
 }

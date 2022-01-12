@@ -1,5 +1,5 @@
 //
-//  UIViewController+ADColonyBanner.swift
+//  UIViewController+AdColonyBanner.swift
 //  NikoNiko
 //
 //  Created by Angelique Babin on 11/01/2022.

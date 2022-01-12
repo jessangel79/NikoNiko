@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
+import AdColony
 
-class StatBoardViewController: UIViewController {
+final class StatBoardViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -18,12 +19,14 @@ class StatBoardViewController: UIViewController {
     @IBOutlet private weak var statTableView: UITableView! {
         didSet { statTableView.tableFooterView = UIView() }
     }
-    @IBOutlet private weak var bannerView: GADBannerView!
-    
+//    @IBOutlet private weak var bannerView: GADBannerView!
+    @IBOutlet private weak var bannerPlacement: UIView!
+
     // MARK: - Properties
     
     private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
-    private let adMobService = AdMobService()
+    private var adColonyService = AdColonyService()
+//    private let adMobService = AdMobService()
     
     // MARK: - Actions
     
@@ -45,13 +48,22 @@ class StatBoardViewController: UIViewController {
         fromDateTextField.delegate = self
         toDateTextField.delegate = self
         setApp()
-        adMobService.setAdMob(bannerView, self)
+        
+        adColonyService.destroyAd()
+        adColonyService.requestBannerAd(Cst.AdColony.Banner1, self) // 1
+        adColonyService.requestInterstitial(Cst.AdColony.Interstitial, self)
+//        adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUserInterfaceStyle()
         statTableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        adColonyService.showAd(self)
     }
 
     // MARK: - Methods
@@ -181,5 +193,37 @@ extension StatBoardViewController: UITextFieldDelegate {
     @IBAction func dismissKeyBoardTapGesture( _ sender: UITapGestureRecognizer) {
         fromDateTextField.resignFirstResponder()
         toDateTextField.resignFirstResponder()
+    }
+}
+
+// MARK: - Extension AdColony Interstitial Delegate
+
+extension StatBoardViewController {
+    
+    override func adColonyInterstitialDidLoad(_ interstitial: AdColonyInterstitial) {
+        adColonyService.interstitial = interstitial
+    }
+    
+    // Handle loading error
+    override func adColonyInterstitialDidFail(toLoad error: AdColonyAdRequestError) {
+        print("Interstitial request failed with error: \(error.localizedDescription) and suggestion: \(error.localizedRecoverySuggestion!)")
+    }
+    
+    // Handle expiring ads (optional)
+    override func adColonyInterstitialExpired(_ interstitial: AdColonyInterstitial) {
+        adColonyService.interstitial = nil
+        adColonyService.requestInterstitial(Cst.AdColony.Interstitial, self)
+    }
+}
+
+// MARK: - Extension AdColony AdView Delegate
+
+extension StatBoardViewController {
+    override func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
+        adColonyService.destroyAd()
+        let placementSize = self.bannerPlacement.frame.size
+        adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
+        self.bannerPlacement.addSubview(adView)
+        adColonyService.banner = adView
     }
 }

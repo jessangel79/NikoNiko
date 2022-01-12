@@ -23,29 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEv-Xc-o3X" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="JBI-tz-mtn"/>
-                                    <constraint firstAttribute="height" constant="50" id="wMc-uh-rvu"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hz-5G-fjJ">
-                                <rect key="frame" x="25" y="410" width="270" height="44"/>
-                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6fc-sQ-be8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Delete all your datas ?">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteAllDatasButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uuV-im-n85"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-ov-IBd">
                                 <rect key="frame" x="25" y="69" width="270" height="31"/>
                                 <subviews>
@@ -82,19 +59,42 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hz-5G-fjJ">
+                                <rect key="frame" x="25" y="465" width="270" height="44"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6fc-sQ-be8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Delete all your datas ?">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAllDatasButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uuV-im-n85"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFC-a8-RZ3">
+                                <rect key="frame" x="10" y="186" width="300" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="CYH-Dx-z6j"/>
+                                    <constraint firstAttribute="width" constant="300" id="MWw-9t-NLg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="backGroundColor"/>
                         <constraints>
                             <constraint firstItem="HC7-mr-jLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="0Kw-sQ-YBc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4hz-5G-fjJ" secondAttribute="trailing" constant="25" id="0dP-Fp-Zy5"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IEv-Xc-o3X" secondAttribute="bottom" id="HHH-HE-yGN"/>
-                            <constraint firstItem="IEv-Xc-o3X" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MgH-kS-LgI"/>
                             <constraint firstItem="4hz-5G-fjJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="WMP-ri-CaH"/>
-                            <constraint firstItem="IEv-Xc-o3X" firstAttribute="top" secondItem="4hz-5G-fjJ" secondAttribute="bottom" constant="15" id="aKI-IH-NNp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4hz-5G-fjJ" secondAttribute="bottom" constant="10" id="bGP-80-YsJ"/>
                             <constraint firstItem="uYJ-ov-IBd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="bUt-6f-lQn"/>
                             <constraint firstItem="HC7-mr-jLb" firstAttribute="top" secondItem="uYJ-ov-IBd" secondAttribute="bottom" constant="25" id="e9M-DB-dj5"/>
                             <constraint firstItem="uYJ-ov-IBd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="gaq-0S-43t"/>
+                            <constraint firstItem="cFC-a8-RZ3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="puT-ya-UQG"/>
+                            <constraint firstItem="cFC-a8-RZ3" firstAttribute="top" secondItem="HC7-mr-jLb" secondAttribute="bottom" constant="30" id="wgS-iV-hFA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HC7-mr-jLb" secondAttribute="trailing" constant="25" id="xmQ-Pg-Ide"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uYJ-ov-IBd" secondAttribute="trailing" constant="25" id="y2T-hS-PCz"/>
                         </constraints>
@@ -117,7 +117,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="IEv-Xc-o3X" id="qFB-2A-Ueb"/>
+                        <outlet property="bannerPlacement" destination="cFC-a8-RZ3" id="YT1-vS-mK3"/>
                         <outlet property="themeSwitch" destination="JLv-Ym-7QR" id="z8E-GX-dak"/>
                         <outlet property="useDeviceSettingsSwitch" destination="DfO-up-lxg" id="o1q-vn-m02"/>
                         <segue destination="ka5-I2-QGS" kind="unwind" identifier="segueToMoodBoard" unwindAction="unwindToViewControllerWithSegue:" id="myL-Y5-qIm"/>

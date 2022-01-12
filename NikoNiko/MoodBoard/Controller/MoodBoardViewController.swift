@@ -25,7 +25,6 @@ final class MoodBoardViewController: UIViewController {
     // MARK: - Properties
     
     private var inverseMoodList: Results<Mood>?
-    private weak var banner: AdColonyAdView?
     private var adColonyService = AdColonyService()
 //    private let adMobService = AdMobService()
 
@@ -55,8 +54,9 @@ final class MoodBoardViewController: UIViewController {
         super.viewDidLoad()
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         setApp()
-        adColonyService.requestBannerAd1(viewController: self)
-        
+        adColonyService.destroyAd()
+        adColonyService.requestBannerAd(Cst.AdColony.Banner1, self) // 1
+
 //        adMobService.setAdMob(bannerView, self)
 //        adViewDidReceiveAd(bannerView)
     }
@@ -182,20 +182,10 @@ extension MoodBoardViewController: UICollectionViewDataSource, UICollectionViewD
 extension MoodBoardViewController {
     
     override func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
-        if let oldBanner = self.banner {
-            // remove previous banner if exists
-            oldBanner.destroy()
-        }
-        
-        // you can set AdView size to be the same as placement size
-        // AdView will take care about banner centering
+        adColonyService.destroyAd()
         let placementSize = self.bannerPlacement.frame.size
         adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
-        
-        // add banner to view
         self.bannerPlacement.addSubview(adView)
-        
-        // store banner reference to be able to clear it later
-        self.banner = adView
+        adColonyService.banner = adView
     }
 }

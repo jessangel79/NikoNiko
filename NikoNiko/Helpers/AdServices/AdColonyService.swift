@@ -10,62 +10,42 @@ import AdColony
 
 final class AdColonyService {
     
-    func requestBannerAd1(viewController: UIViewController) {
-        AdColony.requestAdView(inZone: "vzb85522c99b784ad1a1", with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: viewController)
+    weak var banner: AdColonyAdView?
+    weak var interstitial: AdColonyInterstitial?
+    
+    // MARK: - Banner
+    
+    func requestBannerAd(_ inZone: String, _ viewController: UIViewController) {
+        AdColony.requestAdView(inZone: inZone, with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: viewController)
     }
     
-    func requestBannerAd2(viewController: UIViewController) {
-        AdColony.requestAdView(inZone: "vz6aec3496ad0343b08a", with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: viewController)
+    func requestMediumRectBannerAd(_ inZone: String, _ viewController: UIViewController) {
+        AdColony.requestAdView(inZone: inZone, with: kAdColonyAdSizeMediumRectangle, viewController: viewController, andDelegate: viewController)
+    }
+    
+//    func requestBannerAd1(_ viewController: UIViewController) { // "vzb85522c99b784ad1a1"
+//        AdColony.requestAdView(inZone: Cst.AdColony.Banner1, with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: viewController)
+//    }
+//
+//    func requestBannerAd2(_ viewController: UIViewController) { // "vz6aec3496ad0343b08a"
+//        AdColony.requestAdView(inZone: Cst.AdColony.Banner2, with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: viewController)
+//    }
+    
+    func destroyAd() {
+        if let adBanner = banner {
+            adBanner.destroy()
+        }
+    }
+    
+    // MARK: - Interstitial
+    
+    func requestInterstitial(_ inZone: String, _ viewController: UIViewController) { // "vzf7d1df791b5446a5b7" Cst.AdColony.Interstitial
+        AdColony.requestInterstitial(inZone: inZone, options: nil, andDelegate: viewController)
+    }
+    
+    func showAd(_ viewController: UIViewController) {
+        if let interstitial = interstitial, !interstitial.expired {
+            interstitial.show(withPresenting: viewController)
+        }
     }
 }
-
-//final class AdColonyService: NSObject, AdColonyAdViewDelegate {
-//
-//    weak var banner: AdColonyAdView?
-//    weak var bannerPlacement: UIView!
-//
-//    func requestBanner(viewController: UIViewController, bannerPlacement: UIView) {
-//        AdColony.requestAdView(inZone: "vzb85522c99b784ad1a1", with: kAdColonyAdSizeBanner, viewController: viewController, andDelegate: self)
-//    }
-//
-//    // handle new banner
-//    func adColonyAdViewDidLoad(_ adView: AdColonyAdView) {
-//        if let oldBanner = self.banner {
-//            // remove previous banner if exists
-//            oldBanner.destroy()
-//        }
-//
-//        // you can set AdView size to be the same as placement size
-//        // AdView will take care about banner centering
-//        let placementSize = self.bannerPlacement.frame.size
-//        adView.frame = CGRect(x: 0, y: 0, width: placementSize.width, height: placementSize.height)
-//
-//        // add banner to view
-//        self.bannerPlacement.addSubview(adView)
-//
-//        // store banner reference to be able to clear it later
-//        self.banner = adView
-//    }
-//
-//    // handler banner loading failure
-//    func adColonyAdViewDidFail(toLoad error: AdColonyAdRequestError) {
-//        print("Banner request failed with error: \(error.localizedDescription) and suggestion: \(error.localizedRecoverySuggestion!)")
-//    }
-//
-//    // print AdColony
-//    func adColonyAdViewWillOpen(_ adView: AdColonyAdView) {
-//        print("AdView will open fullscreen view")
-//    }
-//
-//    func adColonyAdViewDidClose(_ adView: AdColonyAdView) {
-//        print("AdView did close fullscreen views")
-//    }
-//
-//    func adColonyAdViewWillLeaveApplication(_ adView: AdColonyAdView) {
-//        print("AdView will send used outside the app")
-//    }
-//
-//    func adColonyAdViewDidReceiveClick(_ adView: AdColonyAdView) {
-//        print("AdView received a click")
-//    }
-//}
