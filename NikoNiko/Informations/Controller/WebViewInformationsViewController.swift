@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import GoogleMobileAds
+// import GoogleMobileAds
 
 final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
     
@@ -16,17 +16,18 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
     @IBOutlet private weak var webView: WKWebView!
     @IBOutlet private weak var safariBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var bannerView: GADBannerView!
+    @IBOutlet private weak var bannerPlacement: UIView!
+    //    @IBOutlet private weak var bannerView: GADBannerView!
     
     // MARK: - Properties
     
-    private let forwardBarItem = UIBarButtonItem(title: ">>", style: .plain, target: self,
+    private let forwardBarItem = UIBarButtonItem(title: ">>", style: .plain, target: WebViewInformationsViewController.self,
                                          action: #selector(forwardAction))
-    private let backBarItem = UIBarButtonItem(title: "<<", style: .plain, target: self,
+    private let backBarItem = UIBarButtonItem(title: "<<", style: .plain, target: WebViewInformationsViewController.self,
                                       action: #selector(backAction))
-    private let refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+    private let refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: WebViewInformationsViewController.self, action: #selector(refresh))
 
-    private let adMobService = AdMobService()
+//    private let adMobService = AdMobService()
     
     var urlString = String()
     
@@ -48,7 +49,7 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
         let barItemsCollection: [UIBarButtonItem] = [forwardBarItem, refreshBarItem, backBarItem]
         setupWebView(webView: webView, barItemsCollection: barItemsCollection)
         loadWebsite(urlString, webView: webView)
-        adMobService.setAdMob(bannerView, self)
+//        adMobService.setAdMob(bannerView, self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

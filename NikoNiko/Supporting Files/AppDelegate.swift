@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
+// import GoogleMobileAds
 import AdColony
 
 @main
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setColorNavBar()
         setRealm()
-        setAdMob()
+//        setAdMob()
         setAdColony()
         return true
     }
@@ -62,22 +62,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        deleteRealmIfMigrationNeeded: true
     }
     
-    private func setAdMob() {
-        let ads = GADMobileAds.sharedInstance()
-        ads.start { status in
-            // Optional: Log each adapter's initialization latency.
-            let adapterStatuses = status.adapterStatusesByClassName
-            for adapter in adapterStatuses {
-                let adapterStatus = adapter.value
-                NSLog("Adapter Name: %@, Description: %@, Latency: %f", adapter.key,
-                      adapterStatus.description, adapterStatus.latency)
-            }
-
-        }
-        
-//        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, "04b5955b04ab689e9a3e11e6927572c3" ]
-    }
+//    private func setAdMob() {
+//        let ads = GADMobileAds.sharedInstance()
+//        ads.start { status in
+//            // Optional: Log each adapter's initialization latency.
+//            let adapterStatuses = status.adapterStatusesByClassName
+//            for adapter in adapterStatuses {
+//                let adapterStatus = adapter.value
+//                NSLog("Adapter Name: %@, Description: %@, Latency: %f", adapter.key,
+//                      adapterStatus.description, adapterStatus.latency)
+//            }
+//
+//        }
+//
+////        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, "04b5955b04ab689e9a3e11e6927572c3" ]
+//    }
     
     private func setAdColony() {
         AdColony.configure(withAppID: Cst.AdColony.AppUUID, zoneIDs: [Cst.AdColony.Banner1,
@@ -85,6 +85,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                       Cst.AdColony.Interstitial,
                                                                       Cst.AdColony.BannerMediumRect], options: nil) { [] (zones) in
             // config RGPD [weak self]
+            if UserSettings.gdpr {
+                
+            } else {
+                
+            }
+
         }
         // "vzb85522c99b784ad1a1", "vz6aec3496ad0343b08a", "vzf7d1df791b5446a5b7"
     }

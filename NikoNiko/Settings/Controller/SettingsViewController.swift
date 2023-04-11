@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-//import GoogleMobileAds
+// import GoogleMobileAds
 import AdColony
 
 class SettingsViewController: UIViewController {

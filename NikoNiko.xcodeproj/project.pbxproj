@@ -26,6 +26,8 @@
 		3A4B1BAC275941ED00E5E2BD /* AssetsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1BAB275941ED00E5E2BD /* AssetsImage.swift */; };
 		3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8A278DDB360007405C /* AdColonyService.swift */; };
 		3A52AB8D278DE1F70007405C /* UIViewController+AdColonyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB8C278DE1F70007405C /* UIViewController+AdColonyBanner.swift */; };
+		3A9501B729B649820072D381 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9501B629B649820072D381 /* Realm */; };
+		3A9501B929B649820072D381 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9501B829B649820072D381 /* RealmSwift */; };
 		3A991B332757E2ED0091587F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A991B322757E2ED0091587F /* UIColor.swift */; };
 		3AA28254278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA28253278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift */; };
 		3AA28257278F3C0600CAB5ED /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA28255278F3C0600CAB5ED /* Keys.swift */; };
@@ -67,8 +69,6 @@
 		3AF6AEE92754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE72754D80700A8D6E5 /* MoodHistoryCollectionViewCell.swift */; };
 		3AF6AEEA2754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF6AEE82754D80700A8D6E5 /* MoodHistoryCollectionViewCell.xib */; };
 		3AF6AEF22754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF6AEF12754FEB600A8D6E5 /* UICollectionViewCell+CustomUI.swift */; };
-		3AFA312B274EB2C70068FADF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312A274EB2C70068FADF /* Realm */; };
-		3AFA312D274EB2C70068FADF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AFA312C274EB2C70068FADF /* RealmSwift */; };
 		3AFA312F274EB4B90068FADF /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA312E274EB4B90068FADF /* Mood.swift */; };
 		3AFA3131274EB5120068FADF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3130274EB5120068FADF /* DataManager.swift */; };
 		3AFA3133274EBFF00068FADF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3132274EBFF00068FADF /* String.swift */; };
@@ -180,15 +180,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9501B729B649820072D381 /* Realm in Frameworks */,
 				3AAA36A7275691F600FE4975 /* EventKitUI.framework in Frameworks */,
 				3AAA36B42756922D00FE4975 /* CoreMedia.framework in Frameworks */,
+				3A9501B929B649820072D381 /* RealmSwift in Frameworks */,
 				3AAA36B62756923700FE4975 /* MessageUI.framework in Frameworks */,
 				3AAA36A8275691F600FE4975 /* EventKit.framework in Frameworks */,
 				3AAA36AA275691FD00FE4975 /* AVFoundation.framework in Frameworks */,
 				3AEB93742756ACDE00405217 /* WebKit.framework in Frameworks */,
 				3AAA36AE2756921000FE4975 /* AudioToolbox.framework in Frameworks */,
-				3AFA312D274EB2C70068FADF /* RealmSwift in Frameworks */,
-				3AFA312B274EB2C70068FADF /* Realm in Frameworks */,
 				3AAA36BA2756924800FE4975 /* SystemConfiguration.framework in Frameworks */,
 				1EF997F5DD03D032AEAE3DDC /* Pods_NikoNiko.framework in Frameworks */,
 				3AAA36B12756922300FE4975 /* CoreTelephony.framework in Frameworks */,
@@ -528,8 +528,8 @@
 			);
 			name = NikoNiko;
 			packageProductDependencies = (
-				3AFA312A274EB2C70068FADF /* Realm */,
-				3AFA312C274EB2C70068FADF /* RealmSwift */,
+				3A9501B629B649820072D381 /* Realm */,
+				3A9501B829B649820072D381 /* RealmSwift */,
 			);
 			productName = NikoNiko;
 			productReference = 3A3EB50C274C1805006EE44F /* NikoNiko.app */;
@@ -605,7 +605,7 @@
 			);
 			mainGroup = 3A3EB503274C1805006EE44F;
 			packageReferences = (
-				3AFA3129274EB2C70068FADF /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				3A9501B529B649820072D381 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 3A3EB50D274C1805006EE44F /* Products */;
 			projectDirPath = "";
@@ -663,14 +663,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/scriptInput.data",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"",
+				"$(DERIVED_FILE_DIR)/scriptOutput.data",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		972050920A4AD1D476D57F70 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1150,9 +1153,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3AFA3129274EB2C70068FADF /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+		3A9501B529B649820072D381 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
+			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				kind = exactVersion;
 				version = 10.19.0;
@@ -1161,14 +1164,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3AFA312A274EB2C70068FADF /* Realm */ = {
+		3A9501B629B649820072D381 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3AFA3129274EB2C70068FADF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 3A9501B529B649820072D381 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		3AFA312C274EB2C70068FADF /* RealmSwift */ = {
+		3A9501B829B649820072D381 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3AFA3129274EB2C70068FADF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 3A9501B529B649820072D381 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

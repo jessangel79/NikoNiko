@@ -33,4 +33,8 @@ struct UserSettings {
     
     @MyUserDefaults(key: "cuteTheme", defaultValue: false)
     static var cuteTheme: Bool
+    
+    /// GDPR AdColony
+    @MyUserDefaults(key: "gdpr", defaultValue: false)
+    static var gdpr: Bool
 }

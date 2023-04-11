@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import GoogleMobileAds
+// import GoogleMobileAds
 import AdColony
 
 final class StatBoardViewController: UIViewController {

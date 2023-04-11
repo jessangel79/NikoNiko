@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-//import GoogleMobileAds
+// import GoogleMobileAds
 import AdColony
 
 final class MoodBoardViewController: UIViewController {
@@ -27,6 +27,7 @@ final class MoodBoardViewController: UIViewController {
     private var inverseMoodList: Results<Mood>?
     private var adColonyService = AdColonyService()
 //    private let adMobService = AdMobService()
+    private var useDeviceSetting = UserSettings.gdpr
 
     // MARK: - Actions
     
@@ -81,7 +82,7 @@ final class MoodBoardViewController: UIViewController {
     }
 
     // MARK: - Methods
-    
+
     private func setCollectionView() {
         moodHistoryCollectionView.delegate = self
         moodHistoryCollectionView.dataSource = self
