@@ -109,6 +109,10 @@ class RealmTests: XCTestCase {
         dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: date)
     }
     
+    private func addComment(_ testRealm: Realm) {
+        dataManager.addComment(withComment: "Yes I'm fine")
+    }
+    
     // MARK: - Tests DataManager
     
     func testUpdateMoodIfMoodListIsEmptyAndAddFirstMood() throws {
@@ -230,5 +234,17 @@ class RealmTests: XCTestCase {
         XCTAssertEqual(statMoodTupleList[2].statMood, 2)
         XCTAssertEqual(statMoodTupleList[3].statMood, 2)
         XCTAssertEqual(statMoodTupleList[4].statMood, 0)
+    }
+    
+    func testAddCommentMood() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        add5Moods(testRealm)
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "None")
+        addComment(testRealm)
+        XCTAssertEqual(testRealm.objects(Mood.self).last?.comment, "Yes I'm fine")
+//        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "Yes I'm fine")
+//        XCTAssertEqual(testRealm.objects(Mood.self)[1].comment, "I don't know")
+//        XCTAssertEqual(testRealm.objects(Mood.self)[2].comment, "No I'm bad")
+//        XCTAssertEqual(testRealm.objects(Mood.self).last?.comment, "So sad")
     }
 }

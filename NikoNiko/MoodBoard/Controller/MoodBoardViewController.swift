@@ -27,7 +27,7 @@ final class MoodBoardViewController: UIViewController {
     private var inverseMoodList: Results<Mood>?
     private var adColonyService = AdColonyService()
 //    private let adMobService = AdMobService()
-    private var useDeviceSetting = UserSettings.gdpr
+//    private var useDeviceSetting = UserSettings.gdpr // ???
 
     // MARK: - Actions
     
@@ -57,7 +57,8 @@ final class MoodBoardViewController: UIViewController {
         setApp()
         adColonyService.destroyAd()
         adColonyService.requestBannerAd(Cst.AdColony.Banner1, self) // 1
-
+        getCommentMood()
+//        displayCommentMood()
 //        adMobService.setAdMob(bannerView, self)
 //        adViewDidReceiveAd(bannerView)
     }
@@ -148,6 +149,86 @@ final class MoodBoardViewController: UIViewController {
         let currentDate = Date()
         dataManager.updateMood(moodName: moodName, forDate: currentDate)
     }
+    
+    private func getCommentMood() {
+        for moodTodayButton in moodTodayButtons {
+            addCommentToMood(moodTodayButton: moodTodayButton)
+        }
+    }
+    
+    private func addCommentToMood(moodTodayButton: UIButton) {
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(sender:)))
+        moodTodayButton.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    @objc func longPressed(sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            displayAddCommentAlert { [] comment in // unowned self
+                guard let comment = comment?.trimWhitespaces, !comment.isBlank else { return }
+                let dataManager = DataManager()
+                dataManager.addComment(withComment: comment)
+            }
+        }
+    }
+    
+//    private func displayCommentMood() {
+//        for moodTodayButton in moodTodayButtons {
+//            touchButtonMoodToDisplayComment(moodTodayButton: moodTodayButton)
+//        }
+//
+// //        touchButtonMoodToDisplayComment()
+//    }
+    
+//    private func touchButtonMoodToDisplayComment(moodTodayButton: UIButton) { // moodTodayButton: UIButton
+//    //        for moodTodayButton in moodTodayButtons {
+//    //            moodTodayButton.addTarget(self, action: #selector(buttonTouched), for: .touchUpInside)
+//    //        }
+//        moodTodayButton.addTarget(self, action: #selector(buttonTouched), for: .touchUpInside)
+//
+//    //        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+//    //        doubleTapGesture.numberOfTapsRequired = 2
+//    //        moodTodayButton.addGestureRecognizer(doubleTapGesture)
+//
+//    }
+    
+//    @objc func buttonTouched(_ sender: UITapGestureRecognizer) {
+//        var comment: String?
+//        comment = inverseMoodList?[0].comment
+//
+//        let alertController = UIAlertController(title: "", message: comment, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alertController.addAction(okAction)
+//        present(alertController, animated: true, completion: nil)
+//
+//    //        if sender.state == .ended {
+//    //            print("Double tap detected on button")
+//    //            let alertController = UIAlertController(title: "", message: comment, preferredStyle: .alert)
+//    //            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//    //            alertController.addAction(okAction)
+//    //            present(alertController, animated: true, completion: nil)
+//    //        }
+//
+//    //        var comment = String()
+//    //        for moodTodayButton in moodTodayButtons {
+//    //            var commentToDisplay: String?
+//    //            switch moodTodayButton.tag {
+//    //            case 0:
+//    //                commentToDisplay = inverseMoodList?[0].comment
+//    //            case 1:
+//    //                commentToDisplay = inverseMoodList?[1].comment
+//    //            case 2:
+//    //                commentToDisplay = inverseMoodList?[2].comment
+//    //            case 3:
+//    //                commentToDisplay = inverseMoodList?[3].comment
+//    //            case 4:
+//    //                commentToDisplay = inverseMoodList?[4].comment
+//    //            default:
+//    //                commentToDisplay = inverseMoodList?[5].comment
+//    //            }
+//    //            comment = commentToDisplay ?? ""
+//    //        }
+//
+//    }
     
     private func getInverseMoodList() {
         let dataManager = DataManager()

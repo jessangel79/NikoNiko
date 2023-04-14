@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                       Cst.AdColony.Interstitial,
                                                                       Cst.AdColony.BannerMediumRect], options: nil) { [] (zones) in
             // config RGPD [weak self]
-            if UserSettings.gdpr {
+            if UserSettings.userConsent {
                 
             } else {
                 

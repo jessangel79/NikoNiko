@@ -1,12 +1,12 @@
 //
 //  UIViewController+Alert.swift
-//  RoadTrip
 //
 //  Created by Angelique Babin on 10/02/2020.
 //  Copyright © 2020 Angelique Babin. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
 
 // MARK: - Extension to display an alert message to the user
 
@@ -62,5 +62,24 @@ extension UIViewController {
         alert.addAction(destructiveAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    /// Display an alert to enter a comment for today
+    func displayAddCommentAlert(handlerAddComment: @escaping (String?) -> Void) {
+        let alertController = UIAlertController(title: "Do you have a comment to add ?", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter your comment"
+            textField.autocapitalizationType = .sentences
+        }
+        let action = UIAlertAction(title: "Add", style: .default, handler: { _ in
+            guard let textField = alertController.textFields else { return }
+            handlerAddComment(textField[0].text)
+            print("textfield")
+            print(textField[0].text ?? "error text")
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

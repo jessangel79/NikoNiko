@@ -37,10 +37,22 @@ final class DataManager {
     }
     
     private func addMood(_ realm: Realm? = try? Realm(), withName name: String, forDate date: Date) {
-        let newMood = Mood(name: name, date: date)
+        let newMood = Mood(name: name, date: date, comment: "None")
         do {
             try realm?.write {
                 realm?.add(newMood)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func addComment(_ realm: Realm? = try? Realm(), withComment comment: String) {
+        do {
+            moodList = (realm?.objects(Mood.self))
+            guard let moodToUpdate = moodList.last else { return }
+            try realm?.write {
+                moodToUpdate.comment = comment
             }
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -87,7 +99,7 @@ final class DataManager {
     func createMoodListDefault() -> [Mood] {
         var moodListDefault = [Mood]()
         for _ in 1...Cst.nbOfMoods {
-            let mood = Mood(name: "puzzledColor", date: Date()) // , dateFormatted: String
+            let mood = Mood(name: "puzzledColor", date: Date(), comment: "") // , dateFormatted: String
             moodListDefault.append(mood)
         }
         return moodListDefault

@@ -19,7 +19,7 @@ extension Date {
     
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = "EEE"
         return dateFormatter.string(from: self).capitalized
     }

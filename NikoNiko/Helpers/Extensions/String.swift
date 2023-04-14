@@ -14,6 +14,12 @@ extension String {
         return self.trimmingCharacters(in: .whitespaces) == String() ? true : false
     }
     
+    /// delete whitespace to trailing and leading of string
+    var trimWhitespaces: String {
+        let trimmed = self.trimmingCharacters(in: .whitespaces)
+        return trimmed
+    }
+    
     /// format type string in type date
     func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date {
         let formatter = DateFormatter()

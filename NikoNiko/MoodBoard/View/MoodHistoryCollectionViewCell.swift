@@ -43,6 +43,10 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(_ indexPath: IndexPath, _ inverseMoodList: Results<Mood>?) {
+        moodHistoryImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(moodHistoryImageViewTapped))
+        moodHistoryImageView.addGestureRecognizer(tapGesture)
+        
 //        if indexPath.item < inverseMoodListCount {
             if let inverseMoodList = inverseMoodList {
                 if !inverseMoodList.isEmpty {
@@ -57,4 +61,13 @@ class MoodHistoryCollectionViewCell: UICollectionViewCell {
 //            print("error in setupCell")
 //        }
     }
+    
+    @objc func moodHistoryImageViewTapped() {
+//        displayCommentAlert { <#String?#> in
+//            <#code#>
+//        }
+    }
+    
+    // Jess Leeloo
+//    je voudrais afficher une popup de texte avec un simple clic sur une imageview en swift dans un collectionviewcell
 }

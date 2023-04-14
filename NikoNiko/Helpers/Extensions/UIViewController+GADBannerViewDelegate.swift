@@ -1,6 +1,5 @@
 //
 //  UIViewController+GADBannerViewDelegate.swift
-//  RoadTrip
 //
 //  Created by Angelique Babin on 20/05/2021.
 //  Copyright © 2021 Angelique Babin. All rights reserved.

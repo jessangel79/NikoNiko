@@ -1,6 +1,5 @@
 //
 //  UiViewController+WKWebView.swift
-//  RoadTrip
 //
 //  Created by Angelique Babin on 10/09/2020.
 //  Copyright © 2020 Angelique Babin. All rights reserved.

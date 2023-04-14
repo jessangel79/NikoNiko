@@ -28,5 +28,10 @@ class StringExtensionTests: XCTestCase {
         let stringNotBlank = "Test"
         XCTAssertFalse(stringNotBlank.isBlank)
     }
+    
+    func testStringTrimWhitespaces() throws {
+        let string = " Test "
+        XCTAssertEqual(string.trimWhitespaces, "Test")
+    }
 
 }

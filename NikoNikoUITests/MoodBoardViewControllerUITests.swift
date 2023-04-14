@@ -51,6 +51,15 @@ class MoodBoardViewControllerUITests: XCTestCase {
         XCTAssertEqual(app.otherElements.element.staticTexts["disappointed"].exists, true)
         XCTAssertEqual(app.otherElements.element.staticTexts["puzzledColor"].exists, false)
     }
+    
+    func testLongPressRecognizerOnMoodButton() throws {
+        app.buttons["smiling"].tap()
+        let smilingButton = app.buttons["smiling"]
+        smilingButton.press(forDuration: 3.6);
+//        smilingButton.press(forDuration: 1.2);
+        app.alerts["Do you have a comment to add ?"].scrollViews.otherElements.buttons["Add"].tap()
+        
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

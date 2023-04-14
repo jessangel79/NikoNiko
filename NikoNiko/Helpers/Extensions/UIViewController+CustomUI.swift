@@ -1,6 +1,5 @@
 //
 //  UIViewController+CustomUI.swift
-//  SunsetApp
 //
 //  Created by Angelique Babin on 24/09/2020.
 //
@@ -84,5 +83,4 @@ extension UIViewController {
         collectionView.layer.borderWidth = width
         collectionView.layer.borderColor = colorBorder.cgColor
     }
-    
 }
