@@ -186,9 +186,9 @@ extension StatBoardViewController {
     }
 }
 
-// MARK: - Keyboard
+// MARK: - Keyboard - UITextFieldDelegate
 
-extension StatBoardViewController: UITextFieldDelegate {
+extension StatBoardViewController {
     
     @IBAction func dismissKeyBoardTapGesture( _ sender: UITapGestureRecognizer) {
         fromDateTextField.resignFirstResponder()

@@ -10,7 +10,7 @@ import RealmSwift
 
 // MARK: - Extension to display an alert message to the user
 
-extension UIViewController {
+extension UIViewController: UITextFieldDelegate {
     
     /// Enumeration of the error
     enum AlertError {
@@ -69,17 +69,25 @@ extension UIViewController {
         let alertController = UIAlertController(title: "Do you have a comment to add ?", message: nil, preferredStyle: .alert)
         alertController.addTextField { textField in
             textField.placeholder = "Enter your comment"
+            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             textField.autocapitalizationType = .sentences
         }
         let action = UIAlertAction(title: "Add", style: .default, handler: { _ in
             guard let textField = alertController.textFields else { return }
-            handlerAddComment(textField[0].text)
+            handlerAddComment(textField.first?.text)
+            // To delete
             print("textfield")
-            print(textField[0].text ?? "error text")
+            print(textField.first?.text ?? "error text")
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(action)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text, text.count > 30 {
+            textField.deleteBackward()
+        }
     }
 }

@@ -55,8 +55,8 @@ class MoodBoardViewControllerUITests: XCTestCase {
     func testLongPressRecognizerOnMoodButton() throws {
         app.buttons["smiling"].tap()
         let smilingButton = app.buttons["smiling"]
-        smilingButton.press(forDuration: 3.6);
-//        smilingButton.press(forDuration: 1.2);
+        smilingButton.press(forDuration: 3.6)
+//        smilingButton.press(forDuration: 1.2)
         app.alerts["Do you have a comment to add ?"].scrollViews.otherElements.buttons["Add"].tap()
         
     }

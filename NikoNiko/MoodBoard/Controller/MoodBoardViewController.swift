@@ -11,7 +11,7 @@ import RealmSwift
 import AdColony
 
 final class MoodBoardViewController: UIViewController {
-            
+    
     // MARK: - Outlets
     
     @IBOutlet private var moodTodayButtons: [UIButton]!
@@ -19,16 +19,16 @@ final class MoodBoardViewController: UIViewController {
     @IBOutlet private var titleLabels: [UILabel]!
     @IBOutlet private weak var moodHistoryCollectionView: UICollectionView!
     @IBOutlet private weak var todayLabel: UILabel!
-//    @IBOutlet private weak var bannerView: GADBannerView!
+    //    @IBOutlet private weak var bannerView: GADBannerView!
     @IBOutlet private weak var bannerPlacement: UIView!
     
     // MARK: - Properties
     
     private var inverseMoodList: Results<Mood>?
     private var adColonyService = AdColonyService()
-//    private let adMobService = AdMobService()
-//    private var useDeviceSetting = UserSettings.gdpr // ???
-
+    //    private let adMobService = AdMobService()
+    //    private var useDeviceSetting = UserSettings.gdpr // ???
+    
     // MARK: - Actions
     
     @IBAction private func moodTodayButtonsPressed(_ sender: UIButton) {
@@ -58,9 +58,8 @@ final class MoodBoardViewController: UIViewController {
         adColonyService.destroyAd()
         adColonyService.requestBannerAd(Cst.AdColony.Banner1, self) // 1
         getCommentMood()
-//        displayCommentMood()
-//        adMobService.setAdMob(bannerView, self)
-//        adViewDidReceiveAd(bannerView)
+        //        adMobService.setAdMob(bannerView, self)
+        //        adViewDidReceiveAd(bannerView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,8 +71,8 @@ final class MoodBoardViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        adMobService.loadBannerAd(bannerView, view)
-//        adMobService.setAdMob(bannerView, self)
+        //        adMobService.loadBannerAd(bannerView, view)
+        //        adMobService.setAdMob(bannerView, self)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {    super.traitCollectionDidChange(previousTraitCollection)
@@ -81,9 +80,9 @@ final class MoodBoardViewController: UIViewController {
         customShadowLabel(label: todayLabel)
         moodHistoryCollectionView.reloadData()
     }
-
+    
     // MARK: - Methods
-
+    
     private func setCollectionView() {
         moodHistoryCollectionView.delegate = self
         moodHistoryCollectionView.dataSource = self
@@ -130,7 +129,7 @@ final class MoodBoardViewController: UIViewController {
             moodTodayButton.setImage(img, for: .normal)
         }
     }
-
+    
     private func customUI() {
         customUIDefaultMode()
         customShadowLabels(labels: titleLabels)
@@ -171,70 +170,10 @@ final class MoodBoardViewController: UIViewController {
         }
     }
     
-//    private func displayCommentMood() {
-//        for moodTodayButton in moodTodayButtons {
-//            touchButtonMoodToDisplayComment(moodTodayButton: moodTodayButton)
-//        }
-//
-// //        touchButtonMoodToDisplayComment()
-//    }
-    
-//    private func touchButtonMoodToDisplayComment(moodTodayButton: UIButton) { // moodTodayButton: UIButton
-//    //        for moodTodayButton in moodTodayButtons {
-//    //            moodTodayButton.addTarget(self, action: #selector(buttonTouched), for: .touchUpInside)
-//    //        }
-//        moodTodayButton.addTarget(self, action: #selector(buttonTouched), for: .touchUpInside)
-//
-//    //        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
-//    //        doubleTapGesture.numberOfTapsRequired = 2
-//    //        moodTodayButton.addGestureRecognizer(doubleTapGesture)
-//
-//    }
-    
-//    @objc func buttonTouched(_ sender: UITapGestureRecognizer) {
-//        var comment: String?
-//        comment = inverseMoodList?[0].comment
-//
-//        let alertController = UIAlertController(title: "", message: comment, preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alertController.addAction(okAction)
-//        present(alertController, animated: true, completion: nil)
-//
-//    //        if sender.state == .ended {
-//    //            print("Double tap detected on button")
-//    //            let alertController = UIAlertController(title: "", message: comment, preferredStyle: .alert)
-//    //            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//    //            alertController.addAction(okAction)
-//    //            present(alertController, animated: true, completion: nil)
-//    //        }
-//
-//    //        var comment = String()
-//    //        for moodTodayButton in moodTodayButtons {
-//    //            var commentToDisplay: String?
-//    //            switch moodTodayButton.tag {
-//    //            case 0:
-//    //                commentToDisplay = inverseMoodList?[0].comment
-//    //            case 1:
-//    //                commentToDisplay = inverseMoodList?[1].comment
-//    //            case 2:
-//    //                commentToDisplay = inverseMoodList?[2].comment
-//    //            case 3:
-//    //                commentToDisplay = inverseMoodList?[3].comment
-//    //            case 4:
-//    //                commentToDisplay = inverseMoodList?[4].comment
-//    //            default:
-//    //                commentToDisplay = inverseMoodList?[5].comment
-//    //            }
-//    //            comment = commentToDisplay ?? ""
-//    //        }
-//
-//    }
-    
     private func getInverseMoodList() {
         let dataManager = DataManager()
         inverseMoodList = dataManager.inverseMoodList()
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource - UICollectionViewDelegate
