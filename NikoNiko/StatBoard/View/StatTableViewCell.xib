@@ -45,9 +45,9 @@
                                             <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="40"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment up to 30 characters.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV3-RZ-HaJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment up to 30 characters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV3-RZ-HaJ">
                                         <rect key="frame" x="105" y="0.0" width="105" height="60"/>
-                                        <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Monaco" family="Monaco" pointSize="14"/>
                                         <color key="textColor" name="fontColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -67,6 +67,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="backGroundColor"/>
             <connections>
+                <outlet property="commentLabel" destination="KV3-RZ-HaJ" id="m1Y-59-wfW"/>
                 <outlet property="moodImageView" destination="tnm-6a-nqI" id="ASJ-hX-wvd"/>
                 <outlet property="statLabel" destination="5N1-pa-9YW" id="C5D-Ma-r6m"/>
             </connections>

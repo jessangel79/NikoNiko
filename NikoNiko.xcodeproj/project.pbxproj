@@ -55,6 +55,7 @@
 		3AABD364275F6E800021FA91 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AABD363275F6E800021FA91 /* Theme.swift */; };
 		3AB53E42274F9F70002B3960 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB53E41274F9F70002B3960 /* RealmTests.swift */; };
 		3AB5602A275B8CB40052732E /* UITableViewCell+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */; };
+		3AC61EB02A0169CD0051651A /* MoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC61EAF2A0169CD0051651A /* MoodData.swift */; };
 		3AD35F1F275A4C64000BBCBD /* StatBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */; };
 		3AD35F21275A4C8C000BBCBD /* StatBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD35F20275A4C8C000BBCBD /* StatBoard.storyboard */; };
 		3AD35F28275A5E59000BBCBD /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35F26275A5E59000BBCBD /* StatTableViewCell.swift */; };
@@ -149,6 +150,7 @@
 		3AB53E38274F9D85002B3960 /* NikoNikoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoNikoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB53E41274F9F70002B3960 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		3AB56029275B8CB40052732E /* UITableViewCell+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CustomUI.swift"; sourceTree = "<group>"; };
+		3AC61EAF2A0169CD0051651A /* MoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodData.swift; sourceTree = "<group>"; };
 		3AD35F1E275A4C64000BBCBD /* StatBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoardViewController.swift; sourceTree = "<group>"; };
 		3AD35F20275A4C8C000BBCBD /* StatBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatBoard.storyboard; sourceTree = "<group>"; };
 		3AD35F26275A5E59000BBCBD /* StatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				3AFA312E274EB4B90068FADF /* Mood.swift */,
+				3AC61EAF2A0169CD0051651A /* MoodData.swift */,
 				3A4B1BAB275941ED00E5E2BD /* AssetsImage.swift */,
 				3AFA3130274EB5120068FADF /* DataManager.swift */,
 				3A4B1BA027590A2600E5E2BD /* UserSettings.swift */,
@@ -755,6 +758,7 @@
 				3AE2917D274D67400068843A /* UIViewController+CustomUI.swift in Sources */,
 				3AFA3137274EC0930068FADF /* FormateDate.swift in Sources */,
 				3AA28254278F1B6600CAB5ED /* UIViewController+AdColonyInterstitial.swift in Sources */,
+				3AC61EB02A0169CD0051651A /* MoodData.swift in Sources */,
 				3AA28257278F3C0600CAB5ED /* Keys.swift in Sources */,
 				3A52AB8B278DDB360007405C /* AdColonyService.swift in Sources */,
 			);

@@ -25,13 +25,16 @@ final class StatBoardViewController: UIViewController {
     // MARK: - Properties
     
     private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
+    private var lastCommentMoodTupleList = [(nameMood: String, lastCommentMood: String)]()
+//    private var statMoodTupleList = [(nameMood: String(), moodData: MoodData)]()
+//    private var lastCommentMoodTupleList = [(nameMood: String(), moodData: MoodData)]()
     private var adColonyService = AdColonyService()
 //    private let adMobService = AdMobService()
     
     // MARK: - Actions
     
     @IBAction func searchBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        getStatMoodToPeriod()
+        getStatAndLastCommentMoodToPeriod()
         statTableView.reloadData()
     }
     
@@ -92,14 +95,22 @@ final class StatBoardViewController: UIViewController {
         statTableView.reloadData()
     }
 
-    private func getStatMoodToPeriod() {
+    private func getStatAndLastCommentMoodToPeriod() {
         guard let fromDateStr = fromDateTextField.text, !fromDateStr.isBlank else { return presentAlert(typeError: .noStartDate) }
         guard let toDateStr = toDateTextField.text, !toDateStr.isBlank else { return presentAlert(typeError: .noEndDate) }
         let fromDate = fromDateStr.toDate(format: FormatDate.onDisplay.rawValue)
         let toDate = toDateStr.toDate(format: FormatDate.onDisplay.rawValue)
         if checkIfDateCorrect(fromDate, toDate) {
             let dataManager = DataManager()
+            
+//            statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.countMood(0))
+//            lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.lastComment(""))
+            
+//            statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate)
+//            lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate)
+
             statMoodTupleList = dataManager.createStatMoodTupleList(fromDate, toDate)
+            lastCommentMoodTupleList = dataManager.createLastCommentMoodTupleList(fromDate, toDate)
         }
     }
     
@@ -129,7 +140,8 @@ extension StatBoardViewController: UITableViewDataSource {
                                                                     for: indexPath) as? StatTableViewCell else {
             return UITableViewCell()
         }
-        statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList)
+//        statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList)
+        statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList, lastCommentMoodTupleList)
         return statTableViewCell
     }
 }
@@ -172,7 +184,7 @@ extension StatBoardViewController {
             self.toDateTextField.text = setSelectedDate(datePicker: datePicker)
          }
         self.toDateTextField.resignFirstResponder()
-        self.getStatMoodToPeriod()
+        self.getStatAndLastCommentMoodToPeriod()
         self.statTableView.reloadData()
     }
     
