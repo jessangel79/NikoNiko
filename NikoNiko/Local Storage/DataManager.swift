@@ -140,70 +140,34 @@ final class DataManager {
         guard let comment = mood?.last?.comment else { return "None" }
         return comment
     }
-    
-//    enum MoodData {
-//        case count(Int)
-//        case lastComment(String)
-//    }
 
-//    func createMoodTupleList(_ fromDate: Date, _ toDate: Date, _ data: MoodData) -> [(nameMood: String, moodData: MoodData)] {
-//        let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
-//        let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
-//        var moodList = [(nameMood: String, moodData: MoodData)]()
-//        let moods = [AssetsImage.smiling, AssetsImage.happy, AssetsImage.neutral, AssetsImage.sad, AssetsImage.disappointed]
-//        for mood in moods {
-//            switch data {
-//            case .countMood:
-//                let count = getMoodCount(fromDateWithAdd, toDateWithAdd, mood.rawValue)
-//                moodList.append((nameMood: mood.rawValue, moodData: .countMood(count)))
-//            case .lastComment:
-//                let lastComment = getLastCommentMood(fromDateWithAdd, toDateWithAdd, mood.rawValue)
-//                moodList.append((nameMood: mood.rawValue, moodData: .lastComment(lastComment)))
-//            }
-//        }
-//        return moodList
-//    }
-    
-    func createStatMoodTupleList(_ fromDate: Date, _ toDate: Date) -> [(nameMood: String, statMood: Int)] {
+    func createMoodTupleList(_ fromDate: Date, _ toDate: Date, _ moodData: MoodData) -> [(nameMood: String, moodData: MoodData)] {
         let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
         let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
-        var statMoodList = [(nameMood: String, statMood: Int)]()
+        var moodList = [(nameMood: String, moodData: MoodData)]()
         let moods = [AssetsImage.smiling, AssetsImage.happy, AssetsImage.neutral, AssetsImage.sad, AssetsImage.disappointed]
         for mood in moods {
-            let moodCount = (nameMood: mood.rawValue, statMood: getMoodCount(fromDate, toDate, mood.rawValue))
-            statMoodList.append(moodCount)
+            switch moodData {
+            case .countMood:
+                let count = getMoodCount(fromDateWithAdd, toDateWithAdd, mood.rawValue)
+                moodList.append((nameMood: mood.rawValue, moodData: .countMood(count)))
+            case .lastComment:
+                let lastComment = getLastCommentMood(fromDateWithAdd, toDateWithAdd, mood.rawValue)
+                moodList.append((nameMood: mood.rawValue, moodData: .lastComment(lastComment)))
+            }
         }
-        return statMoodList
+        return moodList
     }
-    
-    func createLastCommentMoodTupleList(_ fromDate: Date, _ toDate: Date) -> [(nameMood: String, lastCommentMood: String)] {
-        let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
-        let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
-        var lastCommentMoodList = [(nameMood: String, lastCommentMood: String)]()
-        let moods = [AssetsImage.smiling, AssetsImage.happy, AssetsImage.neutral, AssetsImage.sad, AssetsImage.disappointed]
-        for mood in moods {
-            let lastCommentMood = (nameMood: mood.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, mood.rawValue))
-            lastCommentMoodList.append(lastCommentMood)
-        }
-        return lastCommentMoodList
-    }
-
-
-
+        
 //    func createStatMoodTupleList(_ fromDate: Date, _ toDate: Date) -> [(nameMood: String, statMood: Int)] {
 //        let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
 //        let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
 //        var statMoodList = [(nameMood: String, statMood: Int)]()
-//        let moodSmiling = (nameMood: AssetsImage.smiling.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.smiling.rawValue))
-//        let moodHappy = (nameMood: AssetsImage.happy.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.happy.rawValue))
-//        let moodNeutral = (nameMood: AssetsImage.neutral.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.neutral.rawValue))
-//        let moodSad = (nameMood: AssetsImage.sad.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.sad.rawValue))
-//        let moodDisappointed = (nameMood: AssetsImage.disappointed.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, AssetsImage.disappointed.rawValue))
-//        statMoodList.append(moodSmiling)
-//        statMoodList.append(moodHappy)
-//        statMoodList.append(moodNeutral)
-//        statMoodList.append(moodSad)
-//        statMoodList.append(moodDisappointed)
+//        let moods = [AssetsImage.smiling, AssetsImage.happy, AssetsImage.neutral, AssetsImage.sad, AssetsImage.disappointed]
+//        for mood in moods {
+//            let moodCount = (nameMood: mood.rawValue, statMood: getMoodCount(fromDateWithAdd, toDateWithAdd, mood.rawValue))
+//            statMoodList.append(moodCount)
+//        }
 //        return statMoodList
 //    }
     
@@ -211,16 +175,11 @@ final class DataManager {
 //        let fromDateWithAdd = fromDate.addingTimeInterval(60 * 60)
 //        let toDateWithAdd = toDate.addingTimeInterval(60 * 60)
 //        var lastCommentMoodList = [(nameMood: String, lastCommentMood: String)]()
-//        let moodSmiling = (nameMood: AssetsImage.smiling.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, AssetsImage.smiling.rawValue))
-//        let moodHappy = (nameMood: AssetsImage.happy.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, AssetsImage.happy.rawValue))
-//        let moodNeutral = (nameMood: AssetsImage.neutral.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, AssetsImage.neutral.rawValue))
-//        let moodSad = (nameMood: AssetsImage.sad.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, AssetsImage.sad.rawValue))
-//        let moodDisappointed = (nameMood: AssetsImage.disappointed.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, AssetsImage.disappointed.rawValue))
-//        lastCommentMoodList.append(moodSmiling)
-//        lastCommentMoodList.append(moodHappy)
-//        lastCommentMoodList.append(moodNeutral)
-//        lastCommentMoodList.append(moodSad)
-//        lastCommentMoodList.append(moodDisappointed)
+//        let moods = [AssetsImage.smiling, AssetsImage.happy, AssetsImage.neutral, AssetsImage.sad, AssetsImage.disappointed]
+//        for mood in moods {
+//            let lastCommentMood = (nameMood: mood.rawValue, lastCommentMood: getLastCommentMood(fromDateWithAdd, toDateWithAdd, mood.rawValue))
+//            lastCommentMoodList.append(lastCommentMood)
+//        }
 //        return lastCommentMoodList
 //    }
 

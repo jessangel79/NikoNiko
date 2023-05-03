@@ -24,10 +24,10 @@ final class StatBoardViewController: UIViewController {
 
     // MARK: - Properties
     
-    private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
-    private var lastCommentMoodTupleList = [(nameMood: String, lastCommentMood: String)]()
-//    private var statMoodTupleList = [(nameMood: String(), moodData: MoodData)]()
-//    private var lastCommentMoodTupleList = [(nameMood: String(), moodData: MoodData)]()
+//    private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
+//    private var lastCommentMoodTupleList = [(nameMood: String, lastCommentMood: String)]()
+    private var statMoodTupleList = [(nameMood: String, moodData: MoodData)]()
+    private var lastCommentMoodTupleList = [(nameMood: String, moodData: MoodData)]()
     private var adColonyService = AdColonyService()
 //    private let adMobService = AdMobService()
     
@@ -102,15 +102,13 @@ final class StatBoardViewController: UIViewController {
         let toDate = toDateStr.toDate(format: FormatDate.onDisplay.rawValue)
         if checkIfDateCorrect(fromDate, toDate) {
             let dataManager = DataManager()
-            
-//            statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.countMood(0))
-//            lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.lastComment(""))
-            
-//            statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate)
-//            lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate)
+            statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.countMood(0))
+            lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.lastComment(""))
+//            statMoodTupleList = dataManager.createStatMoodTupleList(fromDate, toDate)
+//            lastCommentMoodTupleList = dataManager.createLastCommentMoodTupleList(fromDate, toDate)
+            print("statMoodTupleList \(statMoodTupleList)")
+            print("lastCommentMoodTupleList \(lastCommentMoodTupleList)")
 
-            statMoodTupleList = dataManager.createStatMoodTupleList(fromDate, toDate)
-            lastCommentMoodTupleList = dataManager.createLastCommentMoodTupleList(fromDate, toDate)
         }
     }
     
@@ -140,7 +138,6 @@ extension StatBoardViewController: UITableViewDataSource {
                                                                     for: indexPath) as? StatTableViewCell else {
             return UITableViewCell()
         }
-//        statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList)
         statTableViewCell.setupCellWithTuple(indexPath, statMoodTupleList, lastCommentMoodTupleList)
         return statTableViewCell
     }
