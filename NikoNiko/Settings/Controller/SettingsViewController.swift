@@ -73,6 +73,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         loadUserDefaults()
         setUserInterfaceStyle()
+        
+        adColonyService.destroyAd() // TEST
         adColonyService.requestMediumRectBannerAd(Cst.AdColony.BannerMediumRect, self)
 //        adMobService.setAdMob(bannerView, self)
     }
