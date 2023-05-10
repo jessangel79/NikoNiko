@@ -17,7 +17,8 @@ extension UIViewController: AdColonyInterstitialDelegate {
     
     // Handle loading error
     public func adColonyInterstitialDidFail(toLoad error: AdColonyAdRequestError) {
-        print("Interstitial request failed with error: \(error.localizedDescription) and suggestion: \(error.localizedRecoverySuggestion!)")
+        guard let errorLocalizedRecoverySuggestion = error.localizedRecoverySuggestion else { return }
+        print("Interstitial request failed with error: \(error.localizedDescription) and suggestion: \(errorLocalizedRecoverySuggestion)")
     }
     
     // Handle expiring ads (optional)

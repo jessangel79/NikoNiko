@@ -137,7 +137,7 @@ final class DataManager {
         let mood = statMood?.where {
             $0.name == name
         }
-        guard let comment = mood?.last?.comment else { return "None" }
+        guard let comment = mood?.last?.comment else { return "No comment yet" }
         return comment
     }
 

@@ -24,8 +24,6 @@ final class StatBoardViewController: UIViewController {
 
     // MARK: - Properties
     
-//    private var statMoodTupleList = [(nameMood: String, statMood: Int)]()
-//    private var lastCommentMoodTupleList = [(nameMood: String, lastCommentMood: String)]()
     private var statMoodTupleList = [(nameMood: String, moodData: MoodData)]()
     private var lastCommentMoodTupleList = [(nameMood: String, moodData: MoodData)]()
     private var adColonyService = AdColonyService()
@@ -104,11 +102,8 @@ final class StatBoardViewController: UIViewController {
             let dataManager = DataManager()
             statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.countMood(0))
             lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.lastComment(""))
-//            statMoodTupleList = dataManager.createStatMoodTupleList(fromDate, toDate)
-//            lastCommentMoodTupleList = dataManager.createLastCommentMoodTupleList(fromDate, toDate)
-            print("statMoodTupleList \(statMoodTupleList)")
-            print("lastCommentMoodTupleList \(lastCommentMoodTupleList)")
-
+//            print("statMoodTupleList \(statMoodTupleList)")
+//            print("lastCommentMoodTupleList \(lastCommentMoodTupleList)")
         }
     }
     

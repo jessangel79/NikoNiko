@@ -17,7 +17,8 @@ extension UIViewController: AdColonyAdViewDelegate {
     
     // handler banner loading failure
     public func adColonyAdViewDidFail(toLoad error: AdColonyAdRequestError) {
-        print("Banner request failed with error: \(error.localizedDescription) and suggestion: \(error.localizedRecoverySuggestion!)")
+        guard let errorLocalizedRecoverySuggestion = error.localizedRecoverySuggestion else { return }
+        print("Banner request failed with error: \(error.localizedDescription) and suggestion: \(errorLocalizedRecoverySuggestion)") // error.localizedRecoverySuggestion!
     }
     
     // print AdColony
