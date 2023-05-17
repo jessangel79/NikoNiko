@@ -34,6 +34,7 @@ class RealmTests: XCTestCase {
         dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: date)
     }
     
+    /// Add 5 moods without comment
     private func add5Moods(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         let date = Date().addingTimeInterval(-(24 * 60 * 60 * 4))
@@ -46,6 +47,26 @@ class RealmTests: XCTestCase {
         dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate3)
         let newDate4 = Date()
         dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate4)
+    }
+    
+    /// Add 5 moods with comments
+    private func add5MoodsWithComments(_ testRealm: Realm) {
+        dataManager.removeAllMoods(realm: testRealm)
+        let date = Date().addingTimeInterval(-(24 * 60 * 60 * 4))
+        dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: date)
+        dataManager.addComment(withComment: "I'm really fine")
+        let newDate = Date().addingTimeInterval(-(24 * 60 * 60 * 3))
+        dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+        dataManager.addComment(withComment: "Bof")
+        let newDate2 = Date().addingTimeInterval(-(24 * 60 * 60 * 2))
+        dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate2)
+        dataManager.addComment(withComment: "Nothing to say")
+        let newDate3 = Date().addingTimeInterval(-(24 * 60 * 60))
+        dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate3)
+        dataManager.addComment(withComment: "Happy !")
+        let newDate4 = Date()
+        dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate4)
+        dataManager.addComment(withComment: "I'm really sad")
     }
     
     /// Add 10 moods
@@ -74,32 +95,60 @@ class RealmTests: XCTestCase {
     }
     
     /// Add 35 moods
-    private func add35Moods(_ testRealm: Realm) {
+    private func add35MoodsWithComments(_ testRealm: Realm) {
         dataManager.removeAllMoods(realm: testRealm)
         
         let newDate = Date() // 1
         dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+        dataManager.addComment(withComment: "Bof")
         
         for index in 1...6 { // 6
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
             dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: newDate)
+            dataManager.addComment(withComment: "I'm really sad")
         }
         for index in 7...16 { // 10
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
             dataManager.updateMood(realm: testRealm, moodName: "happy", forDate: newDate)
+            dataManager.addComment(withComment: "I'm really fine")
         }
         for index in 17...19 { // 3
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
             dataManager.updateMood(realm: testRealm, moodName: "smiling", forDate: newDate)
+            dataManager.addComment(withComment: "Happy !")
         }
         for index in 20...26 { // 7
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
             dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: newDate)
+            dataManager.addComment(withComment: "Bof")
         }
         for index in 27...34 { // 8
             let newDate = Date().addingTimeInterval(-(Double(24 * 60 * 60 * index)))
             dataManager.updateMood(realm: testRealm, moodName: "disappointed", forDate: newDate)
+            dataManager.addComment(withComment: "Nothing to say")
         }
+    }
+    
+    private func setTextToStat(_ moodRow: (nameMood: String, moodData: MoodData)) -> String {
+        var stringCount = ""
+        switch moodRow.moodData {
+        case .countMood(let count):
+            stringCount = String(count)
+        case .lastComment:
+            stringCount = ""
+        }
+        return stringCount
+    }
+    
+    private func setTextToCommentMood(_ lastCommentMoodRow: (nameMood: String, moodData: MoodData)) -> String {
+        var commentMood = String()
+        switch lastCommentMoodRow.moodData {
+        case .countMood:
+            commentMood = ""
+        case .lastComment(let comment):
+            commentMood = comment
+        }
+        return commentMood
     }
     
     private func updateMood(_ testRealm: Realm) {
@@ -108,11 +157,7 @@ class RealmTests: XCTestCase {
         dataManager.updateMood(realm: testRealm, moodName: "sad", forDate: date)
         dataManager.updateMood(realm: testRealm, moodName: "neutral", forDate: date)
     }
-    
-    private func addComment(_ testRealm: Realm) {
-        dataManager.addComment(withComment: "Yes I'm fine")
-    }
-    
+        
     // MARK: - Tests DataManager
     
     func testUpdateMoodIfMoodListIsEmptyAndAddFirstMood() throws {
@@ -131,6 +176,7 @@ class RealmTests: XCTestCase {
         updateMood(testRealm)
         XCTAssertFalse(testRealm.objects(Mood.self).isEmpty)
         XCTAssertEqual(testRealm.objects(Mood.self).last?.name, "neutral")
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "No comment yet")
     }
     
     func testUpdateMoodIfAnotherDayIsAdded() throws {
@@ -179,7 +225,7 @@ class RealmTests: XCTestCase {
         print(moodListDefault)
     }
     
-    func testGetCountIfInversListIsEmpty() throws {
+    func testGetCountIfInverseListIsEmpty() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
         dataManager.removeAllMoods(realm: testRealm)
         guard let inverseMoodList = dataManager.inverseMoodList(realm: testRealm) else { return }
@@ -219,32 +265,51 @@ class RealmTests: XCTestCase {
 //        XCTAssertEqual(moodCount, 10)
 //    }
  
-    func testCreateStatMoodTupleList() throws {
+    func testCreateStatMoodTupleListWithComments() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        add35Moods(testRealm)
-        let statMoodTupleList = dataManager.createStatMoodTupleList(Date().addingTimeInterval(-(24 * 60 * 60 * 22)), Date().addingTimeInterval(-(24 * 60 * 60 * 6)))
-        print(statMoodTupleList)
+        add35MoodsWithComments(testRealm)
+        let fromDate = Date().addingTimeInterval(-(24 * 60 * 60 * 22))
+        let toDate = Date().addingTimeInterval(-(24 * 60 * 60 * 6))
+        let statMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.countMood(0))
+        let lastCommentMoodTupleList = dataManager.createMoodTupleList(fromDate, toDate, MoodData.lastComment(""))
+                print(statMoodTupleList)
         XCTAssertEqual(statMoodTupleList[0].nameMood, "smiling")
         XCTAssertEqual(statMoodTupleList[1].nameMood, "happy")
         XCTAssertEqual(statMoodTupleList[2].nameMood, "neutral")
         XCTAssertEqual(statMoodTupleList[3].nameMood, "sad")
         XCTAssertEqual(statMoodTupleList[4].nameMood, "disappointed")
-        XCTAssertEqual(statMoodTupleList[0].statMood, 3)
-        XCTAssertEqual(statMoodTupleList[1].statMood, 10)
-        XCTAssertEqual(statMoodTupleList[2].statMood, 2)
-        XCTAssertEqual(statMoodTupleList[3].statMood, 2)
-        XCTAssertEqual(statMoodTupleList[4].statMood, 0)
+        XCTAssertEqual(setTextToStat(statMoodTupleList[0]), "3")
+        XCTAssertEqual(setTextToStat(statMoodTupleList[1]), "10")
+        XCTAssertEqual(setTextToStat(statMoodTupleList[2]), "2")
+        XCTAssertEqual(setTextToStat(statMoodTupleList[3]), "2")
+        XCTAssertEqual(setTextToStat(statMoodTupleList[4]), "0")
+        XCTAssertEqual(setTextToCommentMood(lastCommentMoodTupleList[0]), "Happy !")
+        XCTAssertEqual(setTextToCommentMood(lastCommentMoodTupleList[1]), "I'm really fine")
+        XCTAssertEqual(setTextToCommentMood(lastCommentMoodTupleList[2]), "Bof")
+        XCTAssertEqual(setTextToCommentMood(lastCommentMoodTupleList[3]), "I'm really sad")
+        XCTAssertEqual(setTextToCommentMood(lastCommentMoodTupleList[4]), "No comment yet")
+    }
+    
+    func testBeforeAddCommentMood() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        addFirstMood(testRealm)
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "No comment yet")
     }
     
     func testAddCommentMood() throws {
         guard let testRealm = try? Realm(configuration: config) else { return }
-        add5Moods(testRealm)
-        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "None")
-        addComment(testRealm)
+        addFirstMood(testRealm)
+        dataManager.addComment(withComment: "Yes I'm fine")
         XCTAssertEqual(testRealm.objects(Mood.self).last?.comment, "Yes I'm fine")
-//        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "Yes I'm fine")
-//        XCTAssertEqual(testRealm.objects(Mood.self)[1].comment, "I don't know")
-//        XCTAssertEqual(testRealm.objects(Mood.self)[2].comment, "No I'm bad")
-//        XCTAssertEqual(testRealm.objects(Mood.self).last?.comment, "So sad")
+    }
+    
+    func testAdd5CommentsTo5Mood() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        add5MoodsWithComments(testRealm)
+        XCTAssertEqual(testRealm.objects(Mood.self).first?.comment, "I'm really fine")
+        XCTAssertEqual(testRealm.objects(Mood.self)[1].comment, "Bof")
+        XCTAssertEqual(testRealm.objects(Mood.self)[2].comment, "Nothing to say")
+        XCTAssertEqual(testRealm.objects(Mood.self)[3].comment, "Happy !")
+        XCTAssertEqual(testRealm.objects(Mood.self).last?.comment, "I'm really sad")
     }
 }

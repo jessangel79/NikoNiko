@@ -37,7 +37,7 @@ final class DataManager {
     }
     
     private func addMood(_ realm: Realm? = try? Realm(), withName name: String, forDate date: Date) {
-        let newMood = Mood(name: name, date: date, comment: "None")
+        let newMood = Mood(name: name, date: date, comment: "No comment yet")
         do {
             try realm?.write {
                 realm?.add(newMood)

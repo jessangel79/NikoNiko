@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 // import GoogleMobileAds
 
-final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
+final class WebViewInformationsViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     // MARK: - Outlets
     
@@ -21,11 +21,9 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Properties
     
-    private let forwardBarItem = UIBarButtonItem(title: ">>", style: .plain, target: WebViewInformationsViewController.self,
-                                         action: #selector(forwardAction))
-    private let backBarItem = UIBarButtonItem(title: "<<", style: .plain, target: WebViewInformationsViewController.self,
-                                      action: #selector(backAction))
-    private let refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: WebViewInformationsViewController.self, action: #selector(refresh))
+    private var forwardBarItem: UIBarButtonItem!
+    private var backBarItem: UIBarButtonItem!
+    private var refreshBarItem: UIBarButtonItem!
 
 //    private let adMobService = AdMobService()
     
@@ -42,10 +40,12 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
     }
         
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
         setUserInterfaceStyle()
+        setButtonsBarItem()
         let barItemsCollection: [UIBarButtonItem] = [forwardBarItem, refreshBarItem, backBarItem]
         setupWebView(webView: webView, barItemsCollection: barItemsCollection)
         loadWebsite(urlString, webView: webView)
@@ -63,6 +63,12 @@ final class WebViewInformationsViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Methods
     
+    private func setButtonsBarItem() {
+        forwardBarItem = UIBarButtonItem(title: ">>", style: .plain, target: self, action: #selector(forwardAction))
+        backBarItem = UIBarButtonItem(title: "<<", style: .plain, target: self, action: #selector(backAction))
+        refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+    }
+        
     @objc private func forwardAction() {
         if webView.canGoForward {
             webView.goForward()

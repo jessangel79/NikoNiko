@@ -18,9 +18,10 @@ final class InformationsViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let badgeLinkedIn = "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
+    private let badgeLinkedIn = "https://www.linkedin.com/in/ang%C3%A9lique-babin-158aa874/?original_referer="
+    // "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
     private let pngTree = "https://pngtree.com/so/Avion"
-    private let angelAppDev = "http://www.angelappdev.io"
+    private let angelAppDev = "https://www.angelappdev.io"
     private var urlString = String()
 //    private let adMobService = AdMobService()
     private weak var banner: AdColonyAdView?

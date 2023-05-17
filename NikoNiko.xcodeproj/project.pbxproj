@@ -46,7 +46,6 @@
 		3AAA36B12756922300FE4975 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36AF2756922300FE4975 /* CoreTelephony.framework */; };
 		3AAA36B22756922300FE4975 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B02756922300FE4975 /* CoreGraphics.framework */; };
 		3AAA36B42756922D00FE4975 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B32756922D00FE4975 /* CoreMedia.framework */; };
-		3AAA36B62756923700FE4975 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B52756923700FE4975 /* MessageUI.framework */; };
 		3AAA36B82756923F00FE4975 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B72756923F00FE4975 /* StoreKit.framework */; };
 		3AAA36BA2756924800FE4975 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA36B92756924800FE4975 /* SystemConfiguration.framework */; };
 		3AAA36BC2756A57500FE4975 /* UiViewController+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA36BB2756A57500FE4975 /* UiViewController+WKWebView.swift */; };
@@ -97,6 +96,15 @@
 
 /* Begin PBXFileReference section */
 		2724C3C431771F8CB0E331DB /* Pods-NikoNikoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoNikoTests.release.xcconfig"; path = "Target Support Files/Pods-NikoNikoTests/Pods-NikoNikoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A0119892A150BD9004B8853 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3A01198B2A150BFF004B8853 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3A01198D2A150C38004B8853 /* AdColony.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdColony.xcframework; path = Pods/AdColony/AdColony.xcframework; sourceTree = "<group>"; };
+		3A01198F2A150C58004B8853 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		3A0119912A150C8F004B8853 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		3A0119932A150C9D004B8853 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		3A0119952A150CB4004B8853 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		3A0119972A150CC2004B8853 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		3A0119992A150CDF004B8853 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		3A011B032756505E009CC1CE /* UIViewController+GADBannerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GADBannerViewDelegate.swift"; sourceTree = "<group>"; };
 		3A0323DF275116D900D53B12 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		3A0323E12751236700D53B12 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
@@ -182,15 +190,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAA36AE2756921000FE4975 /* AudioToolbox.framework in Frameworks */,
 				3A9501B729B649820072D381 /* Realm in Frameworks */,
 				3AAA36A7275691F600FE4975 /* EventKitUI.framework in Frameworks */,
 				3AAA36B42756922D00FE4975 /* CoreMedia.framework in Frameworks */,
 				3A9501B929B649820072D381 /* RealmSwift in Frameworks */,
-				3AAA36B62756923700FE4975 /* MessageUI.framework in Frameworks */,
 				3AAA36A8275691F600FE4975 /* EventKit.framework in Frameworks */,
 				3AAA36AA275691FD00FE4975 /* AVFoundation.framework in Frameworks */,
 				3AEB93742756ACDE00405217 /* WebKit.framework in Frameworks */,
-				3AAA36AE2756921000FE4975 /* AudioToolbox.framework in Frameworks */,
 				3AAA36BA2756924800FE4975 /* SystemConfiguration.framework in Frameworks */,
 				1EF997F5DD03D032AEAE3DDC /* Pods_NikoNiko.framework in Frameworks */,
 				3AAA36B12756922300FE4975 /* CoreTelephony.framework in Frameworks */,
@@ -478,6 +485,15 @@
 		575A51495DF16424DE72B43C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A0119992A150CDF004B8853 /* WatchConnectivity.framework */,
+				3A0119972A150CC2004B8853 /* Social.framework */,
+				3A0119952A150CB4004B8853 /* SafariServices.framework */,
+				3A0119932A150C9D004B8853 /* JavaScriptCore.framework */,
+				3A0119912A150C8F004B8853 /* CoreServices.framework */,
+				3A01198F2A150C58004B8853 /* AppTrackingTransparency.framework */,
+				3A01198D2A150C38004B8853 /* AdColony.xcframework */,
+				3A01198B2A150BFF004B8853 /* libsqlite3.tbd */,
+				3A0119892A150BD9004B8853 /* libz.tbd */,
 				3A52AB79278DAA5F0007405C /* GoogleAppMeasurement.xcframework */,
 				3A52AB7A278DAA5F0007405C /* GoogleAppMeasurementIdentitySupport.xcframework */,
 				3A52AB7B278DAA5F0007405C /* GoogleMobileAds.xcframework */,
@@ -948,6 +964,7 @@
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NikoNiko/Supporting Files/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -979,6 +996,7 @@
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NikoNiko/Supporting Files/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

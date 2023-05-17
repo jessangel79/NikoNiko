@@ -256,11 +256,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bannerPlacement" destination="fN6-Tq-jfS" id="2Wl-TZ-3Ph"/>
-                        <outlet property="bannerView" destination="fN6-Tq-jfS" id="rWV-Ya-tDf"/>
+                        <outlet property="bannerPlacement" destination="fN6-Tq-jfS" id="FyK-c3-Vy6"/>
                         <outlet property="safariBarButtonItem" destination="wZP-Fs-Cqh" id="N8b-ZN-Lfe"/>
                         <outlet property="shareBarButtonItem" destination="maG-8T-rLf" id="iDO-oe-qRZ"/>
-                        <outlet property="webView" destination="qku-HA-tsm" id="fKh-Fd-3Yf"/>
+                        <outlet property="webView" destination="qku-HA-tsm" id="eaM-DJ-cIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baN-yk-KG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

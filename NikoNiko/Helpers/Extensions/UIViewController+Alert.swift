@@ -85,6 +85,7 @@ extension UIViewController: UITextFieldDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
+    /// Limit the number of characters to enter in a textfield
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, text.count > 30 {
             textField.deleteBackward()
