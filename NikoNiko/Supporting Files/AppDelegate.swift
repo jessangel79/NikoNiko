@@ -80,10 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
     
     private func setAdColony() {
-        AdColony.configure(withAppID: Cst.AdColony.AppUUID, zoneIDs: [Cst.AdColony.Banner1,
-                                                                      Cst.AdColony.Banner2,
-                                                                      Cst.AdColony.Interstitial,
-                                                                      Cst.AdColony.BannerMediumRect], options: nil) { [] (zones) in
+        AdColony.configure(withAppID: Cst.AdColony.AppUUID,
+                           zoneIDs: [Cst.AdColony.Banner1,
+                                     Cst.AdColony.Banner2,
+                                     Cst.AdColony.Interstitial,
+                                     Cst.AdColony.BannerMediumRect], options: nil) { [] (zones) in
             // config RGPD [weak self]
             if UserSettings.userConsent {
                 
